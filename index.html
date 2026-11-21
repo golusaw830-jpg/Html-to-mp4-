@@ -191,11 +191,7 @@
         </g>
         <g id="embers-layer"></g>
       </g>
-
-      <g id="title-group" filter="url(#softGoldGlow)">
-        <text x="540" y="1720" text-anchor="middle" font-size="94" font-weight="900" fill="url(#keywordGoldGrad)" stroke="#1f0502" stroke-width="14" paint-order="stroke">भगवान परशुराम</text>
-        <text x="540" y="1805" text-anchor="middle" font-size="44" font-weight="700" fill="#ffe7a3" stroke="#1f0502" stroke-width="8" paint-order="stroke">२१ बार क्षत्रिय विहीन पृथ्वी</text>
-      </g>
+      
       <rect id="impact-flash" width="1080" height="1920" fill="#fff7d6" opacity="0" pointer-events="none" />
     </svg>
   </div>
@@ -246,7 +242,6 @@
     const shock1 = document.getElementById("shockwave-1");
     const shock2 = document.getElementById("shockwave-2");
     const impactFlash = document.getElementById("impact-flash");
-    const titleGroup = document.getElementById("title-group");
     const scarf = document.getElementById("uttariya-scarf");
     const hairL = document.getElementById("hair-left");
     const hairR = document.getElementById("hair-right");
@@ -327,19 +322,9 @@
         em.el.setAttribute("opacity", (0.4 + 0.6 * Math.abs(Math.sin(t * 3 + em.phase))).toFixed(2));
       });
 
-      const titleP = clamp((t - 1.55) / 0.55, 0, 1);
-      titleGroup.setAttribute("opacity", titleP.toFixed(2));
-      titleGroup.setAttribute("transform", `translate(540 1750) scale(${(0.75 + 0.25 * easeOutBack(titleP)).toFixed(3)}) translate(-540 -1750)`);
     };
-
-    let start = null;
-    function loop(ts) {
-      if (!start) start = ts;
-      window.renderAtTime(((ts - start) / 1000) % 4.5);
-      requestAnimationFrame(loop);
-    }
-    requestAnimationFrame(loop);
   </script>
 </body>
-              </html>
+</html>
+
               
