@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'scene*.html'
+      - 'audio.*'
+      - 'durations.json'
       - 'render.js'
   workflow_dispatch:
 
@@ -25,11 +27,11 @@ jobs:
           sudo apt-get install -y ffmpeg fonts-noto-core
           npm install
 
-      - name: Render Video
+      - name: Render Synced Video
         run: node render.js
 
-      - name: Upload MP4 Video
+      - name: Upload Final Synced MP4
         uses: actions/upload-artifact@v4
         with:
-          name: rendered-video
-          path: output.mp4
+          name: synced-final-video
+          path: final_video_with_audio.mp4
