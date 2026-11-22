@@ -14,7 +14,6 @@ const path = require('path');
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
-      '--autoplay-policy=no-user-gesture-required',
       `--window-size=${WIDTH},${HEIGHT}`
     ]
   });
@@ -22,10 +21,81 @@ const path = require('path');
   const page = await browser.newPage();
   await page.setViewport({ width: WIDTH, height: HEIGHT, deviceScaleFactor: 1 });
 
+  // Inject deterministic virtual clock BEFORE loading index.html (zero changes to index.html)
+  await page.evaluateOnNewDocument(() => {
+    let virtualNow = 0;
+    let nextTimerId = 1;
+    const timers = new Map();
+    const rafCallbacks = new Map();
+
+    window.__advanceTime = function (ms) {
+      const target = virtualNow + ms;
+      while (true) {
+        let earliest = null;
+        for (const [id, t] of timers.entries()) {
+          if (t.time <= target && (!earliest || t.time < earliest.time)) {
+            earliest = { id, ...t };
+          }
+        }
+        if (!earliest) break;
+        virtualNow = earliest.time;
+        if (earliest.interval) {
+          timers.set(earliest.id, { ...earliest, time: virtualNow + earliest.interval });
+        } else {
+          timers.delete(earliest.id);
+        }
+        try { earliest.fn(); } catch (e) {}
+      }
+      virtualNow = target;
+
+      const currentRafs = Array.from(rafCallbacks.entries());
+      rafCallbacks.clear();
+      for (const [, cb] of currentRafs) {
+        try { cb(virtualNow); } catch (e) {}
+      }
+    };
+
+    const origPerfNow = performance.now.bind(performance);
+    performance.now = () => virtualNow;
+    Date.now = () => 1700000000000 + virtualNow;
+
+    window.setTimeout = (fn, delay = 0, ...args) => {
+      const id = nextTimerId++;
+      timers.set(id, {
+        fn: typeof fn === 'function' ? () => fn(...args) : () => eval(fn),
+        time: virtualNow + Math.max(0, Number(delay) || 0),
+        interval: null
+      });
+      return id;
+    };
+
+    window.clearTimeout = (id) => timers.delete(id);
+
+    window.setInterval = (fn, delay = 0, ...args) => {
+      const id = nextTimerId++;
+      const step = Math.max(1, Number(delay) || 1);
+      timers.set(id, {
+        fn: typeof fn === 'function' ? () => fn(...args) : () => eval(fn),
+        time: virtualNow + step,
+        interval: step
+      });
+      return id;
+    };
+
+    window.clearInterval = (id) => timers.delete(id);
+
+    window.requestAnimationFrame = (cb) => {
+      const id = nextTimerId++;
+      rafCallbacks.set(id, cb);
+      return id;
+    };
+
+    window.cancelAnimationFrame = (id) => rafCallbacks.delete(id);
+  });
+
   const fileUrl = 'file://' + path.resolve(__dirname, 'index.html');
   await page.goto(fileUrl, { waitUntil: 'networkidle0', timeout: 60000 });
 
-  // Start FFmpeg encoding piped PNG frames at 60fps
   const ffmpeg = spawn('ffmpeg', [
     '-y',
     '-f', 'image2pipe',
@@ -40,54 +110,23 @@ const path = require('path');
     'output.mp4'
   ], { stdio: ['pipe', 'inherit', 'inherit'] });
 
-  const client = await page.target().createCDPSession();
-  let latestFrameBuf = null;
-
-  client.on('Page.screencastFrame', async ({ data, sessionId }) => {
-    latestFrameBuf = Buffer.from(data, 'base64');
-    try {
-      await client.send('Page.screencastFrameAck', { sessionId });
-    } catch (e) {}
-  });
-
-  await client.send('Page.startScreencast', {
-    format: 'png',
-    quality: 100,
-    maxWidth: WIDTH,
-    maxHeight: HEIGHT,
-    everyNthFrame: 1
-  });
-
-  // Wait until first frame arrives so stream starts cleanly
-  while (!latestFrameBuf) {
-    await new Promise(r => setTimeout(r, 10));
-  }
-
   const totalFrames = Math.ceil(DURATION_SEC * FPS);
-  const frameIntervalMs = 1000 / FPS;
-  const startTime = performance.now();
+  const dtMs = 1000 / FPS;
 
   for (let i = 0; i < totalFrames; i++) {
-    const targetTime = startTime + i * frameIntervalMs;
-    const now = performance.now();
-    if (targetTime > now) {
-      await new Promise(r => setTimeout(r, targetTime - now));
-    }
-    if (latestFrameBuf) {
-      const ok = ffmpeg.stdin.write(latestFrameBuf);
-      if (!ok) {
-        await new Promise(r => ffmpeg.stdin.once('drain', r));
-      }
+    await page.evaluate((ms) => window.__advanceTime(ms), i === 0 ? 0 : dtMs);
+    const frameBuf = await page.screenshot({ type: 'png' });
+    const ok = ffmpeg.stdin.write(frameBuf);
+    if (!ok) {
+      await new Promise((r) => ffmpeg.stdin.once('drain', r));
     }
   }
 
-  await client.send('Page.stopScreencast');
   ffmpeg.stdin.end();
-
   await new Promise((resolve, reject) => {
-    ffmpeg.on('close', code => code === 0 ? resolve() : reject(new Error('FFmpeg exited ' + code)));
+    ffmpeg.on('close', (code) => (code === 0 ? resolve() : reject(new Error('FFmpeg exited ' + code))));
   });
 
   await browser.close();
-  console.log('Successfully rendered output.mp4 (' + DURATION_SEC + 's @ 60fps)');
+  console.log('Successfully rendered exact 43.7s @ 60fps output.mp4');
 })();
