@@ -21,76 +21,103 @@ const path = require('path');
   const page = await browser.newPage();
   await page.setViewport({ width: WIDTH, height: HEIGHT, deviceScaleFactor: 1 });
 
-  // Inject deterministic virtual clock BEFORE loading index.html (zero changes to index.html)
+  // Inject virtual clock into main page AND every dynamically created iframe
   await page.evaluateOnNewDocument(() => {
-    let virtualNow = 0;
-    let nextTimerId = 1;
-    const timers = new Map();
-    const rafCallbacks = new Map();
+    function installVirtualClock(win) {
+      if (!win || win.__vcInstalled) return;
+      win.__vcInstalled = true;
 
-    window.__advanceTime = function (ms) {
-      const target = virtualNow + ms;
-      while (true) {
-        let earliest = null;
-        for (const [id, t] of timers.entries()) {
-          if (t.time <= target && (!earliest || t.time < earliest.time)) {
-            earliest = { id, ...t };
+      let virtualNow = 0;
+      let nextTimerId = 1;
+      const timers = new Map();
+      const rafCallbacks = new Map();
+
+      win.__advanceClock = function (ms) {
+        const target = virtualNow + ms;
+        while (true) {
+          let earliest = null;
+          for (const [id, t] of timers.entries()) {
+            if (t.time <= target && (!earliest || t.time < earliest.time)) {
+              earliest = { id, ...t };
+            }
           }
+          if (!earliest) break;
+          virtualNow = earliest.time;
+          if (earliest.interval) {
+            timers.set(earliest.id, { ...earliest, time: virtualNow + earliest.interval });
+          } else {
+            timers.delete(earliest.id);
+          }
+          try { earliest.fn(); } catch (e) {}
         }
-        if (!earliest) break;
-        virtualNow = earliest.time;
-        if (earliest.interval) {
-          timers.set(earliest.id, { ...earliest, time: virtualNow + earliest.interval });
-        } else {
-          timers.delete(earliest.id);
+        virtualNow = target;
+
+        const currentRafs = Array.from(rafCallbacks.entries());
+        rafCallbacks.clear();
+        for (const [, cb] of currentRafs) {
+          try { cb(virtualNow); } catch (e) {}
         }
-        try { earliest.fn(); } catch (e) {}
+      };
+
+      win.performance.now = () => virtualNow;
+      win.Date.now = () => 1700000000000 + virtualNow;
+
+      win.setTimeout = (fn, delay = 0, ...args) => {
+        const id = nextTimerId++;
+        timers.set(id, {
+          fn: typeof fn === 'function' ? () => fn(...args) : () => win.eval(fn),
+          time: virtualNow + Math.max(0, Number(delay) || 0),
+          interval: null
+        });
+        return id;
+      };
+      win.clearTimeout = (id) => timers.delete(id);
+
+      win.setInterval = (fn, delay = 0, ...args) => {
+        const id = nextTimerId++;
+        const step = Math.max(1, Number(delay) || 1);
+        timers.set(id, {
+          fn: typeof fn === 'function' ? () => fn(...args) : () => win.eval(fn),
+          time: virtualNow + step,
+          interval: step
+        });
+        return id;
+      };
+      win.clearInterval = (id) => timers.delete(id);
+
+      win.requestAnimationFrame = (cb) => {
+        const id = nextTimerId++;
+        rafCallbacks.set(id, cb);
+        return id;
+      };
+      win.cancelAnimationFrame = (id) => rafCallbacks.delete(id);
+    }
+
+    installVirtualClock(window);
+
+    // Hook appendChild so every srcdoc iframe gets the virtual clock immediately on load
+    const origAppend = Element.prototype.appendChild;
+    Element.prototype.appendChild = function (node) {
+      const res = origAppend.call(this, node);
+      if (node && node.tagName === 'IFRAME') {
+        node.addEventListener('load', () => {
+          try { installVirtualClock(node.contentWindow); } catch (e) {}
+        });
       }
-      virtualNow = target;
-
-      const currentRafs = Array.from(rafCallbacks.entries());
-      rafCallbacks.clear();
-      for (const [, cb] of currentRafs) {
-        try { cb(virtualNow); } catch (e) {}
-      }
+      return res;
     };
 
-    const origPerfNow = performance.now.bind(performance);
-    performance.now = () => virtualNow;
-    Date.now = () => 1700000000000 + virtualNow;
-
-    window.setTimeout = (fn, delay = 0, ...args) => {
-      const id = nextTimerId++;
-      timers.set(id, {
-        fn: typeof fn === 'function' ? () => fn(...args) : () => eval(fn),
-        time: virtualNow + Math.max(0, Number(delay) || 0),
-        interval: null
+    window.__advanceAll = function (ms) {
+      window.__advanceClock(ms);
+      document.querySelectorAll('iframe').forEach((fr) => {
+        try {
+          if (fr.contentWindow) {
+            if (!fr.contentWindow.__vcInstalled) installVirtualClock(fr.contentWindow);
+            fr.contentWindow.__advanceClock(ms);
+          }
+        } catch (e) {}
       });
-      return id;
     };
-
-    window.clearTimeout = (id) => timers.delete(id);
-
-    window.setInterval = (fn, delay = 0, ...args) => {
-      const id = nextTimerId++;
-      const step = Math.max(1, Number(delay) || 1);
-      timers.set(id, {
-        fn: typeof fn === 'function' ? () => fn(...args) : () => eval(fn),
-        time: virtualNow + step,
-        interval: step
-      });
-      return id;
-    };
-
-    window.clearInterval = (id) => timers.delete(id);
-
-    window.requestAnimationFrame = (cb) => {
-      const id = nextTimerId++;
-      rafCallbacks.set(id, cb);
-      return id;
-    };
-
-    window.cancelAnimationFrame = (id) => rafCallbacks.delete(id);
   });
 
   const fileUrl = 'file://' + path.resolve(__dirname, 'index.html');
@@ -114,7 +141,7 @@ const path = require('path');
   const dtMs = 1000 / FPS;
 
   for (let i = 0; i < totalFrames; i++) {
-    await page.evaluate((ms) => window.__advanceTime(ms), i === 0 ? 0 : dtMs);
+    await page.evaluate((ms) => window.__advanceAll(ms), i === 0 ? 0 : dtMs);
     const frameBuf = await page.screenshot({ type: 'png' });
     const ok = ffmpeg.stdin.write(frameBuf);
     if (!ok) {
@@ -128,5 +155,6 @@ const path = require('path');
   });
 
   await browser.close();
-  console.log('Successfully rendered exact 43.7s @ 60fps output.mp4');
+  console.log('Successfully rendered full animated 43.7s @ 60fps output.mp4');
 })();
+    
