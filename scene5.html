@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parshuram vs Ravana - Sentence 5 (5s 9:16 SVG)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #060204;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+    }
+
+    /* 9:16 Vertical Full-Bleed Stage Container (Zero UI Buttons) */
+    .stage-wrapper {
+      position: relative;
+      height: 100vh;
+      aspect-ratio: 9 / 16;
+      max-width: 100vw;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.96);
+      background: #140405;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    svg#scene {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage-wrapper" id="stage">
+    <svg id="scene" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Upper Half: Fiery Crimson & Amber (Kshatriya Vow) -->
+        <radialGradient id="upperCrimsonBg" cx="50%" cy="28%" r="65%">
+          <stop offset="0%" stop-color="#e35314" />
+          <stop offset="45%" stop-color="#8f160c" />
+          <stop offset="100%" stop-color="#240406" />
+        </radialGradient>
+
+        <!-- Lower Half: Serene Sacred Golden-Indigo Ashram Aura (Brahmin Lineage) -->
+        <radialGradient id="lowerAshramBg" cx="50%" cy="74%" r="65%">
+          <stop offset="0%" stop-color="#ffbe4f" />
+          <stop offset="42%" stop-color="#8c4312" />
+          <stop offset="82%" stop-color="#2b121e" />
+          <stop offset="100%" stop-color="#120512" />
+        </radialGradient>
+
+        <!-- Divine Sacred Thread Aura -->
+        <radialGradient id="janeuDivineGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96" />
+          <stop offset="35%" stop-color="#ffe073" stop-opacity="0.62" />
+          <stop offset="75%" stop-color="#ff8c1a" stop-opacity="0.2" />
+          <stop offset="100%" stop-color="#2b121e" stop-opacity="0" />
+        </radialGradient>
+
+        <!-- Parshuram Skin Tone (Consistent with Previous Scenes) -->
+        <linearGradient id="parshuramSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f7ba80" />
+          <stop offset="55%" stop-color="#e38d4c" />
+          <stop offset="100%" stop-color="#b35a24" />
+        </linearGradient>
+
+        <!-- Sage Vishrava Ascetic Skin Tone -->
+        <linearGradient id="sageSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f2c496" />
+          <stop offset="60%" stop-color="#d49663" />
+          <stop offset="100%" stop-color="#9e6234" />
+        </linearGradient>
+
+        <!-- Young Ravana Warm Bronze Skin Tone (Consistent with Reference) -->
+        <linearGradient id="ravanaSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#b5774b" />
+          <stop offset="55%" stop-color="#8f542d" />
+          <stop offset="100%" stop-color="#5e3216" />
+        </linearGradient>
+
+        <!-- Saffron Cloth Gradient -->
+        <linearGradient id="saffronCloth" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ff7a17" />
+          <stop offset="55%" stop-color="#de4508" />
+          <stop offset="100%" stop-color="#8f1f03" />
+        </linearGradient>
+
+        <!-- Pure White Ascetic Robes (Sage Vishrava) -->
+        <linearGradient id="asceticWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="60%" stop-color="#f0e6d2" />
+          <stop offset="100%" stop-color="#c7b293" />
+        </linearGradient>
+
+        <!-- Radiant Gold Metal -->
+        <linearGradient id="goldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#fff8c7" />
+          <stop offset="35%" stop-color="#ffd043" />
+          <stop offset="75%" stop-color="#e08d12" />
+          <stop offset="100%" stop-color="#8c4503" />
+        </linearGradient>
+
+        <!-- Axe Edge Glow -->
+        <linearGradient id="axeEdgeGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ff9d00" />
+          <stop offset="50%" stop-color="#fff9cf" />
+          <stop offset="100%" stop-color="#ffffff" />
+        </linearGradient>
+
+        <!-- Kinetic Slash Arc Gradient -->
+        <linearGradient id="slashArcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+          <stop offset="40%" stop-color="#ffdf6b" stop-opacity="0.82" />
+          <stop offset="100%" stop-color="#ff6a00" stop-opacity="0" />
+        </linearGradient>
+
+        <!-- Bold Hindi Keyword Fill -->
+        <linearGradient id="keywordGoldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="32%" stop-color="#ffe785" />
+          <stop offset="75%" stop-color="#ff9900" />
+          <stop offset="100%" stop-color="#d43500" />
+        </linearGradient>
+
+        <!-- Intense Golden Glow Filter -->
+        <filter id="intenseGoldGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="12" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <!-- Soft Glow Filter -->
+        <filter id="softGoldGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="7" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <!-- Clip Paths for Clean Dual-Layer Panel Split -->
+        <clipPath id="upperHalfClip">
+          <rect x="0" y="0" width="1080" height="960" />
+        </clipPath>
+        <clipPath id="lowerHalfClip">
+          <rect x="0" y="960" width="1080" height="960" />
+        </clipPath>
+      </defs>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 1: DUAL-LAYER BACKDROP (UPPER & LOWER PANELS)       -->
+      <!-- ========================================================= -->
+      <rect x="0" y="0" width="1080" height="960" fill="url(#upperCrimsonBg)" />
+      <rect x="0" y="960" width="1080" height="960" fill="url(#lowerAshramBg)" />
+
+      <!-- ========================================================= -->
+      <!-- LAYER 2: CAMERA RIG                                       -->
+      <!-- ========================================================= -->
+      <g id="camera-rig">
+        <!-- ======================================================= -->
+        <!-- UPPER HALF (0 - 960): PARSHURAM SHATTERING CROWNS       -->
+        <!-- ======================================================= -->
+        <g clip-path="url(#upperHalfClip)">
+          <!-- Rotating Mandala Behind Parshuram -->
+          <g id="upper-mandala" opacity="0.34">
+            <circle cx="330" cy="540" r="330" fill="none" stroke="url(#goldMetal)" stroke-width="3" stroke-dasharray="14 10" />
+            <circle cx="330" cy="540" r="245" fill="none" stroke="#ffd25a" stroke-width="2" />
+          </g>
+
+          <!-- Impact Shockwave Rings on Crown Shatter -->
+          <circle id="crown-impact-ring1" cx="720" cy="610" r="95" fill="none" stroke="#fff3a8" stroke-width="9" opacity="0" />
+          <circle id="crown-impact-ring2" cx="720" cy="610" r="95" fill="none" stroke="#ff8814" stroke-width="6" opacity="0" />
+
+          <!-- Kinetic Slash Crescent -->
+          <path id="upper-slash-arc" d="M 450 320 C 660 280, 845 430, 865 680 C 785 495, 635 390, 450 320 Z" fill="url(#slashArcGrad)" filter="url(#intenseGoldGlow)" opacity="0" />
+
+          <!-- Tyrannical Royal Crowns Target Group (Shatters on Strike!) -->
+          <g id="tyrant-crowns-group">
+            <!-- Crown 1 (Main Central Royal Crown) -->
+            <g id="crown-main" transform="translate(720, 610)">
+              <path d="M -78 40 L -95 -45 L -42 -12 L 0 -75 L 42 -12 L 95 -45 L 78 40 Z" fill="#2b0709" stroke="url(#goldMetal)" stroke-width="5" stroke-linejoin="round" />
+              <rect x="-82" y="34" width="164" height="22" rx="6" fill="url(#goldMetal)" stroke="#1a0404" stroke-width="4" />
+              <circle cx="0" cy="-12" r="11" fill="#ff2a2a" />
+            </g>
+            <!-- Crown 2 (Left Tilted Crown) -->
+            <g id="crown-left" transform="translate(585, 675) rotate(-18) scale(0.76)">
+              <path d="M -78 40 L -95 -45 L -42 -12 L 0 -75 L 42 -12 L 95 -45 L 78 40 Z" fill="#2b0709" stroke="url(#goldMetal)" stroke-width="5" stroke-linejoin="round" />
+              <rect x="-82" y="34" width="164" height="22" rx="6" fill="url(#goldMetal)" stroke="#1a0404" stroke-width="4" />
+            </g>
+            <!-- Crown 3 (Right Tilted Crown) -->
+            <g id="crown-right" transform="translate(855, 675) rotate(18) scale(0.76)">
+              <path d="M -78 40 L -95 -45 L -42 -12 L 0 -75 L 42 -12 L 95 -45 L 78 40 Z" fill="#2b0709" stroke="url(#goldMetal)" stroke-width="5" stroke-linejoin="round" />
+              <rect x="-82" y="34" width="164" height="22" rx="6" fill="url(#goldMetal)" stroke="#1a0404" stroke-width="4" />
+            </g>
+          </g>
+
+          <!-- Shattered Crown Fragments Layer (Populated via JS) -->
+          <g id="crown-fragments-layer" filter="url(#softGoldGlow)"></g>
+
+          <!-- Lord Parshuram Upper-Body Striking Pose (Consistent Character Design) -->
+          <g id="parshuram-upper-fig" transform="translate(310, 565)">
+            <!-- Flowing Hair & Scarf -->
+            <path d="M -45 -110 C -115 -50, -135 50, -95 125 C -75 70, -55 15, -20 -35 Z" fill="#1c0d08" stroke="#0d0503" stroke-width="4" />
+            <path d="M -85 45 C -165 130, -180 265, -135 375 C -100 295, -80 195, -45 120 Z" fill="url(#saffronCloth)" stroke="#1a0b05" stroke-width="5" />
+
+            <!-- Torso -->
+            <path d="M -75 20 C -25 -5, 65 -5, 115 20 L 95 395 L -55 395 Z" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="5.5" />
+            <!-- Sacred White Janeu -->
+            <path d="M -58 18 C -15 125, 45 215, 92 290" fill="none" stroke="#ffffff" stroke-width="8.5" stroke-linecap="round" />
+            <!-- Rudraksha & Gold Necklace -->
+            <path d="M -32 12 Q 20 68 72 12" fill="none" stroke="url(#goldMetal)" stroke-width="10" stroke-linecap="round" />
+
+            <!-- Topknot Jata & Fierce Head -->
+            <path d="M -18 -165 C -23 -218, 63 -218, 58 -165 Z" fill="#1c0d08" stroke="#0d0503" stroke-width="4.5" />
+            <path d="M -32 -132 Q 20 -148 72 -132" fill="none" stroke="url(#goldMetal)" stroke-width="6" />
+            <path d="M -34 -132 C -34 -162, 74 -162, 74 -132 L 70 -52 C 70 -18, 42 2, 20 2 C -2 2, -30 -18, -30 -52 Z" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="5" />
+            <!-- Tilak & Fierce Eyes -->
+            <path d="M 14 -130 L 26 -102 L 38 -130" fill="none" stroke="#fff9e6" stroke-width="4" stroke-linecap="round" />
+            <path d="M -8 -98 L 22 -88" stroke="#140905" stroke-width="6" stroke-linecap="round" />
+            <path d="M 58 -98 L 34 -88" stroke="#140905" stroke-width="6" stroke-linecap="round" />
+            <ellipse cx="8" cy="-82" rx="9" ry="5.5" fill="#ffffff" stroke="#140905" stroke-width="2" />
+            <circle cx="10" cy="-82" r="3.8" fill="#3b1204" />
+            <ellipse cx="46" cy="-82" rx="9" ry="5.5" fill="#ffffff" stroke="#140905" stroke-width="2" />
+            <circle cx="48" cy="-82" r="3.8" fill="#3b1204" />
+            <!-- Beard -->
+            <path d="M -28 -55 C -28 -12, -2 8, 20 10 C 42 8, 68 -12, 68 -55 C 58 -30, 40 -20, 20 -20 C 0 -20, -18 -30, -28 -55 Z" fill="#1c0d08" />
+
+            <!-- Striking Arm & Glowing Parashu Axe -->
+            <g id="upper-axe-rig">
+              <path d="M 92 38 C 155 15, 205 -35, 225 -95 L 182 -115 C 165 -68, 125 -32, 78 -12 Z" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="5" stroke-linejoin="round" />
+              <!-- Parashu Shaft -->
+              <line x1="35" y1="155" x2="265" y2="-255" stroke="#1a0b05" stroke-width="20" stroke-linecap="round" />
+              <line x1="35" y1="155" x2="265" y2="-255" stroke="#7a3210" stroke-width="13" stroke-linecap="round" />
+              <!-- Glowing Golden Axe Head -->
+              <g filter="url(#intenseGoldGlow)">
+                <path d="M 195 -165 C 265 -275, 385 -280, 430 -195 C 390 -95, 295 -52, 212 -130 Z" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="5" stroke-linejoin="round" />
+                <path d="M 368 -245 C 410 -225, 430 -188, 414 -145 C 392 -102, 345 -75, 295 -80 C 345 -98, 380 -138, 386 -182 Z" fill="url(#axeEdgeGlow)" />
+                <path d="M 190 -172 L 130 -225 L 210 -195 Z" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="4" />
+              </g>
+              <circle cx="202" cy="-102" r="20" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="4.5" />
+            </g>
+          </g>
+        </g>
+
+        <!-- ======================================================= -->
+        <!-- LOWER HALF (960 - 1920): SAGE VISHRAVA & BRAHMIN RAVANA -->
+        <!-- ======================================================= -->
+        <g clip-path="url(#lowerHalfClip)">
+          <!-- Ashram Sacred Banyan & Pillar Silhouettes -->
+          <g opacity="0.28" fill="#1c080a">
+            <rect x="65" y="960" width="44" height="960" />
+            <rect x="971" y="960" width="44" height="960" />
+            <path d="M 0 1060 Q 220 1130 390 960 L 0 960 Z" />
+            <path d="M 1080 1060 Q 860 1130 690 960 L 1080 960 Z" />
+          </g>
+
+          <!-- Warm Golden Ashram Ground -->
+          <path d="M 0 1640 Q 540 1590 1080 1640 L 1080 1920 L 0 1920 Z" fill="#170609" />
+
+          <!-- Radiant Divine Aura Behind Sacred Janeu & Young Ravana -->
+          <circle id="janeu-aura-orb" cx="695" cy="1340" r="340" fill="url(#janeuDivineGlow)" />
+
+          <!-- ===================================================== -->
+          <!-- LEFT: SAGE VISHRAVA IN SERENE WHITE ASCETIC ROBES     -->
+          <!-- ===================================================== -->
+          <g id="sage-vishrava-fig" transform="translate(345, 1340)">
+            <!-- White Ascetic Dhoti & Shawl -->
+            <path d="M -85 45 L 85 45 L 110 330 L -110 330 Z" fill="url(#asceticWhite)" stroke="#1a0d08" stroke-width="5" stroke-linejoin="round" />
+            <!-- Torso & White Uttariya -->
+            <path d="M -78 -145 C -30 -168, 30 -168, 78 -145 L 88 55 L -88 55 Z" fill="url(#sageSkin)" stroke="#1a0d08" stroke-width="5" />
+            <path d="M -75 -148 C -20 -65, 35 5, 86 52 L 86 -35 C 35 -85, -10 -125, -45 -155 Z" fill="url(#asceticWhite)" stroke="#1a0d08" stroke-width="4.5" />
+            <!-- Rudraksha Mala -->
+            <path d="M -38 -148 Q 0 -85 38 -148" fill="none" stroke="#5c2109" stroke-width="8" stroke-dasharray="6 6" stroke-linecap="round" />
+
+            <!-- Sage Topknot Jata & Serene Bearded Face -->
+            <path d="M -32 -285 C -38 -342, 38 -342, 32 -285 Z" fill="#d9d2c5" stroke="#1a0d08" stroke-width="4.5" />
+            <path d="M -42 -252 C -42 -285, 42 -285, 42 -252 L 38 -182 C 38 -152, 18 -138, 0 -138 C -18 -138, -38 -152, -38 -182 Z" fill="url(#sageSkin)" stroke="#1a0d08" stroke-width="4.5" />
+            <!-- White Flowing Beard & Mustache -->
+            <path d="M -36 -195 C -42 -135, -18 -92, 0 -85 C 18 -92, 42 -135, 36 -195 C 24 -168, 12 -162, 0 -162 C -12 -162, -24 -168, -36 -195 Z" fill="#f5f0e6" stroke="#1a0d08" stroke-width="3.5" />
+            <!-- Serene Compassionate Eyes & Tilak -->
+            <line x1="0" y1="-256" x2="0" y2="-230" stroke="#fff7d6" stroke-width="4" stroke-linecap="round" />
+            <path d="M -24 -222 Q -14 -228 -4 -222" fill="none" stroke="#1a0d08" stroke-width="3.5" stroke-linecap="round" />
+            <path d="M 4 -222 Q 14 -228 24 -222" fill="none" stroke="#1a0d08" stroke-width="3.5" stroke-linecap="round" />
+
+            <!-- Blessing Right Arm Extended Toward Young Ravana -->
+            <g id="sage-blessing-arm">
+              <path d="M 75 -125 C 135 -115, 185 -135, 225 -165 L 205 -195 C 165 -170, 125 -155, 70 -162 Z" fill="url(#sageSkin)" stroke="#1a0d08" stroke-width="4.5" stroke-linejoin="round" />
+              <!-- Blessing Hand & Golden Rays -->
+              <circle cx="222" cy="-182" r="18" fill="url(#sageSkin)" stroke="#1a0d08" stroke-width="4" />
+              <circle id="blessing-spark" cx="242" cy="-192" r="26" fill="#fff6c2" filter="url(#intenseGoldGlow)" opacity="0.85" />
+            </g>
+          </g>
+
+          <!-- ===================================================== -->
+          <!-- RIGHT: YOUNG BRAHMIN RAVANA WITH GLOWING SACRED JANEU -->
+          <!-- ===================================================== -->
+          <g id="young-ravana-fig" transform="translate(715, 1365)">
+            <!-- Saffron-Gold Brahmin Student Dhoti -->
+            <path d="M -78 35 L 78 35 L 98 305 L -98 305 Z" fill="url(#saffronCloth)" stroke="#140703" stroke-width="5" stroke-linejoin="round" />
+            <line x1="-94" y1="288" x2="94" y2="288" stroke="url(#goldMetal)" stroke-width="10" />
+
+            <!-- Torso (Warm Bronze Skin Matching Reference Sheet) -->
+            <path d="M -72 -135 C -25 -156, 25 -156, 72 -135 L 62 45 L -62 45 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5" />
+
+            <!-- GLOWING SACRED WHITE BRAHMIN JANEU THREAD (HERO HIGHLIGHT) -->
+            <g id="sacred-janeu-highlight" filter="url(#intenseGoldGlow)">
+              <path d="M -52 -136 C -15 -55, 25 2, 58 42" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" />
+              <path d="M -52 -136 C -15 -55, 25 2, 58 42" fill="none" stroke="#ffe066" stroke-width="4" stroke-dasharray="10 8" stroke-linecap="round" />
+            </g>
+
+            <!-- Rudraksha Mala -->
+            <path d="M -35 -136 Q 0 -82 35 -136" fill="none" stroke="#4a1906" stroke-width="8" stroke-dasharray="6 6" stroke-linecap="round" />
+
+            <!-- Young Scholar Hair Topknot & Noble Face with Tripundra Tilak -->
+            <path d="M -26 -252 C -32 -302, 32 -302, 26 -252 Z" fill="#140703" stroke="#0a0301" stroke-width="4" />
+            <path d="M -40 -222 C -40 -252, 40 -252, 40 -222 L 36 -156 C 36 -130, 18 -116, 0 -116 C -18 -116, -36 -130, -36 -156 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="4.5" />
+            <!-- Tripundra Tilak -->
+            <line x1="-18" y1="-212" x2="18" y2="-212" stroke="#ffffff" stroke-width="3" />
+            <line x1="-15" y1="-204" x2="15" y2="-204" stroke="#ffffff" stroke-width="3" />
+            <circle cx="0" cy="-208" r="4" fill="#d91e18" />
+            <!-- Calm Devoted Eyes -->
+            <ellipse cx="-14" cy="-185" rx="7" ry="4.5" fill="#ffffff" stroke="#140703" stroke-width="2" />
+            <circle cx="-15" cy="-185" r="3" fill="#2b0d04" />
+            <ellipse cx="14" cy="-185" rx="7" ry="4.5" fill="#ffffff" stroke="#140703" stroke-width="2" />
+            <circle cx="13" cy="-185" r="3" fill="#2b0d04" />
+            <path d="M -10 -150 Q 0 -144 10 -150" fill="none" stroke="#140703" stroke-width="3" stroke-linecap="round" />
+
+            <!-- Arms Holding Sacred Vedic Palm-Leaf Scriptures (Shastras) -->
+            <path d="M -70 -115 C -95 -65, -75 -25, -35 -18 L -28 -45 C -52 -50, -62 -75, -45 -105 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="4.5" />
+            <path d="M 70 -115 C 95 -65, 75 -25, 35 -18 L 28 -45 C 52 -50, 62 -75, 45 -105 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="4.5" />
+
+            <!-- Golden Vedic Palm-Leaf Scripture Bundle -->
+            <g transform="translate(0, -30)">
+              <rect x="-56" y="-16" width="112" height="32" rx="8" fill="url(#goldMetal)" stroke="#140703" stroke-width="4" />
+              <line x1="-52" y1="-5" x2="52" y2="-5" stroke="#5e2904" stroke-width="2.5" />
+              <line x1="-52" y1="5" x2="52" y2="5" stroke="#5e2904" stroke-width="2.5" />
+              <line x1="-18" y1="-16" x2="-18" y2="16" stroke="#d91e18" stroke-width="5" />
+              <line x1="18" y1="-16" x2="18" y2="16" stroke="#d91e18" stroke-width="5" />
+            </g>
+          </g>
+        </g>
+
+        <!-- ======================================================= -->
+        <!-- CENTER GOLDEN DIVIDER BEAM SEPARATING BOTH REALMS       -->
+        <!-- ======================================================= -->
+        <g id="center-divider">
+          <line x1="36" y1="960" x2="1044" y2="960" stroke="#1f0504" stroke-width="22" />
+          <line x1="36" y1="960" x2="1044" y2="960" stroke="url(#goldMetal)" stroke-width="8" filter="url(#softGoldGlow)" />
+          <!-- Ornate Center Diamond Emblem -->
+          <polygon points="540,932 574,960 540,988 506,960" fill="url(#goldMetal)" stroke="#1f0504" stroke-width="4.5" />
+          <circle cx="540" cy="960" r="7" fill="#d91e18" />
+        </g>
+      </g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 3: RISING GOLDEN SPARK PARTICLES                    -->
+      <!-- ========================================================= -->
+      <g id="embers-layer"></g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 4: BOLD HINDI KEYWORDS (NO FULL CAPTIONS)           -->
+      <!-- ========================================================= -->
+      <g id="kinetic-keywords" pointer-events="none" text-anchor="middle">
+        <!-- Upper Keyword: "क्षत्रिय संहार" -->
+        <g id="kw-kshatriya-vow" transform="translate(540, 175)" opacity="0">
+          <line x1="-320" y1="0" x2="-245" y2="0" stroke="url(#goldMetal)" stroke-width="5" stroke-linecap="round" />
+          <line x1="245" y1="0" x2="320" y2="0" stroke="url(#goldMetal)" stroke-width="5" stroke-linecap="round" />
+          <text x="0" y="24" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="76" letter-spacing="2" stroke="#1f0504" stroke-width="18" stroke-linejoin="round" paint-order="stroke" fill="url(#keywordGoldGrad)" filter="url(#softGoldGlow)">क्षत्रिय संहार</text>
+        </g>
+
+        <!-- Lower Keyword: "ब्राह्मण पुत्र" -->
+        <g id="kw-brahmin-son" transform="translate(540, 1785)" opacity="0">
+          <rect x="-275" y="-62" width="550" height="92" rx="20" fill="#180614" fill-opacity="0.9" stroke="url(#goldMetal)" stroke-width="4.5" />
+          <text x="0" y="8" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="72" letter-spacing="2" stroke="#0f030c" stroke-width="14" stroke-linejoin="round" paint-order="stroke" fill="url(#keywordGoldGrad)">ब्राह्मण पुत्र</text>
+        </g>
+      </g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 5: ORNATE CRIMSON & GOLD MITHILA BORDER             -->
+      <!-- ========================================================= -->
+      <g pointer-events="none">
+        <rect x="18" y="18" width="1044" height="1884" rx="28" fill="none" stroke="#240506" stroke-width="24" />
+        <rect x="18" y="18" width="1044" height="1884" rx="28" fill="none" stroke="url(#goldMetal)" stroke-width="7" />
+        <rect x="34" y="34" width="1012" height="1852" rx="20" fill="none" stroke="#ffcf54" stroke-width="2.5" stroke-dasharray="16 10" />
+        <g fill="url(#goldMetal)" stroke="#240506" stroke-width="3">
+          <circle cx="44" cy="44" r="18" />
+          <circle cx="1036" cy="44" r="18" />
+          <circle cx="44" cy="1876" r="18" />
+          <circle cx="1036" cy="1876" r="18" />
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <script>
+    (function () {
+      const svgNS = "http://www.w3.org/2000/svg";
+
+      const cameraRig = document.getElementById("camera-rig");
+      const upperMandala = document.getElementById("upper-mandala");
+      const upperAxeRig = document.getElementById("upper-axe-rig");
+      const upperSlashArc = document.getElementById("upper-slash-arc");
+
+      const tyrantCrownsGroup = document.getElementById("tyrant-crowns-group");
+      const crownFragmentsLayer = document.getElementById("crown-fragments-layer");
+      const impactRing1 = document.getElementById("crown-impact-ring1");
+      const impactRing2 = document.getElementById("crown-impact-ring2");
+
+      const janeuAuraOrb = document.getElementById("janeu-aura-orb");
+      const sageBlessingArm = document.getElementById("sage-blessing-arm");
+      const blessingSpark = document.getElementById("blessing-spark");
+      const sacredJaneu = document.getElementById("sacred-janeu-highlight");
+
+      const embersLayer = document.getElementById("embers-layer");
+      const kwKshatriyaVow = document.getElementById("kw-kshatriya-vow");
+      const kwBrahminSon = document.getElementById("kw-brahmin-son");
+
+      // 1. Build 26 Shattered Crown Fragments (Fly outward when Parashu strikes at t=1.05s)
+      const fragments = [];
+      for (let i = 0; i < 26; i++) {
+        const poly = document.createElementNS(svgNS, "polygon");
+        const sz = 11 + (i % 5) * 5;
+        poly.setAttribute("points", `0,${-sz} ${sz * 0.85},0 0,${sz} ${-sz * 0.75},${sz * 0.3}`);
+        poly.setAttribute("fill", i % 2 === 0 ? "#ffd859" : "#2b0709");
+        poly.setAttribute("stroke", "#ffcf54");
+        poly.setAttribute("stroke-width", "2");
+        poly.setAttribute("opacity", "0");
+        crownFragmentsLayer.appendChild(poly);
+
+        const angle = (-155 + (i / 25) * 185) * (Math.PI / 180);
+        fragments.push({
+          el: poly,
+          vx: Math.cos(angle) * (240 + (i % 6) * 65),
+          vy: Math.sin(angle) * (240 + (i % 5) * 65),
+          spin: (i % 2 === 0 ? 1 : -1) * (220 + (i % 4) * 85)
+        });
+      }
+
+      // 2. Build 32 Rising Golden Ember Particles
+      const embers = [];
+      for (let i = 0; i < 32; i++) {
+        const circle = document.createElementNS(svgNS, "circle");
+        const r = 3 + (i % 4) * 1.4;
+        circle.setAttribute("r", r.toFixed(1));
+        circle.setAttribute("fill", i % 2 === 0 ? "#ffe680" : "#ff941a");
+        circle.setAttribute("filter", "url(#softGoldGlow)");
+        embersLayer.appendChild(circle);
+
+        embers.push({
+          el: circle,
+          baseX: 85 + ((i * 101) % 910),
+          startY: 1850 - ((i * 131) % 720),
+          speedY: 205 + (i % 7) * 40,
+          wobbleAmp: 16 + (i % 4) * 8,
+          wobbleFreq: 2.1 + (i % 5) * 0.45,
+          phase: i * 0.65
+        });
+      }
+
+      // Easing Helpers
+      function clamp01(v) {
+        return Math.max(0, Math.min(1, v));
+      }
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+      function easeOutBack(t) {
+        const c1 = 1.70158;
+        const c3 = c1 + 1;
+        return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+      }
+      function lerp(a, b, t) {
+        return a + (b - a) * t;
+      }
+
+      // Master 5.0-Second Deterministic Render Function
+      function renderFrameAtTime(t) {
+        // 1. Subtle Camera Push-In + Micro Impact Shake on Axe Strike (1.05s -> 1.40s)
+        let camScale = lerp(1.0, 1.06, easeOutCubic(clamp01(t / 5.0)));
+        let camX = 0;
+        let camY = 0;
+        if (t >= 1.05 && t <= 1.40) {
+          const sp = (t - 1.05) / 0.35;
+          const decay = 1 - sp;
+          camX = Math.sin(sp * Math.PI * 10) * 14 * decay;
+          camY = Math.cos(sp * Math.PI * 8) * 10 * decay;
+        }
+        cameraRig.setAttribute(
+          "transform",
+          `translate(${(540 + camX).toFixed(2)} ${(960 + camY).toFixed(2)}) scale(${camScale.toFixed(4)}) translate(-540 -960)`
+        );
+
+        // 2. Upper Half: Mandala Rotation & Parshuram Downward Parashu Strike
+        upperMandala.setAttribute("transform", `rotate(${((t * 14) % 360).toFixed(2)} 330 540)`);
+
+        let axeRot = 0;
+        let slashAlpha = 0;
+        if (t < 0.72) {
+          // Wind-up back
+          const p = easeInOutCubic(t / 0.72);
+          axeRot = lerp(-12, -42, p);
+        } else if (t < 1.08) {
+          // Fierce downward strike onto the crowns
+          const p = easeOutCubic((t - 0.72) / 0.36);
+          axeRot = lerp(-42, 36, p);
+          slashAlpha = Math.sin(p * Math.PI);
+        } else if (t < 1.55) {
+          // Recoil back to commanding stance
+          const p = easeInOutCubic((t - 1.08) / 0.47);
+          axeRot = lerp(36, -6, p);
+          slashAlpha = Math.max(0, 1 - p * 2) * 0.6;
+        } else {
+          axeRot = -6 + Math.sin((t - 1.55) * 3.0) * 4;
+        }
+        upperAxeRig.setAttribute("transform", `rotate(${axeRot.toFixed(2)} 75 20)`);
+        upperSlashArc.setAttribute("opacity", clamp01(slashAlpha).toFixed(3));
+
+        // 3. Tyrannical Crowns Shattering into Fragments at t = 1.05s
+        if (t < 1.05) {
+          const wobble = Math.sin(t * 18) * 2;
+          tyrantCrownsGroup.setAttribute("opacity", "1");
+          tyrantCrownsGroup.setAttribute("transform", `translate(0 ${wobble.toFixed(1)})`);
+          impactRing1.setAttribute("opacity", "0");
+          impactRing2.setAttribute("opacity", "0");
+        } else {
+          const dt = t - 1.05;
+          tyrantCrownsGroup.setAttribute("opacity", clamp01(1 - dt * 5).toFixed(3));
+
+          // Expanding Impact Shockwave Rings
+          if (dt <= 0.95) {
+            const sw1 = dt / 0.95;
+            const s1 = lerp(0.4, 2.2, easeOutCubic(sw1));
+            impactRing1.setAttribute("opacity", (1 - sw1).toFixed(3));
+            impactRing1.setAttribute("transform", `translate(720 610) scale(${s1.toFixed(3)}) translate(-720 -610)`);
+
+            const sw2 = clamp01((dt - 0.14) / 0.85);
+            const s2 = lerp(0.4, 2.0, easeOutCubic(sw2));
+            impactRing2.setAttribute("opacity", (sw2 > 0 ? 1 - sw2 : 0).toFixed(3));
+            impactRing2.setAttribute("transform", `translate(720 610) scale(${s2.toFixed(3)}) translate(-720 -610)`);
+          } else {
+            impactRing1.setAttribute("opacity", "0");
+            impactRing2.setAttribute("opacity", "0");
+          }
+        }
+
+        // Crown Shatter Fragments Flying Outward (1.05s -> 2.85s)
+        for (let i = 0; i < fragments.length; i++) {
+          const fr = fragments[i];
+          if (t >= 1.05 && t <= 2.85) {
+            const dt = t - 1.05;
+            const prog = dt / 1.8;
+            const x = 720 + fr.vx * dt;
+            const y = 610 + fr.vy * dt + 220 * dt * dt;
+            const rot = fr.spin * dt;
+            const alpha = prog < 0.7 ? 1 : 1 - (prog - 0.7) / 0.3;
+            fr.el.setAttribute("opacity", clamp01(alpha).toFixed(3));
+            fr.el.setAttribute("transform", `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(1)})`);
+          } else {
+            fr.el.setAttribute("opacity", "0");
+          }
+        }
+
+        // 4. Lower Half: Sage Vishrava Blessing & Sacred Janeu Golden Glow
+        const auraPulse = 1 + 0.08 * Math.sin(t * 3.2);
+        janeuAuraOrb.setAttribute(
+          "transform",
+          `translate(695 1340) scale(${auraPulse.toFixed(3)}) translate(-695 -1340)`
+        );
+
+        const blessAngle = Math.sin(t * 2.6) * 3.5;
+        sageBlessingArm.setAttribute("transform", `rotate(${blessAngle.toFixed(2)} 75 -140)`);
+        const sparkScale = 0.85 + 0.25 * Math.sin(t * 5.5);
+        blessingSpark.setAttribute(
+          "transform",
+          `translate(242 -192) scale(${sparkScale.toFixed(3)}) translate(-242 192)`
+        );
+
+        // Sacred White Janeu Highlight Pulse (Strengthens after 1.6s when lower half is emphasized)
+        const janeuGlow = t >= 1.6 ? 0.85 + 0.15 * Math.sin((t - 1.6) * 6) : 0.7;
+        sacredJaneu.setAttribute("opacity", janeuGlow.toFixed(3));
+
+        // 5. Rising Golden Spark Particles
+        for (let i = 0; i < embers.length; i++) {
+          const em = embers[i];
+          const travel = (t * em.speedY) % 1650;
+          let y = em.startY - travel;
+          if (y < 140) y += 1650;
+          const x = em.baseX + Math.sin(t * em.wobbleFreq + em.phase) * em.wobbleAmp;
+          const alpha = y < 320 ? (y - 140) / 180 : y > 1650 ? (1850 - y) / 200 : 0.85;
+          em.el.setAttribute("cx", x.toFixed(1));
+          em.el.setAttribute("cy", y.toFixed(1));
+          em.el.setAttribute("opacity", clamp01(alpha).toFixed(3));
+        }
+
+        // 6. Bold Hindi Keywords ("क्षत्रिय संहार" & "ब्राह्मण पुत्र")
+        if (t >= 0.85) {
+          const p1 = clamp01((t - 0.85) / 0.36);
+          const s1 = easeOutBack(p1);
+          kwKshatriyaVow.setAttribute("opacity", clamp01(p1 * 2).toFixed(3));
+          kwKshatriyaVow.setAttribute("transform", `translate(540 175) scale(${s1.toFixed(3)})`);
+        } else {
+          kwKshatriyaVow.setAttribute("opacity", "0");
+        }
+
+        if (t >= 2.15) {
+          const p2 = clamp01((t - 2.15) / 0.38);
+          const s2 = easeOutBack(p2);
+          const slideY = lerp(1835, 1785, easeOutCubic(p2));
+          kwBrahminSon.setAttribute("opacity", clamp01(p2 * 2).toFixed(3));
+          kwBrahminSon.setAttribute("transform", `translate(540 ${slideY.toFixed(1)}) scale(${s2.toFixed(3)})`);
+        } else {
+          kwBrahminSon.setAttribute("opacity", "0");
+        }
+      }
+
+      // Live 5.0-Second Seamless Loop
+      const CLIP_DURATION = 5.0;
+      let startTimestamp = performance.now();
+
+      function animationLoop(now) {
+        const elapsedSec = ((now - startTimestamp) / 1000) % CLIP_DURATION;
+        renderFrameAtTime(elapsedSec);
+        requestAnimationFrame(animationLoop);
+      }
+
+      renderFrameAtTime(0);
+      requestAnimationFrame(animationLoop);
+    })();
+  </script>
+</body>
+</html>

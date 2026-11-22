@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parshuram - 9:16 Animated SVG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: #090404; display: flex; justify-content: center;
+      align-items: center; width: 100%; height: 100%; overflow: hidden;
+      font-family: 'Noto Sans Devanagari', system-ui, sans-serif;
+    }
+    .stage-wrapper {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      max-width: 1080px;
+      max-height: 1920px;
+      background: #140504;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    svg#scene { width: 100%; height: 100%; display: block; }
+  </style>
+</head>
+<body>
+  <div class="stage-wrapper" id="stage">
+    <svg id="scene" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="twilightSky" cx="50%" cy="38%" r="74%">
+          <stop offset="0%" stop-color="#ff9124" />
+          <stop offset="28%" stop-color="#c42b12" />
+          <stop offset="64%" stop-color="#590c0b" />
+          <stop offset="100%" stop-color="#170305" />
+        </radialGradient>
+        <radialGradient id="divineHalo" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff6c2" stop-opacity="0.95" />
+          <stop offset="38%" stop-color="#ff9d1c" stop-opacity="0.52" />
+          <stop offset="76%" stop-color="#d62814" stop-opacity="0.16" />
+          <stop offset="100%" stop-color="#5c0d0c" stop-opacity="0" />
+        </radialGradient>
+        <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f7ba80" />
+          <stop offset="55%" stop-color="#e38d4c" />
+          <stop offset="100%" stop-color="#b35a24" />
+        </linearGradient>
+        <linearGradient id="skinShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#c96e34" />
+          <stop offset="100%" stop-color="#8a3d14" />
+        </linearGradient>
+        <linearGradient id="saffronCloth" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ff7a17" />
+          <stop offset="55%" stop-color="#de4508" />
+          <stop offset="100%" stop-color="#8f1f03" />
+        </linearGradient>
+        <linearGradient id="goldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#fff8c7" />
+          <stop offset="35%" stop-color="#ffd043" />
+          <stop offset="75%" stop-color="#e08d12" />
+          <stop offset="100%" stop-color="#994e03" />
+        </linearGradient>
+        <linearGradient id="axeEdgeGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ff9d00" />
+          <stop offset="50%" stop-color="#fff9cf" />
+          <stop offset="100%" stop-color="#ffffff" />
+        </linearGradient>
+        <linearGradient id="slashTrailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96" />
+          <stop offset="35%" stop-color="#ffdf6b" stop-opacity="0.88" />
+          <stop offset="75%" stop-color="#ff6a00" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#d62814" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="keywordGoldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="32%" stop-color="#ffe785" />
+          <stop offset="75%" stop-color="#ff9900" />
+          <stop offset="100%" stop-color="#d43500" />
+        </linearGradient>
+        <linearGradient id="woodShaft" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#4a1e0b" />
+          <stop offset="45%" stop-color="#8a3d17" />
+          <stop offset="100%" stop-color="#2b0e04" />
+        </linearGradient>
+        <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#38090b" />
+          <stop offset="100%" stop-color="#120305" />
+        </linearGradient>
+        <filter id="intenseGoldGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="12" result="blur1" />
+          <feMerge><feMergeNode in="blur1" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="softGoldGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="7" result="coloredBlur" />
+          <feMerge><feMergeNode in="coloredBlur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <g id="mini-parashu">
+          <rect x="-2.5" y="-26" width="5" height="54" rx="2" fill="url(#goldMetal)" stroke="#2b1204" stroke-width="1.5" />
+          <path d="M 2 -20 C 16 -24, 24 -12, 22 0 C 16 -6, 9 -7, 2 -4 Z" fill="url(#axeEdgeGlow)" stroke="#2b1204" stroke-width="1.5" />
+          <path d="M -2 -14 L -11 -11 L -2 -8 Z" fill="url(#goldMetal)" stroke="#2b1204" stroke-width="1.2" />
+        </g>
+      </defs>
+
+      <rect width="1080" height="1920" fill="url(#twilightSky)" />
+      <g id="sunbeams-layer" opacity="0.22" fill="#ffd97d">
+        <polygon points="540,760 80,0 310,0" /><polygon points="540,760 460,0 620,0" />
+        <polygon points="540,760 770,0 1000,0" /><polygon points="540,760 0,300 0,530" />
+        <polygon points="540,760 1080,300 1080,530" />
+      </g>
+      <circle id="sun-aura" cx="540" cy="760" r="560" fill="url(#divineHalo)" />
+
+      <g id="mandala-outer" opacity="0.5">
+        <circle cx="540" cy="760" r="460" fill="none" stroke="url(#goldMetal)" stroke-width="3" stroke-dasharray="18 10" />
+        <circle cx="540" cy="760" r="435" fill="none" stroke="url(#goldMetal)" stroke-width="1.5" />
+        <g id="mandala-petals" stroke="url(#goldMetal)" stroke-width="2" fill="none"></g>
+      </g>
+
+      <g id="mandala-inner" opacity="0.62">
+        <circle cx="540" cy="760" r="320" fill="none" stroke="#ffdf78" stroke-width="2.5" stroke-dasharray="8 8" />
+        <polygon points="540,450 808,915 272,915" fill="none" stroke="#ffd25a" stroke-width="2" />
+        <polygon points="540,1070 808,605 272,605" fill="none" stroke="#ffd25a" stroke-width="2" />
+      </g>
+
+      <g id="twenty-one-axes-arc"></g>
+      <g id="circle-text" filter="url(#softGoldGlow)">
+        <text x="540" y="395" text-anchor="middle" font-size="48" font-weight="900" fill="url(#keywordGoldGrad)" stroke="#1f0502" stroke-width="9" paint-order="stroke">२१ क्षत्रिय संहार</text>
+      </g>
+      
+      <path d="M 0 1480 L 180 1310 L 340 1420 L 520 1270 L 730 1410 L 910 1290 L 1080 1430 L 1080 1920 L 0 1920 Z" fill="url(#mountainGrad)" opacity="0.9" />
+      <path d="M 0 1580 Q 540 1500 1080 1590 L 1080 1920 L 0 1920 Z" fill="#120304" />
+
+      <g id="camera-rig">
+        <circle id="shockwave-1" cx="560" cy="520" r="110" fill="none" stroke="#fff2a6" stroke-width="10" opacity="0" />
+        <circle id="shockwave-2" cx="560" cy="520" r="110" fill="none" stroke="#ff9d1c" stroke-width="7" opacity="0" />
+        <path id="slash-arc-trail" d="M 220 560 C 370 210, 810 210, 975 585 C 830 355, 445 340, 220 560 Z" fill="url(#slashTrailGrad)" filter="url(#intenseGoldGlow)" opacity="0" />
+        <path id="slash-arc-inner" d="M 285 520 C 420 265, 765 265, 910 535 C 790 365, 470 355, 285 520 Z" fill="#ffffff" opacity="0" />
+
+        <g id="parshuram-root">
+          <path id="hair-left" d="M 485 750 C 405 810, 380 915, 412 995 C 435 942, 460 885, 505 835 Z" fill="#1c0d08" stroke="#0d0503" stroke-width="4" />
+          <path id="hair-right" d="M 595 750 C 680 815, 710 925, 672 1010 C 645 948, 620 885, 575 835 Z" fill="#1c0d08" stroke="#0d0503" stroke-width="4" />
+          <path id="uttariya-scarf" d="M 410 925 C 315 1015, 280 1165, 325 1300 C 365 1215, 390 1110, 435 1030 Z" fill="url(#saffronCloth)" stroke="#1a0b05" stroke-width="5" />
+
+          <g id="parashu-strike-rig">
+            <path d="M 435 925 C 375 875, 345 785, 395 695 C 425 645, 475 615, 520 595 L 548 632 C 505 660, 468 690, 452 735 C 435 785, 455 835, 482 875 Z" fill="url(#skinGrad)" stroke="#1a0b05" stroke-width="6" stroke-linejoin="round" />
+            <path d="M 382 775 L 446 792 L 440 816 L 376 798 Z" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="4" />
+            <path d="M 488 612 L 528 648 L 512 664 L 474 628 Z" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="4" />
+            <path d="M 642 918 C 710 845, 745 730, 715 620 C 698 565, 665 525, 635 495 L 598 525 C 625 560, 648 595, 655 645 C 665 715, 635 795, 595 855 Z" fill="url(#skinGrad)" stroke="#1a0b05" stroke-width="6" stroke-linejoin="round" />
+            <path d="M 652 745 L 722 732 L 726 756 L 656 770 Z" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="4" />
+            <path d="M 602 532 L 642 504 L 656 522 L 614 550 Z" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="4" />
+            <g id="parashu-weapon">
+              <line x1="350" y1="825" x2="735" y2="345" stroke="#1a0b05" stroke-width="26" stroke-linecap="round" />
+              <line x1="350" y1="825" x2="735" y2="345" stroke="url(#woodShaft)" stroke-width="18" stroke-linecap="round" />
+              <line x1="485" y1="658" x2="502" y2="636" stroke="url(#goldMetal)" stroke-width="22" />
+              <line x1="608" y1="502" x2="625" y2="480" stroke="url(#goldMetal)" stroke-width="22" />
+              <polygon points="350,825 320,862 366,842" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="4" />
+              <g filter="url(#intenseGoldGlow)">
+                <path d="M 648 448 C 728 315, 875 300, 938 395 C 895 515, 780 572, 675 485 Z" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="6" stroke-linejoin="round" />
+                <path d="M 862 338 C 915 362, 940 405, 922 458 C 896 510, 840 544, 780 538 C 840 516, 882 470, 890 415 C 894 380, 880 355, 862 338 Z" fill="url(#axeEdgeGlow)" />
+                <circle cx="778" cy="435" r="28" fill="none" stroke="#7a3204" stroke-width="3.5" />
+                <circle cx="778" cy="435" r="11" fill="#fff7c2" />
+                <path d="M 642 442 L 564 378 L 668 410 Z" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="5" stroke-linejoin="round" />
+                <path d="M 702 385 L 776 290 L 732 405 Z" fill="url(#axeEdgeGlow)" stroke="#1a0b05" stroke-width="5" stroke-linejoin="round" />
+              </g>
+            </g>
+            <ellipse cx="526" cy="614" rx="26" ry="22" transform="rotate(-38 526 614)" fill="url(#skinGrad)" stroke="#1a0b05" stroke-width="5" />
+            <ellipse cx="618" cy="496" rx="26" ry="22" transform="rotate(-38 618 496)" fill="url(#skinGrad)" stroke="#1a0b05" stroke-width="5" />
+          </g>
+
+          <g id="parshuram-torso-head">
+            <path d="M 432 905 C 485 880, 595 880, 648 905 L 622 1185 L 458 1185 Z" fill="url(#skinGrad)" stroke="#1a0b05" stroke-width="6" stroke-linejoin="round" />
+            <path d="M 455 975 Q 500 1005 540 978 Q 580 1005 625 975" fill="none" stroke="#9e4918" stroke-width="4.5" stroke-linecap="round" />
+            <line x1="540" y1="982" x2="540" y2="1145" stroke="#9e4918" stroke-width="4" stroke-linecap="round" />
+            <path d="M 452 902 C 495 1015, 565 1105, 622 1175" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" />
+            <path d="M 482 895 Q 540 955 598 895" fill="none" stroke="#521d08" stroke-width="10" stroke-linecap="round" />
+            <path d="M 482 895 Q 540 955 598 895" fill="none" stroke="url(#goldMetal)" stroke-width="5" stroke-dasharray="6 10" stroke-linecap="round" />
+            <circle cx="540" cy="932" r="12" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="3" />
+
+            <rect x="506" y="845" width="68" height="62" rx="14" fill="url(#skinShadow)" stroke="#1a0b05" stroke-width="5" />
+            <path d="M 498 695 C 492 635, 588 635, 582 695 Z" fill="#1c0d08" stroke="#0d0503" stroke-width="5" />
+            <path d="M 485 732 Q 540 715 595 732" fill="none" stroke="url(#goldMetal)" stroke-width="7" />
+            <path d="M 482 732 C 482 698, 598 698, 598 732 L 594 818 C 594 855, 562 878, 540 878 C 518 878, 486 855, 486 818 Z" fill="url(#skinGrad)" stroke="#1a0b05" stroke-width="5.5" />
+            <ellipse cx="478" cy="788" rx="10" ry="18" fill="url(#skinGrad)" stroke="#1a0b05" stroke-width="4" />
+            <ellipse cx="602" cy="788" rx="10" ry="18" fill="url(#skinGrad)" stroke="#1a0b05" stroke-width="4" />
+            <circle cx="478" cy="812" r="11" fill="none" stroke="url(#goldMetal)" stroke-width="5" />
+            <circle cx="602" cy="812" r="11" fill="none" stroke="url(#goldMetal)" stroke-width="5" />
+            <path d="M 526 734 L 540 766 L 554 734" fill="none" stroke="#fff9e6" stroke-width="4.5" stroke-linecap="round" />
+            <circle cx="540" cy="752" r="4.5" fill="#d91e18" />
+            <path d="M 498 766 L 530 778" stroke="#140905" stroke-width="7" stroke-linecap="round" />
+            <path d="M 582 766 L 550 778" stroke="#140905" stroke-width="7" stroke-linecap="round" />
+            <ellipse cx="514" cy="785" rx="11" ry="6.5" fill="#ffffff" stroke="#140905" stroke-width="2.5" />
+            <circle cx="515" cy="785" r="4.5" fill="#3b1204" />
+            <ellipse cx="566" cy="785" rx="11" ry="6.5" fill="#ffffff" stroke="#140905" stroke-width="2.5" />
+            <circle cx="565" cy="785" r="4.5" fill="#3b1204" />
+            <path d="M 540 782 L 535 812 L 546 814" fill="none" stroke="#8f4116" stroke-width="4" stroke-linecap="round" />
+            <path d="M 540 822 C 520 818, 502 826, 494 838 C 510 835, 526 832, 540 828 C 554 832, 570 835, 586 838 C 578 826, 560 818, 540 822 Z" fill="#1c0d08" />
+            <path d="M 488 815 C 488 862, 515 886, 540 888 C 565 886, 592 862, 592 815 C 580 842, 562 854, 540 854 C 518 854, 500 842, 488 815 Z" fill="#1c0d08" stroke="#0d0503" stroke-width="3" />
+          </g>
+
+          <rect x="448" y="1172" width="184" height="28" rx="8" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="5" />
+          <circle cx="540" cy="1186" r="16" fill="#d91e18" stroke="url(#goldMetal)" stroke-width="5" />
+          <path d="M 448 1198 L 632 1198 L 685 1640 L 568 1640 L 540 1430 L 512 1640 L 395 1640 Z" fill="url(#saffronCloth)" stroke="#1a0b05" stroke-width="6" stroke-linejoin="round" />
+          <path d="M 510 1200 L 540 1430 L 570 1200 Z" fill="#ff9636" stroke="#1a0b05" stroke-width="4" />
+        </g>
+        <g id="embers-layer"></g>
+      </g>
+      
+      <rect id="impact-flash" width="1080" height="1920" fill="#fff7d6" opacity="0" pointer-events="none" />
+    </svg>
+  </div>
+
+  <script>
+    const svgNS = "http://www.w3.org/2000/svg";
+    const petalsGroup = document.getElementById("mandala-petals");
+    for (let i = 0; i < 24; i++) {
+      const p = document.createElementNS(svgNS, "path");
+      p.setAttribute("d", "M 540 315 Q 565 365 540 415 Q 515 365 540 315 Z");
+      p.setAttribute("transform", `rotate(${(i * 360) / 24} 540 760)`);
+      petalsGroup.appendChild(p);
+    }
+
+    const axesArc = document.getElementById("twenty-one-axes-arc");
+    const axeItems = [];
+    for (let i = 0; i < 21; i++) {
+      const angleDeg = -115 + (i / 20) * 230;
+      const rad = ((angleDeg - 90) * Math.PI) / 180;
+      const x = 540 + 510 * Math.cos(rad);
+      const y = 760 + 510 * Math.sin(rad);
+      const use = document.createElementNS(svgNS, "use");
+      use.setAttribute("href", "#mini-parashu");
+      use.setAttribute("opacity", "0");
+      axesArc.appendChild(use);
+      axeItems.push({ el: use, x, y, angleDeg, index: i });
+    }
+
+    const embersLayer = document.getElementById("embers-layer");
+    const embers = [];
+    for (let i = 0; i < 40; i++) {
+      const c = document.createElementNS(svgNS, "circle");
+      c.setAttribute("r", 3 + (i % 6));
+      c.setAttribute("fill", i % 2 === 0 ? "#ffd86b" : "#ff6a1a");
+      embersLayer.appendChild(c);
+      embers.push({ el: c, startX: (i * 97) % 1080, startY: 400 + ((i * 173) % 1500), speed: 180 + (i % 5) * 65, drift: ((i % 7) - 3) * 28, phase: i * 0.4 });
+    }
+
+    const mandalaOuter = document.getElementById("mandala-outer");
+    const mandalaInner = document.getElementById("mandala-inner");
+    const sunAura = document.getElementById("sun-aura");
+    const cameraRig = document.getElementById("camera-rig");
+    const parshuramRoot = document.getElementById("parshuram-root");
+    const strikeRig = document.getElementById("parashu-strike-rig");
+    const torsoHead = document.getElementById("parshuram-torso-head");
+    const slashTrail = document.getElementById("slash-arc-trail");
+    const slashInner = document.getElementById("slash-arc-inner");
+    const shock1 = document.getElementById("shockwave-1");
+    const shock2 = document.getElementById("shockwave-2");
+    const impactFlash = document.getElementById("impact-flash");
+    const scarf = document.getElementById("uttariya-scarf");
+    const hairL = document.getElementById("hair-left");
+    const hairR = document.getElementById("hair-right");
+
+    const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+    const easeOutBack = (x) => 1 + 2.70158 * Math.pow(x - 1, 3) + 1.70158 * Math.pow(x - 1, 2);
+    const easeOutCubic = (x) => 1 - Math.pow(1 - x, 3);
+
+    window.renderAtTime = function (t) {
+      mandalaOuter.setAttribute("transform", `rotate(${(t * 18).toFixed(2)} 540 760)`);
+      mandalaInner.setAttribute("transform", `rotate(${(-t * 28).toFixed(2)} 540 760)`);
+      const auraScale = 1 + 0.06 * Math.sin(t * 4);
+      sunAura.setAttribute("transform", `translate(540 760) scale(${auraScale.toFixed(3)}) translate(-540 -760)`);
+
+      axeItems.forEach((item) => {
+        const p = clamp((t - (0.1 + item.index * 0.055)) / 0.35, 0, 1);
+        const s = 0.4 + 0.75 * easeOutBack(p);
+        item.el.setAttribute("opacity", p.toFixed(2));
+        item.el.setAttribute("transform", `translate(${item.x.toFixed(1)}, ${item.y.toFixed(1)}) rotate(${item.angleDeg.toFixed(1)}) scale(${s.toFixed(3)})`);
+      });
+
+      const entY = (1 - easeOutCubic(clamp(t / 0.65, 0, 1))) * 140;
+      parshuramRoot.setAttribute("transform", `translate(0, ${(entY + Math.sin(t * 3.5) * 6).toFixed(2)})`);
+      const sway = Math.sin(t * 5.5) * 5;
+      scarf.setAttribute("transform", `rotate(${sway.toFixed(2)} 420 930)`);
+      hairL.setAttribute("transform", `rotate(${(sway * 1.2).toFixed(2)} 490 760)`);
+      hairR.setAttribute("transform", `rotate(${(-sway * 1.2).toFixed(2)} 590 760)`);
+
+      let axeAngle = -8, torsoAngle = 0;
+      if (t >= 0.8 && t < 1.35) {
+        const w = easeOutCubic((t - 0.8) / 0.55);
+        axeAngle = -8 - w * 26; torsoAngle = -w * 6;
+      } else if (t >= 1.35 && t < 1.62) {
+        const s = easeOutCubic((t - 1.35) / 0.27);
+        axeAngle = -34 + s * 62; torsoAngle = -6 + s * 13;
+      } else if (t >= 1.62) {
+        const settle = easeOutCubic(clamp((t - 1.62) / 0.8, 0, 1));
+        axeAngle = 28 - settle * 16 + Math.sin(t * 4) * 2;
+        torsoAngle = 7 - settle * 5;
+      }
+      strikeRig.setAttribute("transform", `rotate(${axeAngle.toFixed(2)} 540 820)`);
+      torsoHead.setAttribute("transform", `rotate(${torsoAngle.toFixed(2)} 540 1050)`);
+
+      const slashT = t - 1.46;
+      if (slashT >= 0 && slashT <= 0.65) {
+        const sp = slashT / 0.65;
+        const op = sp < 0.2 ? sp / 0.2 : 1 - (sp - 0.2) / 0.8;
+        slashTrail.setAttribute("opacity", clamp(op, 0, 1).toFixed(2));
+        slashInner.setAttribute("opacity", clamp(op * 0.9, 0, 1).toFixed(2));
+      } else {
+        slashTrail.setAttribute("opacity", "0"); slashInner.setAttribute("opacity", "0");
+      }
+
+      if (slashT >= 0 && slashT <= 1.1) {
+        const swP = slashT / 1.1;
+        shock1.setAttribute("r", (110 + swP * 480).toFixed(1));
+        shock1.setAttribute("opacity", (1 - swP).toFixed(2));
+        const swP2 = clamp((slashT - 0.1) / 1.0, 0, 1);
+        shock2.setAttribute("r", (110 + swP2 * 420).toFixed(1));
+        shock2.setAttribute("opacity", (1 - swP2).toFixed(2));
+      } else {
+        shock1.setAttribute("opacity", "0"); shock2.setAttribute("opacity", "0");
+      }
+
+      if (slashT >= 0 && slashT <= 0.35) {
+        const fp = 1 - slashT / 0.35;
+        impactFlash.setAttribute("opacity", (fp * 0.55).toFixed(2));
+        cameraRig.setAttribute("transform", `translate(${(540 + Math.sin(slashT * 95) * 18 * fp).toFixed(1)} ${(960 + Math.cos(slashT * 110) * 18 * fp).toFixed(1)}) scale(${(1 + 0.045 * fp).toFixed(3)}) translate(-540 -960)`);
+      } else {
+        impactFlash.setAttribute("opacity", "0");
+        cameraRig.setAttribute("transform", `translate(540 960) scale(${(1 + clamp(t / 4.5, 0, 1) * 0.04).toFixed(3)}) translate(-540 -960)`);
+      }
+
+      embers.forEach((em) => {
+        const y = ((em.startY - t * em.speed) % 1650 + 1650) % 1650 + 200;
+        const x = em.startX + Math.sin(t * 2.5 + em.phase) * em.drift;
+        em.el.setAttribute("cx", x.toFixed(1)); em.el.setAttribute("cy", y.toFixed(1));
+        em.el.setAttribute("opacity", (0.4 + 0.6 * Math.abs(Math.sin(t * 3 + em.phase))).toFixed(2));
+      });
+
+    };
+
+    let startTime = null;
+    let isManualRender = false;
+    const origRender = window.renderAtTime;
+    window.renderAtTime = function(t) {
+      isManualRender = true;
+      origRender(t);
+    };
+
+    function browserLoop(now) {
+      if (isManualRender) return;
+      if (!startTime) startTime = now;
+      const elapsed = ((now - startTime) / 1000) % 5.0;
+      origRender(elapsed);
+      requestAnimationFrame(browserLoop);
+    }
+    requestAnimationFrame(browserLoop);
+  </script>
+</body>
+</html>
+
+              

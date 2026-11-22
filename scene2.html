@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parshuram vs Ravana - Sentence 2 (5s 9:16 SVG)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #070203;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+    }
+
+    /* 9:16 Vertical Stage Container */
+    .stage-wrapper {
+      position: relative;
+      height: 100vh;
+      aspect-ratio: 9 / 16;
+      max-width: 100vw;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.96);
+      background: #140405;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    svg#scene {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Bottom Controls Bar */
+    .controls-bar {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      gap: 10px;
+      z-index: 20;
+    }
+
+    .action-btn {
+      background: rgba(24, 8, 6, 0.88);
+      color: #ffd875;
+      border: 1.5px solid rgba(255, 200, 80, 0.6);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: transform 0.18s ease, background 0.18s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .action-btn:hover:not(:disabled) {
+      background: rgba(185, 42, 14, 0.95);
+      border-color: #ffe89e;
+      transform: scale(1.05);
+    }
+
+    .action-btn:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, #d43d0b, #7d1305);
+      color: #fff7d6;
+      border-color: #ffd35c;
+    }
+
+    .status-toast {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20, 6, 4, 0.94);
+      color: #ffe28a;
+      border: 1.5px solid #ffcf54;
+      padding: 9px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      z-index: 30;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    }
+
+    .status-toast.visible {
+      opacity: 1;
+    }
+  </style>
+  <style>.controls-bar{display:none !important}</style>
+</head>
+<body>
+  <div class="stage-wrapper" id="stage">
+    <div class="status-toast" id="statusToast">Rendering 5.0s 9:16 Video...</div>
+
+    <svg id="scene" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Left Side Saffron-Crimson Aura (Parshuram) -->
+        <radialGradient id="leftParshuramBg" cx="25%" cy="48%" r="65%">
+          <stop offset="0%" stop-color="#ff8c1a" />
+          <stop offset="45%" stop-color="#a81d0c" />
+          <stop offset="100%" stop-color="#290405" />
+        </radialGradient>
+
+        <!-- Right Side Dark Royal Crimson-Indigo Aura (Ravana) -->
+        <radialGradient id="rightRavanaBg" cx="75%" cy="48%" r="65%">
+          <stop offset="0%" stop-color="#8c1124" />
+          <stop offset="48%" stop-color="#3b0718" />
+          <stop offset="100%" stop-color="#120208" />
+        </radialGradient>
+
+        <!-- Center Energy Barrier Glow -->
+        <radialGradient id="centerBarrierGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+          <stop offset="30%" stop-color="#ffd54f" stop-opacity="0.65" />
+          <stop offset="68%" stop-color="#ff6d00" stop-opacity="0.22" />
+          <stop offset="100%" stop-color="#3b0505" stop-opacity="0" />
+        </radialGradient>
+
+        <!-- Parshuram Skin Tone (Exact Match with Sentence 1) -->
+        <linearGradient id="parshuramSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f7ba80" />
+          <stop offset="55%" stop-color="#e38d4c" />
+          <stop offset="100%" stop-color="#b35a24" />
+        </linearGradient>
+
+        <!-- Ravana Bronze-Brown Skin Tone (Consistent with Character Sheet) -->
+        <linearGradient id="ravanaSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#b5774b" />
+          <stop offset="55%" stop-color="#8f542d" />
+          <stop offset="100%" stop-color="#5e3216" />
+        </linearGradient>
+
+        <!-- Saffron Cloth (Parshuram) -->
+        <linearGradient id="saffronCloth" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ff7a17" />
+          <stop offset="55%" stop-color="#de4508" />
+          <stop offset="100%" stop-color="#8f1f03" />
+        </linearGradient>
+
+        <!-- Royal Crimson Cloth (Ravana) -->
+        <linearGradient id="royalCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#d92626" />
+          <stop offset="55%" stop-color="#9e1116" />
+          <stop offset="100%" stop-color="#57060a" />
+        </linearGradient>
+
+        <!-- Radiant Gold Metal -->
+        <linearGradient id="goldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#fff8c7" />
+          <stop offset="35%" stop-color="#ffd043" />
+          <stop offset="75%" stop-color="#e08d12" />
+          <stop offset="100%" stop-color="#8c4503" />
+        </linearGradient>
+
+        <!-- Axe Edge Glow -->
+        <linearGradient id="axeEdgeGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ff9d00" />
+          <stop offset="50%" stop-color="#fff9cf" />
+          <stop offset="100%" stop-color="#ffffff" />
+        </linearGradient>
+
+        <!-- Chandrahas Sword Steel -->
+        <linearGradient id="swordSteel" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="45%" stop-color="#cfd8e3" />
+          <stop offset="100%" stop-color="#6c7a8c" />
+        </linearGradient>
+
+        <!-- Bold Hindi Keyword Fill -->
+        <linearGradient id="keywordGoldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="32%" stop-color="#ffe785" />
+          <stop offset="75%" stop-color="#ff9900" />
+          <stop offset="100%" stop-color="#d43500" />
+        </linearGradient>
+
+        <!-- Intense Golden Glow Filter -->
+        <filter id="intenseGoldGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="12" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <!-- Soft Glow Filter -->
+        <filter id="softGoldGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="7" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <!-- Reusable Ravana Side Head (Consistent with Reference Sheet) -->
+        <g id="ravana-side-head">
+          <path d="M -22 -22 L -17 -50 L 0 -64 L 17 -50 L 22 -22 Z" fill="url(#goldMetal)" stroke="#140703" stroke-width="3" stroke-linejoin="round" />
+          <path d="M -25 -22 Q 0 -28 25 -22 L 23 -14 Q 0 -19 -23 -14 Z" fill="url(#goldMetal)" stroke="#140703" stroke-width="2.5" />
+          <circle cx="0" cy="-42" r="4" fill="#d91e18" />
+          <path d="M -22 -15 L 22 -15 L 19 18 C 19 30, 9 36, 0 36 C -9 36, -19 30, -19 18 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="3" />
+          <line x1="-11" y1="-8" x2="11" y2="-8" stroke="#ffffff" stroke-width="2" />
+          <line x1="-9" y1="-3" x2="9" y2="-3" stroke="#ffffff" stroke-width="2" />
+          <circle cx="0" cy="-5" r="2.5" fill="#d91e18" />
+          <path d="M -16 2 L -4 6" stroke="#140703" stroke-width="3.2" stroke-linecap="round" />
+          <path d="M 16 2 L 4 6" stroke="#140703" stroke-width="3.2" stroke-linecap="round" />
+          <ellipse cx="-9" cy="9" rx="4.5" ry="2.8" fill="#fff2a6" />
+          <circle cx="-9" cy="9" r="1.8" fill="#b31209" />
+          <ellipse cx="9" cy="9" rx="4.5" ry="2.8" fill="#fff2a6" />
+          <circle cx="9" cy="9" r="1.8" fill="#b31209" />
+          <path d="M 0 19 C -8 17, -17 20, -20 26 C -14 24, -6 23, 0 21 C 6 23, 14 24, 20 26 C 17 20, 8 17, 0 19 Z" fill="#140703" />
+        </g>
+      </defs>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 1: SPLIT-SCREEN CONFRONTATION BACKDROP              -->
+      <!-- ========================================================= -->
+      <rect x="0" y="0" width="540" height="1920" fill="url(#leftParshuramBg)" />
+      <rect x="540" y="0" width="540" height="1920" fill="url(#rightRavanaBg)" />
+
+      <!-- Rotating Background Sacred Mandala Behind Split -->
+      <g id="bg-mandala" opacity="0.32">
+        <circle cx="540" cy="920" r="460" fill="none" stroke="url(#goldMetal)" stroke-width="3" stroke-dasharray="16 10" />
+        <circle cx="540" cy="920" r="350" fill="none" stroke="#ffd25a" stroke-width="2" />
+      </g>
+
+      <!-- Dark Ground Horizon -->
+      <path d="M 0 1560 Q 540 1510 1080 1560 L 1080 1920 L 0 1920 Z" fill="#120305" />
+
+      <!-- ========================================================= -->
+      <!-- LAYER 2: MAIN CAMERA ZOOM RIG                             -->
+      <!-- ========================================================= -->
+      <g id="camera-rig">
+        <!-- ======================================================= -->
+        <!-- LEFT WARRIOR: LORD PARSHURAM (CONSISTENT WITH SENTENCE 1)-->
+        <!-- ======================================================= -->
+        <g id="parshuram-side">
+          <!-- Flowing Hair & Uttariya -->
+          <path id="p-hair-back" d="M 195 790 C 125 855, 105 965, 145 1045 C 165 985, 185 920, 225 870 Z" fill="#1c0d08" stroke="#0d0503" stroke-width="4" />
+          <path id="p-scarf" d="M 155 965 C 75 1055, 55 1200, 100 1320 C 135 1235, 155 1135, 195 1055 Z" fill="url(#saffronCloth)" stroke="#1a0b05" stroke-width="5" />
+
+          <!-- Saffron Dhoti & Legs -->
+          <path d="M 175 1210 L 345 1210 L 385 1640 L 285 1640 L 260 1440 L 235 1640 L 135 1640 Z" fill="url(#saffronCloth)" stroke="#1a0b05" stroke-width="5.5" stroke-linejoin="round" />
+          <line x1="142" y1="1622" x2="232" y2="1622" stroke="url(#goldMetal)" stroke-width="10" />
+          <line x1="288" y1="1622" x2="378" y2="1622" stroke="url(#goldMetal)" stroke-width="10" />
+          <rect x="175" y="1188" width="170" height="24" rx="7" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="4.5" />
+
+          <!-- Muscular Torso -->
+          <path d="M 168 935 C 215 912, 305 912, 352 935 L 332 1192 L 188 1192 Z" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="5.5" stroke-linejoin="round" />
+          <!-- Sacred White Janeu -->
+          <path d="M 185 932 C 225 1035, 285 1118, 330 1185" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+          <!-- Rudraksha & Gold Kantha -->
+          <path d="M 212 925 Q 260 978 308 925" fill="none" stroke="url(#goldMetal)" stroke-width="9" stroke-linecap="round" />
+
+          <!-- Topknot Hair Bun & Fierce Head Facing Right -->
+          <path d="M 225 745 C 220 692, 300 692, 295 745 Z" fill="#1c0d08" stroke="#0d0503" stroke-width="4.5" />
+          <path d="M 212 778 Q 260 762 308 778" fill="none" stroke="url(#goldMetal)" stroke-width="6" />
+          <path d="M 210 778 C 210 748, 310 748, 310 778 L 306 855 C 306 888, 280 908, 260 908 C 240 908, 214 888, 214 855 Z" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="5" />
+          <!-- Tilak & Fierce Eyes -->
+          <path d="M 254 780 L 266 808 L 278 780" fill="none" stroke="#fff9e6" stroke-width="4" stroke-linecap="round" />
+          <path d="M 235 812 L 262 822" stroke="#140905" stroke-width="6" stroke-linecap="round" />
+          <path d="M 298 812 L 274 822" stroke="#140905" stroke-width="6" stroke-linecap="round" />
+          <ellipse cx="250" cy="828" rx="9" ry="5.5" fill="#ffffff" stroke="#140905" stroke-width="2" />
+          <circle cx="252" cy="828" r="3.8" fill="#3b1204" />
+          <ellipse cx="286" cy="828" rx="9" ry="5.5" fill="#ffffff" stroke="#140905" stroke-width="2" />
+          <circle cx="288" cy="828" r="3.8" fill="#3b1204" />
+          <!-- Mustache & Beard -->
+          <path d="M 216 852 C 216 894, 240 914, 260 916 C 280 914, 304 894, 304 852 C 294 876, 278 886, 260 886 C 242 886, 226 876, 216 852 Z" fill="#1c0d08" />
+
+          <!-- Parshuram Striking Arm & Glowing Parashu Axe Aimed Forward -->
+          <g id="parshuram-axe-arm">
+            <path d="M 332 952 C 385 935, 425 895, 445 845 L 405 825 C 388 865, 355 895, 315 910 Z" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="5" stroke-linejoin="round" />
+            <!-- Parashu Axe Shaft -->
+            <line x1="275" y1="1080" x2="475" y2="660" stroke="#1a0b05" stroke-width="20" stroke-linecap="round" />
+            <line x1="275" y1="1080" x2="475" y2="660" stroke="#7a3210" stroke-width="13" stroke-linecap="round" />
+            <!-- Glowing Golden Axe Head -->
+            <g filter="url(#intenseGoldGlow)">
+              <path d="M 412 752 C 475 645, 585 640, 628 718 C 592 812, 505 852, 428 782 Z" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="5" stroke-linejoin="round" />
+              <path d="M 572 672 C 610 692, 628 725, 614 765 C 594 805, 550 830, 505 825 C 550 808, 582 772, 588 730 Z" fill="url(#axeEdgeGlow)" />
+              <path d="M 408 746 L 352 695 L 426 722 Z" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="4" />
+            </g>
+            <circle cx="422" cy="838" r="20" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="4.5" />
+          </g>
+        </g>
+
+        <!-- ======================================================= -->
+        <!-- RIGHT WARRIOR: TEN-HEADED RAVANA (CONSISTENT SHEET)     -->
+        <!-- ======================================================= -->
+        <g id="ravana-side">
+          <!-- Royal Crimson Dhoti & Legs -->
+          <path d="M 735 1210 L 905 1210 L 945 1640 L 845 1640 L 820 1440 L 795 1640 L 695 1640 Z" fill="url(#royalCrimson)" stroke="#140703" stroke-width="5.5" stroke-linejoin="round" />
+          <line x1="702" y1="1622" x2="792" y2="1622" stroke="url(#goldMetal)" stroke-width="10" />
+          <line x1="848" y1="1622" x2="938" y2="1622" stroke="url(#goldMetal)" stroke-width="10" />
+          <rect x="735" y="1188" width="170" height="24" rx="7" fill="url(#goldMetal)" stroke="#140703" stroke-width="4.5" />
+
+          <!-- Broad Royal Torso -->
+          <path d="M 728 935 C 775 912, 865 912, 912 935 L 892 1192 L 748 1192 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5.5" stroke-linejoin="round" />
+          <!-- Sacred White Janeu & Royal Gold Necklaces -->
+          <path d="M 752 932 C 788 1035, 845 1118, 888 1185" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+          <path d="M 768 925 Q 820 982 872 925" fill="none" stroke="url(#goldMetal)" stroke-width="11" stroke-linecap="round" />
+
+          <!-- Ten Heads & Crowns Cluster -->
+          <g id="ravana-heads-cluster">
+            <!-- Left 4 Side Heads -->
+            <use href="#ravana-side-head" transform="translate(615, 795) scale(0.84)" />
+            <use href="#ravana-side-head" transform="translate(662, 790) scale(0.88)" />
+            <use href="#ravana-side-head" transform="translate(710, 785) scale(0.92)" />
+            <use href="#ravana-side-head" transform="translate(758, 782) scale(0.96)" />
+
+            <!-- Right 5 Side Heads -->
+            <use href="#ravana-side-head" transform="translate(882, 782) scale(0.96)" />
+            <use href="#ravana-side-head" transform="translate(930, 785) scale(0.92)" />
+            <use href="#ravana-side-head" transform="translate(976, 790) scale(0.88)" />
+            <use href="#ravana-side-head" transform="translate(1020, 795) scale(0.84)" />
+
+            <!-- Main Center Crown & Arrogant Smirking Face -->
+            <path d="M 768 730 L 780 658 L 820 615 L 860 658 L 872 730 Z" fill="url(#goldMetal)" stroke="#140703" stroke-width="4.5" stroke-linejoin="round" />
+            <path d="M 760 730 Q 820 716 880 730 L 875 746 Q 820 735 765 746 Z" fill="url(#goldMetal)" stroke="#140703" stroke-width="4" />
+            <circle cx="820" cy="675" r="10" fill="#d91e18" />
+
+            <path d="M 770 744 L 870 744 L 865 820 C 865 852, 842 868, 820 868 C 798 868, 775 852, 775 820 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5" />
+            <!-- Tripundra Tilak -->
+            <line x1="794" y1="760" x2="846" y2="760" stroke="#ffffff" stroke-width="3.5" />
+            <line x1="798" y1="769" x2="842" y2="769" stroke="#ffffff" stroke-width="3.5" />
+            <circle cx="820" cy="765" r="4.5" fill="#d91e18" />
+            <!-- Defiant Eyebrows & Eyes -->
+            <path d="M 782 782 L 812 790" stroke="#140703" stroke-width="5.5" stroke-linecap="round" />
+            <path d="M 858 782 L 828 790" stroke="#140703" stroke-width="5.5" stroke-linecap="round" />
+            <ellipse cx="798" cy="798" rx="10" ry="6.5" fill="#fff2a6" stroke="#140703" stroke-width="2.5" />
+            <circle cx="796" cy="798" r="4" fill="#9e0b0b" />
+            <ellipse cx="842" cy="798" rx="10" ry="6.5" fill="#fff2a6" stroke="#140703" stroke-width="2.5" />
+            <circle cx="840" cy="798" r="4" fill="#9e0b0b" />
+            <!-- Handlebar Mustache & Arrogant Smirk -->
+            <path d="M 820 822 C 800 816, 780 824, 772 838 C 786 833, 804 831, 820 828 C 836 831, 854 833, 868 838 C 860 824, 840 816, 820 822 Z" fill="#140703" />
+            <path d="M 802 846 Q 820 854 838 842" fill="none" stroke="#140703" stroke-width="3.5" stroke-linecap="round" />
+          </g>
+
+          <!-- Ravana Sword Arm Raising Chandrahas Forward -->
+          <g id="ravana-sword-arm">
+            <path d="M 748 952 C 695 935, 655 895, 635 845 L 675 825 C 692 865, 725 895, 765 910 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5" stroke-linejoin="round" />
+            <!-- Curved Chandrahas Sword -->
+            <g transform="translate(655, 838) rotate(-32)">
+              <path d="M -10 -15 L -14 -260 C -14 -305, 8 -338, 28 -358 C 22 -312, 14 -275, 14 -15 Z" fill="url(#swordSteel)" stroke="#140703" stroke-width="4.5" stroke-linejoin="round" />
+              <rect x="-26" y="-12" width="52" height="14" rx="5" fill="url(#goldMetal)" stroke="#140703" stroke-width="3.5" />
+              <rect x="-8" y="2" width="16" height="42" rx="4" fill="url(#goldMetal)" stroke="#140703" stroke-width="3.5" />
+            </g>
+            <circle cx="655" cy="838" r="20" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="4.5" />
+          </g>
+        </g>
+
+        <!-- ======================================================= -->
+        <!-- CENTER DIVINE ENERGY BARRIER & QUESTION MARK SEAL       -->
+        <!-- ======================================================= -->
+        <g id="center-barrier-group">
+          <!-- Vertical Glowing Energy Beam -->
+          <line x1="540" y1="260" x2="540" y2="1650" stroke="url(#goldMetal)" stroke-width="10" filter="url(#intenseGoldGlow)" opacity="0.85" />
+          <line x1="540" y1="260" x2="540" y2="1650" stroke="#ffffff" stroke-width="4" opacity="0.9" />
+
+          <!-- Crackling Lightning Arcs Along Center Barrier -->
+          <polyline id="barrier-bolt-1" points="540,340 508,450 568,540 512,650 558,760 540,860" fill="none" stroke="#fff7c2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#intenseGoldGlow)" />
+          <polyline id="barrier-bolt-2" points="540,980 572,1090 510,1190 565,1290 515,1400 540,1510" fill="none" stroke="#ffd24c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#intenseGoldGlow)" />
+
+          <!-- Radiant Central Question-Mark Yantra Orb -->
+          <circle id="q-orb-aura" cx="540" cy="920" r="190" fill="url(#centerBarrierGlow)" />
+          <circle id="q-ring-outer" cx="540" cy="920" r="118" fill="#1c0506" fill-opacity="0.88" stroke="url(#goldMetal)" stroke-width="7" />
+          <circle id="q-ring-inner" cx="540" cy="920" r="98" fill="none" stroke="#ffdf78" stroke-width="2.5" stroke-dasharray="10 8" />
+
+          <!-- Glowing Golden Question Mark "?" -->
+          <text x="540" y="975" text-anchor="middle" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="165" stroke="#1f0504" stroke-width="14" paint-order="stroke" fill="url(#keywordGoldGrad)" filter="url(#intenseGoldGlow)">?</text>
+        </g>
+      </g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 3: RISING GOLDEN SPARK PARTICLES                    -->
+      <!-- ========================================================= -->
+      <g id="embers-layer"></g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 4: BOLD HINDI KEYWORDS (NO FULL CAPTIONS)           -->
+      <!-- ========================================================= -->
+      <g id="kinetic-keywords" pointer-events="none" text-anchor="middle">
+        <!-- Keyword 1: "लंकापति रावण" -->
+        <g id="kw-ravana" transform="translate(540, 215)" opacity="0">
+          <line x1="-320" y1="0" x2="-245" y2="0" stroke="url(#goldMetal)" stroke-width="5" stroke-linecap="round" />
+          <line x1="245" y1="0" x2="320" y2="0" stroke="url(#goldMetal)" stroke-width="5" stroke-linecap="round" />
+          <text x="0" y="26" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="80" letter-spacing="2" stroke="#1f0504" stroke-width="18" stroke-linejoin="round" paint-order="stroke" fill="url(#keywordGoldGrad)" filter="url(#softGoldGlow)">लंकापति रावण</text>
+        </g>
+
+        <!-- Keyword 2: "वध क्यों नहीं?" -->
+        <g id="kw-why-not" transform="translate(540, 1745)" opacity="0">
+          <rect x="-285" y="-66" width="570" height="98" rx="20" fill="#1c0405" fill-opacity="0.88" stroke="url(#goldMetal)" stroke-width="4.5" />
+          <text x="0" y="8" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="74" letter-spacing="2" stroke="#140203" stroke-width="14" stroke-linejoin="round" paint-order="stroke" fill="url(#keywordGoldGrad)">वध क्यों नहीं?</text>
+        </g>
+      </g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 5: ORNATE CRIMSON & GOLD MITHILA BORDER             -->
+      <!-- ========================================================= -->
+      <g pointer-events="none">
+        <rect x="18" y="18" width="1044" height="1884" rx="28" fill="none" stroke="#240506" stroke-width="24" />
+        <rect x="18" y="18" width="1044" height="1884" rx="28" fill="none" stroke="url(#goldMetal)" stroke-width="7" />
+        <rect x="34" y="34" width="1012" height="1852" rx="20" fill="none" stroke="#ffcf54" stroke-width="2.5" stroke-dasharray="16 10" />
+        <g fill="url(#goldMetal)" stroke="#240506" stroke-width="3">
+          <circle cx="44" cy="44" r="18" />
+          <circle cx="1036" cy="44" r="18" />
+          <circle cx="44" cy="1876" r="18" />
+          <circle cx="1036" cy="1876" r="18" />
+        </g>
+      </g>
+    </svg>
+
+    <div class="controls-bar" id="controlsBar">
+      <button class="action-btn" id="replayBtn" title="Replay 5s Animation">↻ Replay</button>
+      <button class="action-btn download-btn" id="downloadBtn" title="Download 5.0s 9:16 Video">⬇ Download MP4</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const svgNS = "http://www.w3.org/2000/svg";
+
+      const cameraRig = document.getElementById("camera-rig");
+      const bgMandala = document.getElementById("bg-mandala");
+
+      const parshuramSide = document.getElementById("parshuram-side");
+      const parshuramAxeArm = document.getElementById("parshuram-axe-arm");
+      const pHairBack = document.getElementById("p-hair-back");
+      const pScarf = document.getElementById("p-scarf");
+
+      const ravanaSide = document.getElementById("ravana-side");
+      const ravanaSwordArm = document.getElementById("ravana-sword-arm");
+      const ravanaHeadsCluster = document.getElementById("ravana-heads-cluster");
+
+      const centerBarrierGroup = document.getElementById("center-barrier-group");
+      const qOrbAura = document.getElementById("q-orb-aura");
+      const qRingInner = document.getElementById("q-ring-inner");
+      const barrierBolt1 = document.getElementById("barrier-bolt-1");
+      const barrierBolt2 = document.getElementById("barrier-bolt-2");
+
+      const embersLayer = document.getElementById("embers-layer");
+      const kwRavana = document.getElementById("kw-ravana");
+      const kwWhyNot = document.getElementById("kw-why-not");
+
+      // Build 32 Floating Golden Spark Particles
+      const embers = [];
+      for (let i = 0; i < 32; i++) {
+        const circle = document.createElementNS(svgNS, "circle");
+        const r = 3 + (i % 4) * 1.4;
+        circle.setAttribute("r", r.toFixed(1));
+        circle.setAttribute("fill", i % 2 === 0 ? "#ffe680" : "#ff8c1a");
+        circle.setAttribute("filter", "url(#softGoldGlow)");
+        embersLayer.appendChild(circle);
+
+        embers.push({
+          el: circle,
+          baseX: 90 + ((i * 97) % 900),
+          startY: 1850 - ((i * 131) % 720),
+          speedY: 200 + (i % 7) * 40,
+          wobbleAmp: 16 + (i % 4) * 8,
+          wobbleFreq: 2.1 + (i % 5) * 0.45,
+          phase: i * 0.65
+        });
+      }
+
+      // Easing Helpers
+      function clamp01(v) {
+        return Math.max(0, Math.min(1, v));
+      }
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+      function easeOutBack(t) {
+        const c1 = 1.70158;
+        const c3 = c1 + 1;
+        return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+      }
+      function lerp(a, b, t) {
+        return a + (b - a) * t;
+      }
+
+      // Master 5.0-Second Deterministic Render Function
+      function renderFrameAtTime(t) {
+        // 1. Background Mandala & Center Question Ring Rotation
+        bgMandala.setAttribute("transform", `rotate(${((t * 12) % 360).toFixed(2)} 540 920)`);
+        qRingInner.setAttribute("transform", `rotate(${(-(t * 28) % 360).toFixed(2)} 540 920)`);
+
+        // 2. Dramatic Camera Zoom-In across 5.0 Seconds
+        const zoom = lerp(1.0, 1.09, easeOutCubic(clamp01(t / 5.0)));
+        cameraRig.setAttribute(
+          "transform",
+          `translate(540 920) scale(${zoom.toFixed(4)}) translate(-540 -920)`
+        );
+
+        // 3. Fast Slide-In From Left (Parshuram) & Right (Ravana) in First 0.65s
+        const slideProg = easeOutBack(clamp01(t / 0.65));
+        const leftOffset = lerp(-340, 0, slideProg);
+        const rightOffset = lerp(340, 0, slideProg);
+
+        // Subtle Breathing Bob after Slide-In
+        const bobLeft = t > 0.65 ? Math.sin((t - 0.65) * 3.2) * 7 : 0;
+        const bobRight = t > 0.65 ? Math.cos((t - 0.65) * 3.0) * 7 : 0;
+
+        parshuramSide.setAttribute("transform", `translate(${leftOffset.toFixed(1)} ${bobLeft.toFixed(1)})`);
+        ravanaSide.setAttribute("transform", `translate(${rightOffset.toFixed(1)} ${bobRight.toFixed(1)})`);
+
+        // 4. Weapon-Ready Combat Motion (Axe Aiming Forward & Sword Raising Defiantly)
+        const axeAngle = Math.sin(t * 3.4) * 5.5 - 3;
+        const swordAngle = -Math.sin(t * 3.2) * 5.5 + 3;
+        parshuramAxeArm.setAttribute("transform", `rotate(${axeAngle.toFixed(2)} 315 935)`);
+        ravanaSwordArm.setAttribute("transform", `rotate(${swordAngle.toFixed(2)} 765 935)`);
+
+        // Hair & Scarf Flowing Motion
+        pHairBack.setAttribute("transform", `rotate(${(Math.sin(t * 4.2) * 5).toFixed(2)} 200 810)`);
+        pScarf.setAttribute("transform", `rotate(${(Math.sin(t * 3.6) * 6).toFixed(2)} 175 990)`);
+        ravanaHeadsCluster.setAttribute("transform", `rotate(${(Math.sin(t * 2.8) * 1.2).toFixed(2)} 820 840)`);
+
+        // 5. Center Energy Barrier Pop-In (0.45s -> 0.90s) + Flickering Lightning Arcs
+        const barrierProg = easeOutBack(clamp01((t - 0.45) / 0.45));
+        const orbPulse = 1 + 0.06 * Math.sin(t * 5.5);
+        centerBarrierGroup.setAttribute("opacity", clamp01((t - 0.35) / 0.3).toFixed(3));
+        qOrbAura.setAttribute(
+          "transform",
+          `translate(540 920) scale(${(barrierProg * orbPulse).toFixed(3)}) translate(-540 -920)`
+        );
+
+        // Flickering Electric Path Strokes
+        const flick1 = 0.55 + 0.45 * Math.abs(Math.sin(t * 24));
+        const flick2 = 0.55 + 0.45 * Math.abs(Math.cos(t * 21));
+        const shiftX1 = Math.sin(t * 35) * 6;
+        const shiftX2 = Math.cos(t * 31) * 6;
+        barrierBolt1.setAttribute("opacity", flick1.toFixed(2));
+        barrierBolt1.setAttribute("transform", `translate(${shiftX1.toFixed(1)} 0)`);
+        barrierBolt2.setAttribute("opacity", flick2.toFixed(2));
+        barrierBolt2.setAttribute("transform", `translate(${shiftX2.toFixed(1)} 0)`);
+
+        // 6. Rising Spark Particles
+        for (let i = 0; i < embers.length; i++) {
+          const em = embers[i];
+          const travel = (t * em.speedY) % 1650;
+          let y = em.startY - travel;
+          if (y < 140) y += 1650;
+          const x = em.baseX + Math.sin(t * em.wobbleFreq + em.phase) * em.wobbleAmp;
+          const alpha = y < 320 ? (y - 140) / 180 : y > 1650 ? (1850 - y) / 200 : 0.85;
+          em.el.setAttribute("cx", x.toFixed(1));
+          em.el.setAttribute("cy", y.toFixed(1));
+          em.el.setAttribute("opacity", clamp01(alpha).toFixed(3));
+        }
+
+        // 7. Bold Hindi Keywords ("लंकापति रावण" & "वध क्यों नहीं?")
+        if (t >= 0.85) {
+          const p1 = clamp01((t - 0.85) / 0.36);
+          const s1 = easeOutBack(p1);
+          kwRavana.setAttribute("opacity", clamp01(p1 * 2).toFixed(3));
+          kwRavana.setAttribute("transform", `translate(540 215) scale(${s1.toFixed(3)})`);
+        } else {
+          kwRavana.setAttribute("opacity", "0");
+        }
+
+        if (t >= 1.85) {
+          const p2 = clamp01((t - 1.85) / 0.38);
+          const s2 = easeOutBack(p2);
+          const slideY = lerp(1795, 1745, easeOutCubic(p2));
+          kwWhyNot.setAttribute("opacity", clamp01(p2 * 2).toFixed(3));
+          kwWhyNot.setAttribute("transform", `translate(540 ${slideY.toFixed(1)}) scale(${s2.toFixed(3)})`);
+        } else {
+          kwWhyNot.setAttribute("opacity", "0");
+        }
+      }
+
+      // Live 5.0-Second Preview Loop
+      const CLIP_DURATION = 5.0;
+      let startTimestamp = performance.now();
+      let isExporting = false;
+
+      function animationLoop(now) {
+        if (!isExporting) {
+          const elapsedSec = ((now - startTimestamp) / 1000) % CLIP_DURATION;
+          renderFrameAtTime(elapsedSec);
+        }
+        requestAnimationFrame(animationLoop);
+      }
+
+      renderFrameAtTime(0);
+      requestAnimationFrame(animationLoop);
+
+      document.getElementById("replayBtn").addEventListener("click", () => {
+        startTimestamp = performance.now();
+        renderFrameAtTime(0);
+      });
+
+      // Direct 5.0s 9:16 Video Exporter
+      const downloadBtn = document.getElementById("downloadBtn");
+      const statusToast = document.getElementById("statusToast");
+
+      function showToast(msg) {
+        statusToast.textContent = msg;
+        statusToast.classList.add("visible");
+      }
+
+      function hideToast() {
+        statusToast.classList.remove("visible");
+      }
+
+      downloadBtn.addEventListener("click", async () => {
+        if (downloadBtn.disabled) return;
+        downloadBtn.disabled = true;
+        isExporting = true;
+
+        try {
+          const svgEl = document.getElementById("scene");
+          const width = 1080;
+          const height = 1920;
+          const fps = 30;
+          const totalFrames = Math.round(CLIP_DURATION * fps);
+
+          const canvas = document.createElement("canvas");
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+
+          const mimeCandidates = [
+            "video/mp4;codecs=avc1",
+            "video/mp4",
+            "video/webm;codecs=vp9",
+            "video/webm;codecs=vp8",
+            "video/webm"
+          ];
+          const chosenMime = mimeCandidates.find((m) => MediaRecorder.isTypeSupported(m)) || "";
+          const isMp4 = chosenMime.includes("mp4");
+          const fileExt = isMp4 ? "mp4" : "webm";
+
+          const stream = canvas.captureStream(fps);
+          const recorder = chosenMime
+            ? new MediaRecorder(stream, { mimeType: chosenMime, videoBitsPerSecond: 10_000_000 })
+            : new MediaRecorder(stream);
+
+          const chunks = [];
+          recorder.ondataavailable = (e) => {
+            if (e.data && e.data.size > 0) chunks.push(e.data);
+          };
+
+          const recordingDone = new Promise((resolve) => {
+            recorder.onstop = resolve;
+          });
+
+          function rasterizeCurrentSvgFrame() {
+            return new Promise((resolve) => {
+              const xml = new XMLSerializer().serializeToString(svgEl);
+              const svgBlob = new Blob([xml], { type: "image/svg+xml;charset=utf-8" });
+              const url = URL.createObjectURL(svgBlob);
+              const img = new Image();
+              img.onload = () => {
+                ctx.clearRect(0, 0, width, height);
+                ctx.drawImage(img, 0, 0, width, height);
+                URL.revokeObjectURL(url);
+                resolve();
+              };
+              img.onerror = () => {
+                URL.revokeObjectURL(url);
+                resolve();
+              };
+              img.src = url;
+            });
+          }
+
+          recorder.start();
+
+          for (let frame = 0; frame <= totalFrames; frame++) {
+            const simTime = (frame / totalFrames) * CLIP_DURATION;
+            const pct = Math.min(99, Math.round((frame / totalFrames) * 100));
+            showToast(`Rendering 5.0s Video... ${pct}%`);
+
+            renderFrameAtTime(simTime);
+            await rasterizeCurrentSvgFrame();
+            await new Promise((r) => setTimeout(r, 1000 / fps));
+          }
+
+          recorder.stop();
+          await recordingDone;
+
+          const videoBlob = new Blob(chunks, { type: chosenMime || "video/webm" });
+          const downloadUrl = URL.createObjectURL(videoBlob);
+          const a = document.createElement("a");
+          a.href = downloadUrl;
+          a.download = `parshuram_sentence_2.${fileExt}`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(() => URL.revokeObjectURL(downloadUrl), 4000);
+
+          showToast(`Saved parshuram_sentence_2.${fileExt}!`);
+          setTimeout(hideToast, 2800);
+        } catch (err) {
+          console.error(err);
+          showToast("Export error — please retry");
+          setTimeout(hideToast, 2800);
+        } finally {
+          isExporting = false;
+          startTimestamp = performance.now();
+          downloadBtn.disabled = false;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

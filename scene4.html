@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parshuram vs Ravana - Sentence 4 (5s 9:16 SVG)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #06030a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+    }
+
+    /* 9:16 Vertical Stage Container */
+    .stage-wrapper {
+      position: relative;
+      height: 100vh;
+      aspect-ratio: 9 / 16;
+      max-width: 100vw;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.96);
+      background: #0d061a;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    svg#scene {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Bottom Controls Bar */
+    .controls-bar {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      gap: 10px;
+      z-index: 20;
+    }
+
+    .action-btn {
+      background: rgba(18, 10, 32, 0.88);
+      color: #ffd875;
+      border: 1.5px solid rgba(255, 200, 80, 0.6);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: transform 0.18s ease, background 0.18s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .action-btn:hover:not(:disabled) {
+      background: rgba(185, 42, 14, 0.95);
+      border-color: #ffe89e;
+      transform: scale(1.05);
+    }
+
+    .action-btn:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, #d43d0b, #7d1305);
+      color: #fff7d6;
+      border-color: #ffd35c;
+    }
+
+    .status-toast {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(18, 8, 28, 0.94);
+      color: #ffe28a;
+      border: 1.5px solid #ffcf54;
+      padding: 9px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      z-index: 30;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    }
+
+    .status-toast.visible {
+      opacity: 1;
+    }
+  </style>
+  <style>.controls-bar{display:none !important}</style>
+</head>
+<body>
+  <div class="stage-wrapper" id="stage">
+    <div class="status-toast" id="statusToast">Rendering 5.0s 9:16 Video...</div>
+
+    <svg id="scene" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Rich Deep-Indigo & Sacred Crimson Parchment Backdrop -->
+        <radialGradient id="indigoParchmentBg" cx="50%" cy="48%" r="74%">
+          <stop offset="0%" stop-color="#361447" />
+          <stop offset="38%" stop-color="#1d0b2e" />
+          <stop offset="76%" stop-color="#10051c" />
+          <stop offset="100%" stop-color="#06020d" />
+        </radialGradient>
+
+        <!-- Saffron-Gold Burst Aura for Each Seal -->
+        <radialGradient id="sealBurstGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96" />
+          <stop offset="32%" stop-color="#ffd54f" stop-opacity="0.68" />
+          <stop offset="70%" stop-color="#ff6d00" stop-opacity="0.24" />
+          <stop offset="100%" stop-color="#1d0b2e" stop-opacity="0" />
+        </radialGradient>
+
+        <!-- Ornate Gold Metal Gradient -->
+        <linearGradient id="goldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#fff8c7" />
+          <stop offset="35%" stop-color="#ffd043" />
+          <stop offset="75%" stop-color="#e08d12" />
+          <stop offset="100%" stop-color="#8c4503" />
+        </linearGradient>
+
+        <!-- Dark Bronze Yantra Inner Plate -->
+        <linearGradient id="yantraPlateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#3b120e" />
+          <stop offset="50%" stop-color="#1f070a" />
+          <stop offset="100%" stop-color="#0f0306" />
+        </linearGradient>
+
+        <!-- Bold Hindi Keyword Fill -->
+        <linearGradient id="keywordGoldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="32%" stop-color="#ffe785" />
+          <stop offset="75%" stop-color="#ff9900" />
+          <stop offset="100%" stop-color="#d43500" />
+        </linearGradient>
+
+        <!-- Intense Golden Glow Filter -->
+        <filter id="intenseGoldGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="12" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <!-- Soft Glow Filter -->
+        <filter id="softGoldGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="7" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <!-- Reusable Hexagonal Vedic Yantra Frame -->
+        <g id="hex-yantra-base">
+          <!-- Outer Hexagonal Gold Frame -->
+          <polygon points="0,-165 143,-82.5 143,82.5 0,165 -143,82.5 -143,-82.5" fill="url(#yantraPlateGrad)" stroke="url(#goldMetal)" stroke-width="10" stroke-linejoin="round" />
+          <!-- Inner Rotated Star Hexagon (Shatkona) -->
+          <polygon points="0,-135 117,67.5 -117,67.5" fill="none" stroke="url(#goldMetal)" stroke-width="4.5" stroke-linejoin="round" />
+          <polygon points="0,135 117,-67.5 -117,-67.5" fill="none" stroke="url(#goldMetal)" stroke-width="4.5" stroke-linejoin="round" />
+          <!-- Corner Jewels -->
+          <circle cx="0" cy="-165" r="8" fill="#fff2a6" stroke="#240705" stroke-width="2.5" />
+          <circle cx="143" cy="-82.5" r="8" fill="#fff2a6" stroke="#240705" stroke-width="2.5" />
+          <circle cx="143" cy="82.5" r="8" fill="#fff2a6" stroke="#240705" stroke-width="2.5" />
+          <circle cx="0" cy="165" r="8" fill="#fff2a6" stroke="#240705" stroke-width="2.5" />
+          <circle cx="-143" cy="82.5" r="8" fill="#fff2a6" stroke="#240705" stroke-width="2.5" />
+          <circle cx="-143" cy="-82.5" r="8" fill="#fff2a6" stroke="#240705" stroke-width="2.5" />
+        </g>
+      </defs>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 1: DEEP INDIGO PARCHMENT & COSMIC MANDALA BACKDROP  -->
+      <!-- ========================================================= -->
+      <rect width="1080" height="1920" fill="url(#indigoParchmentBg)" />
+
+      <!-- Subtle Cosmic Grid & Sacred Mandala Geometry -->
+      <g id="bg-cosmos" opacity="0.28">
+        <circle cx="540" cy="960" r="520" fill="none" stroke="url(#goldMetal)" stroke-width="2.5" stroke-dasharray="14 10" />
+        <circle cx="540" cy="960" r="390" fill="none" stroke="#ff9d2e" stroke-width="2" />
+        <line x1="540" y1="180" x2="540" y2="1740" stroke="url(#goldMetal)" stroke-width="3" stroke-dasharray="12 12" />
+      </g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 2: MAIN CAMERA RIG & 3 VEDIC YANTRA SEALS           -->
+      <!-- ========================================================= -->
+      <g id="camera-rig">
+        <!-- Vertical Energy Conduit Connecting the 3 Seals -->
+        <line id="conduit-1-2" x1="540" y1="530" x2="540" y2="960" stroke="url(#goldMetal)" stroke-width="8" stroke-linecap="round" filter="url(#intenseGoldGlow)" opacity="0" />
+        <line id="conduit-2-3" x1="540" y1="960" x2="540" y2="1390" stroke="url(#goldMetal)" stroke-width="8" stroke-linecap="round" filter="url(#intenseGoldGlow)" opacity="0" />
+
+        <!-- ======================================================= -->
+        <!-- SEAL 1 (TOP - Y: 530): REASON 1 (BRAHMIN / PARASHU)     -->
+        <!-- ======================================================= -->
+        <g id="seal-group-1" transform="translate(540, 530)">
+          <!-- Expanding Light Rays & Aura Burst -->
+          <circle id="burst-1" cx="0" cy="0" r="240" fill="url(#sealBurstGrad)" opacity="0" />
+          <circle id="shock-1" cx="0" cy="0" r="140" fill="none" stroke="#fff2a6" stroke-width="8" opacity="0" />
+
+          <!-- Hexagonal Yantra Base -->
+          <use href="#hex-yantra-base" />
+
+          <!-- Rotating Inner Geometric Gear Ring -->
+          <g id="gear-1">
+            <circle cx="0" cy="0" r="88" fill="none" stroke="#ffd25a" stroke-width="4" stroke-dasharray="16 8" />
+            <circle cx="0" cy="0" r="66" fill="#26080b" stroke="url(#goldMetal)" stroke-width="3.5" />
+          </g>
+
+          <!-- Emblem 1: Miniature Golden Parashu Axe & Numeral "१" -->
+          <g filter="url(#softGoldGlow)">
+            <line x1="-26" y1="32" x2="28" y2="-32" stroke="url(#goldMetal)" stroke-width="7" stroke-linecap="round" />
+            <path d="M 8 -14 C 24 -34, 46 -32, 54 -16 C 46 2, 28 10, 12 -6 Z" fill="#fff6c2" stroke="#1f0604" stroke-width="2.5" />
+            <text x="-22" y="-12" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="38" fill="#ffd86b">१</text>
+          </g>
+        </g>
+
+        <!-- ======================================================= -->
+        <!-- SEAL 2 (CENTER - Y: 960): REASON 2 (SHIVA TRISHUL)      -->
+        <!-- ======================================================= -->
+        <g id="seal-group-2" transform="translate(540, 960)">
+          <circle id="burst-2" cx="0" cy="0" r="240" fill="url(#sealBurstGrad)" opacity="0" />
+          <circle id="shock-2" cx="0" cy="0" r="140" fill="none" stroke="#fff2a6" stroke-width="8" opacity="0" />
+
+          <use href="#hex-yantra-base" />
+
+          <g id="gear-2">
+            <circle cx="0" cy="0" r="88" fill="none" stroke="#ffd25a" stroke-width="4" stroke-dasharray="16 8" />
+            <circle cx="0" cy="0" r="66" fill="#26080b" stroke="url(#goldMetal)" stroke-width="3.5" />
+          </g>
+
+          <!-- Emblem 2: Sacred Golden Trishul & Numeral "२" -->
+          <g filter="url(#softGoldGlow)">
+            <line x1="0" y1="42" x2="0" y2="-44" stroke="url(#goldMetal)" stroke-width="6" stroke-linecap="round" />
+            <path d="M -22 -14 C -22 -34, -12 -42, -12 -42 C -12 -26, -6 -18, 0 -18 C 6 -18, 12 -26, 12 -42 C 12 -42, 22 -34, 22 -14 C 22 -2, 10 4, 0 4 C -10 4, -22 -2, -22 -14 Z" fill="none" stroke="#fff6c2" stroke-width="5" stroke-linecap="round" />
+            <text x="-34" y="28" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="38" fill="#ffd86b">२</text>
+          </g>
+        </g>
+
+        <!-- ======================================================= -->
+        <!-- SEAL 3 (BOTTOM - Y: 1390): REASON 3 (COSMIC CHAKRA/BOW) -->
+        <!-- ======================================================= -->
+        <g id="seal-group-3" transform="translate(540, 1390)">
+          <circle id="burst-3" cx="0" cy="0" r="240" fill="url(#sealBurstGrad)" opacity="0" />
+          <circle id="shock-3" cx="0" cy="0" r="140" fill="none" stroke="#fff2a6" stroke-width="8" opacity="0" />
+
+          <use href="#hex-yantra-base" />
+
+          <g id="gear-3">
+            <circle cx="0" cy="0" r="88" fill="none" stroke="#ffd25a" stroke-width="4" stroke-dasharray="16 8" />
+            <circle cx="0" cy="0" r="66" fill="#26080b" stroke="url(#goldMetal)" stroke-width="3.5" />
+          </g>
+
+          <!-- Emblem 3: Divine Bow-Arrow / Cosmic Destiny & Numeral "३" -->
+          <g filter="url(#softGoldGlow)">
+            <path d="M -18 -38 C 18 -20, 18 20, -18 38" fill="none" stroke="url(#goldMetal)" stroke-width="6" stroke-linecap="round" />
+            <line x1="-18" y1="-38" x2="-18" y2="38" stroke="#fff6c2" stroke-width="2.5" />
+            <line x1="-26" y1="0" x2="34" y2="0" stroke="#fff6c2" stroke-width="5" stroke-linecap="round" />
+            <polygon points="38,0 24,-8 24,8" fill="#fff6c2" />
+            <text x="-38" y="-12" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="38" fill="#ffd86b">३</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 3: RISING GOLDEN SPARK PARTICLES                    -->
+      <!-- ========================================================= -->
+      <g id="embers-layer"></g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 4: BOLD HINDI KEYWORDS (NO FULL CAPTIONS)           -->
+      <!-- ========================================================= -->
+      <g id="kinetic-keywords" pointer-events="none" text-anchor="middle">
+        <!-- Keyword 1: "तीन बड़े कारण" -->
+        <g id="kw-three-reasons" transform="translate(540, 215)" opacity="0">
+          <line x1="-325" y1="0" x2="-250" y2="0" stroke="url(#goldMetal)" stroke-width="5" stroke-linecap="round" />
+          <line x1="250" y1="0" x2="325" y2="0" stroke="url(#goldMetal)" stroke-width="5" stroke-linecap="round" />
+          <text x="0" y="26" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="78" letter-spacing="2" stroke="#160521" stroke-width="18" stroke-linejoin="round" paint-order="stroke" fill="url(#keywordGoldGrad)" filter="url(#softGoldGlow)">तीन बड़े कारण</text>
+        </g>
+
+        <!-- Keyword 2: "चौंकाने वाले रहस्य" -->
+        <g id="kw-shocking-secrets" transform="translate(540, 1745)" opacity="0">
+          <rect x="-320" y="-66" width="640" height="98" rx="20" fill="#140521" fill-opacity="0.9" stroke="url(#goldMetal)" stroke-width="4.5" />
+          <text x="0" y="8" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="68" letter-spacing="1.5" stroke="#0d0317" stroke-width="14" stroke-linejoin="round" paint-order="stroke" fill="url(#keywordGoldGrad)">चौंकाने वाले रहस्य</text>
+        </g>
+      </g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 5: ORNATE CRIMSON & GOLD MITHILA BORDER             -->
+      <!-- ========================================================= -->
+      <g pointer-events="none">
+        <rect x="18" y="18" width="1044" height="1884" rx="28" fill="none" stroke="#240506" stroke-width="24" />
+        <rect x="18" y="18" width="1044" height="1884" rx="28" fill="none" stroke="url(#goldMetal)" stroke-width="7" />
+        <rect x="34" y="34" width="1012" height="1852" rx="20" fill="none" stroke="#ffcf54" stroke-width="2.5" stroke-dasharray="16 10" />
+        <g fill="url(#goldMetal)" stroke="#240506" stroke-width="3">
+          <circle cx="44" cy="44" r="18" />
+          <circle cx="1036" cy="44" r="18" />
+          <circle cx="44" cy="1876" r="18" />
+          <circle cx="1036" cy="1876" r="18" />
+        </g>
+      </g>
+    </svg>
+
+    <div class="controls-bar" id="controlsBar">
+      <button class="action-btn" id="replayBtn" title="Replay 5s Animation">↻ Replay</button>
+      <button class="action-btn download-btn" id="downloadBtn" title="Download 5.0s 9:16 Video">⬇ Download MP4</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const svgNS = "http://www.w3.org/2000/svg";
+
+      const cameraRig = document.getElementById("camera-rig");
+      const bgCosmos = document.getElementById("bg-cosmos");
+
+      const conduit12 = document.getElementById("conduit-1-2");
+      const conduit23 = document.getElementById("conduit-2-3");
+
+      const seals = [
+        {
+          group: document.getElementById("seal-group-1"),
+          gear: document.getElementById("gear-1"),
+          burst: document.getElementById("burst-1"),
+          shock: document.getElementById("shock-1"),
+          y: 530,
+          unlockTime: 0.45,
+          gearDir: 1
+        },
+        {
+          group: document.getElementById("seal-group-2"),
+          gear: document.getElementById("gear-2"),
+          burst: document.getElementById("burst-2"),
+          shock: document.getElementById("shock-2"),
+          y: 960,
+          unlockTime: 1.35,
+          gearDir: -1
+        },
+        {
+          group: document.getElementById("seal-group-3"),
+          gear: document.getElementById("gear-3"),
+          burst: document.getElementById("burst-3"),
+          shock: document.getElementById("shock-3"),
+          y: 1390,
+          unlockTime: 2.25,
+          gearDir: 1
+        }
+      ];
+
+      const embersLayer = document.getElementById("embers-layer");
+      const kwThreeReasons = document.getElementById("kw-three-reasons");
+      const kwShockingSecrets = document.getElementById("kw-shocking-secrets");
+
+      // Build 34 Floating Golden Spark Particles
+      const embers = [];
+      for (let i = 0; i < 34; i++) {
+        const circle = document.createElementNS(svgNS, "circle");
+        const r = 3 + (i % 5) * 1.3;
+        circle.setAttribute("r", r.toFixed(1));
+        circle.setAttribute("fill", i % 2 === 0 ? "#ffe680" : "#ff8c1a");
+        circle.setAttribute("filter", "url(#softGoldGlow)");
+        embersLayer.appendChild(circle);
+
+        embers.push({
+          el: circle,
+          baseX: 85 + ((i * 97) % 910),
+          startY: 1850 - ((i * 131) % 720),
+          speedY: 205 + (i % 7) * 40,
+          wobbleAmp: 16 + (i % 4) * 8,
+          wobbleFreq: 2.1 + (i % 5) * 0.45,
+          phase: i * 0.65
+        });
+      }
+
+      // Easing Helpers
+      function clamp01(v) {
+        return Math.max(0, Math.min(1, v));
+      }
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+      function easeOutBack(t) {
+        const c1 = 1.70158;
+        const c3 = c1 + 1;
+        return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+      }
+      function lerp(a, b, t) {
+        return a + (b - a) * t;
+      }
+
+      // Master 5.0-Second Deterministic Render Function
+      function renderFrameAtTime(t) {
+        // 1. Subtle Cosmic Backdrop Rotation & Camera Push-In
+        bgCosmos.setAttribute("transform", `rotate(${((t * 10) % 360).toFixed(2)} 540 960)`);
+
+        const camZoom = lerp(0.98, 1.07, easeOutCubic(clamp01(t / 5.0)));
+        cameraRig.setAttribute(
+          "transform",
+          `translate(540 960) scale(${camZoom.toFixed(4)}) translate(-540 -960)`
+        );
+
+        // 2. Staggered Pop-In & Unlocking of the 3 Hexagonal Vedic Seals
+        for (let i = 0; i < seals.length; i++) {
+          const s = seals[i];
+          const dt = t - s.unlockTime;
+
+          // Continuous inner gear rotation
+          const gearDeg = ((t * 48 * s.gearDir) % 360).toFixed(2);
+          s.gear.setAttribute("transform", `rotate(${gearDeg})`);
+
+          if (dt < 0) {
+            s.group.setAttribute("opacity", "0");
+            s.burst.setAttribute("opacity", "0");
+            s.shock.setAttribute("opacity", "0");
+          } else {
+            const popProg = clamp01(dt / 0.45);
+            const popScale = easeOutBack(popProg);
+            const idlePulse = dt > 0.45 ? 1 + 0.03 * Math.sin((dt - 0.45) * 4.5 + i) : 1;
+            const totalScale = popScale * idlePulse;
+
+            s.group.setAttribute("opacity", clamp01(popProg * 2.2).toFixed(3));
+            s.group.setAttribute(
+              "transform",
+              `translate(540 ${s.y}) scale(${totalScale.toFixed(4)})`
+            );
+
+            // Saffron Aura Burst Glow
+            const auraAlpha = dt < 0.6 ? Math.sin((dt / 0.6) * Math.PI) * 0.95 : 0.45 + 0.18 * Math.sin(dt * 5 + i);
+            s.burst.setAttribute("opacity", clamp01(auraAlpha).toFixed(3));
+
+            // Expanding Shockwave Ring on Unlock
+            if (dt <= 0.95) {
+              const sw = dt / 0.95;
+              const swScale = lerp(0.6, 1.9, easeOutCubic(sw));
+              s.shock.setAttribute("opacity", (1 - sw).toFixed(3));
+              s.shock.setAttribute("transform", `scale(${swScale.toFixed(3)})`);
+            } else {
+              s.shock.setAttribute("opacity", "0");
+            }
+          }
+        }
+
+        // 3. Energy Conduit Beams Connecting Unlocked Seals
+        const c12 = clamp01((t - 1.15) / 0.35);
+        const c23 = clamp01((t - 2.05) / 0.35);
+        conduit12.setAttribute("opacity", (c12 * (0.65 + 0.25 * Math.sin(t * 7))).toFixed(3));
+        conduit23.setAttribute("opacity", (c23 * (0.65 + 0.25 * Math.cos(t * 7))).toFixed(3));
+
+        // 4. Rising Golden Spark Particles
+        for (let i = 0; i < embers.length; i++) {
+          const em = embers[i];
+          const travel = (t * em.speedY) % 1650;
+          let y = em.startY - travel;
+          if (y < 140) y += 1650;
+          const x = em.baseX + Math.sin(t * em.wobbleFreq + em.phase) * em.wobbleAmp;
+          const alpha = y < 320 ? (y - 140) / 180 : y > 1650 ? (1850 - y) / 200 : 0.85;
+          em.el.setAttribute("cx", x.toFixed(1));
+          em.el.setAttribute("cy", y.toFixed(1));
+          em.el.setAttribute("opacity", clamp01(alpha).toFixed(3));
+        }
+
+        // 5. Bold Hindi Keywords ("तीन बड़े कारण" & "चौंकाने वाले रहस्य")
+        if (t >= 0.65) {
+          const p1 = clamp01((t - 0.65) / 0.36);
+          const s1 = easeOutBack(p1);
+          kwThreeReasons.setAttribute("opacity", clamp01(p1 * 2).toFixed(3));
+          kwThreeReasons.setAttribute("transform", `translate(540 215) scale(${s1.toFixed(3)})`);
+        } else {
+          kwThreeReasons.setAttribute("opacity", "0");
+        }
+
+        if (t >= 2.45) {
+          const p2 = clamp01((t - 2.45) / 0.38);
+          const s2 = easeOutBack(p2);
+          const slideY = lerp(1795, 1745, easeOutCubic(p2));
+          kwShockingSecrets.setAttribute("opacity", clamp01(p2 * 2).toFixed(3));
+          kwShockingSecrets.setAttribute("transform", `translate(540 ${slideY.toFixed(1)}) scale(${s2.toFixed(3)})`);
+        } else {
+          kwShockingSecrets.setAttribute("opacity", "0");
+        }
+      }
+
+      // Live 5.0-Second Preview Loop
+      const CLIP_DURATION = 5.0;
+      let startTimestamp = performance.now();
+      let isExporting = false;
+
+      function animationLoop(now) {
+        if (!isExporting) {
+          const elapsedSec = ((now - startTimestamp) / 1000) % CLIP_DURATION;
+          renderFrameAtTime(elapsedSec);
+        }
+        requestAnimationFrame(animationLoop);
+      }
+
+      renderFrameAtTime(0);
+      requestAnimationFrame(animationLoop);
+
+      document.getElementById("replayBtn").addEventListener("click", () => {
+        startTimestamp = performance.now();
+        renderFrameAtTime(0);
+      });
+
+      // Direct 5.0s 9:16 Video Exporter
+      const downloadBtn = document.getElementById("downloadBtn");
+      const statusToast = document.getElementById("statusToast");
+
+      function showToast(msg) {
+        statusToast.textContent = msg;
+        statusToast.classList.add("visible");
+      }
+
+      function hideToast() {
+        statusToast.classList.remove("visible");
+      }
+
+      downloadBtn.addEventListener("click", async () => {
+        if (downloadBtn.disabled) return;
+        downloadBtn.disabled = true;
+        isExporting = true;
+
+        try {
+          const svgEl = document.getElementById("scene");
+          const width = 1080;
+          const height = 1920;
+          const fps = 30;
+          const totalFrames = Math.round(CLIP_DURATION * fps);
+
+          const canvas = document.createElement("canvas");
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+
+          const mimeCandidates = [
+            "video/mp4;codecs=avc1",
+            "video/mp4",
+            "video/webm;codecs=vp9",
+            "video/webm;codecs=vp8",
+            "video/webm"
+          ];
+          const chosenMime = mimeCandidates.find((m) => MediaRecorder.isTypeSupported(m)) || "";
+          const isMp4 = chosenMime.includes("mp4");
+          const fileExt = isMp4 ? "mp4" : "webm";
+
+          const stream = canvas.captureStream(fps);
+          const recorder = chosenMime
+            ? new MediaRecorder(stream, { mimeType: chosenMime, videoBitsPerSecond: 10_000_000 })
+            : new MediaRecorder(stream);
+
+          const chunks = [];
+          recorder.ondataavailable = (e) => {
+            if (e.data && e.data.size > 0) chunks.push(e.data);
+          };
+
+          const recordingDone = new Promise((resolve) => {
+            recorder.onstop = resolve;
+          });
+
+          function rasterizeCurrentSvgFrame() {
+            return new Promise((resolve) => {
+              const xml = new XMLSerializer().serializeToString(svgEl);
+              const svgBlob = new Blob([xml], { type: "image/svg+xml;charset=utf-8" });
+              const url = URL.createObjectURL(svgBlob);
+              const img = new Image();
+              img.onload = () => {
+                ctx.clearRect(0, 0, width, height);
+                ctx.drawImage(img, 0, 0, width, height);
+                URL.revokeObjectURL(url);
+                resolve();
+              };
+              img.onerror = () => {
+                URL.revokeObjectURL(url);
+                resolve();
+              };
+              img.src = url;
+            });
+          }
+
+          recorder.start();
+
+          for (let frame = 0; frame <= totalFrames; frame++) {
+            const simTime = (frame / totalFrames) * CLIP_DURATION;
+            const pct = Math.min(99, Math.round((frame / totalFrames) * 100));
+            showToast(`Rendering 5.0s Video... ${pct}%`);
+
+            renderFrameAtTime(simTime);
+            await rasterizeCurrentSvgFrame();
+            await new Promise((r) => setTimeout(r, 1000 / fps));
+          }
+
+          recorder.stop();
+          await recordingDone;
+
+          const videoBlob = new Blob(chunks, { type: chosenMime || "video/webm" });
+          const downloadUrl = URL.createObjectURL(videoBlob);
+          const a = document.createElement("a");
+          a.href = downloadUrl;
+          a.download = `parshuram_sentence_4.${fileExt}`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(() => URL.revokeObjectURL(downloadUrl), 4000);
+
+          showToast(`Saved parshuram_sentence_4.${fileExt}!`);
+          setTimeout(hideToast, 2800);
+        } catch (err) {
+          console.error(err);
+          showToast("Export error — please retry");
+          setTimeout(hideToast, 2800);
+        } finally {
+          isExporting = false;
+          startTimestamp = performance.now();
+          downloadBtn.disabled = false;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

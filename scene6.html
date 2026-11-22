@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parshuram vs Ravana - Sentence 6 (5s 9:16 SVG)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #040612;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+    }
+
+    /* 9:16 Vertical Full-Bleed Stage Container (Zero UI Buttons) */
+    .stage-wrapper {
+      position: relative;
+      height: 100vh;
+      aspect-ratio: 9 / 16;
+      max-width: 100vw;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.96);
+      background: #080c24;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    svg#scene {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage-wrapper" id="stage">
+    <svg id="scene" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Himalayan Cosmic Indigo & Silver Twilight Sky -->
+        <radialGradient id="kailashSkyGrad" cx="50%" cy="32%" r="74%">
+          <stop offset="0%" stop-color="#2c4c8c" />
+          <stop offset="38%" stop-color="#14234a" />
+          <stop offset="76%" stop-color="#091026" />
+          <stop offset="100%" stop-color="#030612" />
+        </radialGradient>
+
+        <!-- Lord Shiva Divine Halo -->
+        <radialGradient id="shivaDivineHalo" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+          <stop offset="32%" stop-color="#a6e3ff" stop-opacity="0.62" />
+          <stop offset="68%" stop-color="#ffaa2b" stop-opacity="0.22" />
+          <stop offset="100%" stop-color="#091026" stop-opacity="0" />
+        </radialGradient>
+
+        <!-- Mount Kailash Snow Peak Gradient -->
+        <linearGradient id="kailashSnowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="48%" stop-color="#bdd9f5" />
+          <stop offset="85%" stop-color="#3c5e8a" />
+          <stop offset="100%" stop-color="#132240" />
+        </linearGradient>
+
+        <!-- Lord Shiva Serene Blue Skin Tone -->
+        <linearGradient id="shivaBlueSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#9ad4f5" />
+          <stop offset="55%" stop-color="#5da3d4" />
+          <stop offset="100%" stop-color="#2e6796" />
+        </linearGradient>
+
+        <!-- Tiger Skin Robe Gradient -->
+        <linearGradient id="tigerSkinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ff9d2e" />
+          <stop offset="60%" stop-color="#c95b0c" />
+          <stop offset="100%" stop-color="#6e2904" />
+        </linearGradient>
+
+        <!-- Parshuram Skin Tone (Consistent with Previous Scenes) -->
+        <linearGradient id="parshuramSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f7ba80" />
+          <stop offset="55%" stop-color="#e38d4c" />
+          <stop offset="100%" stop-color="#b35a24" />
+        </linearGradient>
+
+        <!-- Ravana Warm Bronze Skin Tone (Consistent with Reference) -->
+        <linearGradient id="ravanaSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#b5774b" />
+          <stop offset="55%" stop-color="#8f542d" />
+          <stop offset="100%" stop-color="#5e3216" />
+        </linearGradient>
+
+        <!-- Saffron Cloth (Parshuram) -->
+        <linearGradient id="saffronCloth" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ff7a17" />
+          <stop offset="55%" stop-color="#de4508" />
+          <stop offset="100%" stop-color="#8f1f03" />
+        </linearGradient>
+
+        <!-- Royal Crimson Cloth (Ravana) -->
+        <linearGradient id="royalCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#d92626" />
+          <stop offset="55%" stop-color="#9e1116" />
+          <stop offset="100%" stop-color="#57060a" />
+        </linearGradient>
+
+        <!-- Radiant Gold Metal -->
+        <linearGradient id="goldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#fff8c7" />
+          <stop offset="35%" stop-color="#ffd043" />
+          <stop offset="75%" stop-color="#e08d12" />
+          <stop offset="100%" stop-color="#8c4503" />
+        </linearGradient>
+
+        <!-- Bold Hindi Keyword Fill -->
+        <linearGradient id="keywordGoldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="32%" stop-color="#ffe785" />
+          <stop offset="75%" stop-color="#ff9900" />
+          <stop offset="100%" stop-color="#d43500" />
+        </linearGradient>
+
+        <!-- Intense Golden Glow Filter -->
+        <filter id="intenseGoldGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="12" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <!-- Soft Glow Filter -->
+        <filter id="softGoldGlow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="7" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <!-- Reusable Ravana Side Head (Devotional Kneeling Pose) -->
+        <g id="ravana-devotee-head">
+          <path d="M -18 -18 L -14 -42 L 0 -54 L 14 -42 L 18 -18 Z" fill="url(#goldMetal)" stroke="#140703" stroke-width="2.5" stroke-linejoin="round" />
+          <path d="M -20 -18 Q 0 -23 20 -18 L 19 -12 Q 0 -16 -19 -12 Z" fill="url(#goldMetal)" stroke="#140703" stroke-width="2" />
+          <path d="M -18 -12 L 18 -12 L 16 15 C 16 25, 8 30, 0 30 C -8 30, -16 25, -16 15 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="2.5" />
+          <!-- Tripundra Tilak -->
+          <line x1="-9" y1="-6" x2="9" y2="-6" stroke="#ffffff" stroke-width="1.8" />
+          <line x1="-8" y1="-2" x2="8" y2="-2" stroke="#ffffff" stroke-width="1.8" />
+          <circle cx="0" cy="-4" r="2" fill="#d91e18" />
+          <!-- Bowed Devout Eyes & Mustache -->
+          <path d="M -12 5 Q -7 9 -2 5" fill="none" stroke="#140703" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M 2 5 Q 7 9 12 5" fill="none" stroke="#140703" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M 0 15 C -6 13, -14 16, -16 21 C -11 19, -5 18, 0 17 C 5 18, 11 19, 16 21 C 14 16, 6 13, 0 15 Z" fill="#140703" />
+        </g>
+      </defs>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 1: HIMALAYAN NIGHT SKY & STARLIGHT                  -->
+      <!-- ========================================================= -->
+      <rect width="1080" height="1920" fill="url(#kailashSkyGrad)" />
+      <g id="stars-layer"></g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 2: MAIN CAMERA RIG                                  -->
+      <!-- ========================================================= -->
+      <g id="camera-rig">
+        <!-- Lord Shiva Divine Halo & Rotating Sacred Mandala -->
+        <circle id="shiva-halo" cx="540" cy="540" r="460" fill="url(#shivaDivineHalo)" />
+        <g id="shiva-mandala" opacity="0.45">
+          <circle cx="540" cy="540" r="360" fill="none" stroke="url(#goldMetal)" stroke-width="3" stroke-dasharray="16 10" />
+          <circle cx="540" cy="540" r="290" fill="none" stroke="#a6e3ff" stroke-width="2" />
+          <polygon points="540,210 825,705 255,705" fill="none" stroke="#ffd25a" stroke-width="2" />
+          <polygon points="540,870 825,375 255,375" fill="none" stroke="#ffd25a" stroke-width="2" />
+        </g>
+
+        <!-- MOUNT KAILASH SNOW-CAPPED PEAKS -->
+        <g id="mount-kailash">
+          <!-- Distant Flanking Peaks -->
+          <polygon points="0,1240 240,860 520,1240" fill="#1c3563" stroke="#0b152b" stroke-width="4" />
+          <polygon points="560,1240 840,850 1080,1240" fill="#1c3563" stroke="#0b152b" stroke-width="4" />
+          <!-- Central Sacred Peak of Kailash -->
+          <polygon points="150,1260 540,730 930,1260" fill="url(#kailashSnowGrad)" stroke="#0f1d38" stroke-width="5" />
+          <!-- Snow Ridge Highlights -->
+          <polygon points="540,730 430,890 495,865 540,925 585,860 650,890" fill="#ffffff" opacity="0.9" />
+          <!-- Sacred Foothill Platform for Both Disciples -->
+          <path d="M 0 1230 Q 540 1160 1080 1230 L 1080 1920 L 0 1920 Z" fill="#0b132b" />
+          <path d="M 40 1580 Q 540 1515 1040 1580 L 1040 1920 L 40 1920 Z" fill="#060a1a" />
+        </g>
+
+        <!-- ======================================================= -->
+        <!-- TOP CENTER: LORD SHIVA MEDITATING IN PADMASANA          -->
+        <!-- ======================================================= -->
+        <g id="lord-shiva-fig" transform="translate(540, 565)">
+          <!-- Radiant Golden Trishul & Damaru Beside Shiva -->
+          <g transform="translate(185, -35)" filter="url(#softGoldGlow)">
+            <line x1="0" y1="220" x2="0" y2="-210" stroke="url(#goldMetal)" stroke-width="9" stroke-linecap="round" />
+            <!-- Trishul Prongs -->
+            <path d="M -38 -145 C -38 -185, -22 -200, -22 -200 C -22 -170, -10 -155, 0 -155 C 10 -155, 22 -170, 22 -200 C 22 -200, 38 -185, 38 -145 C 38 -122, 16 -110, 0 -110 C -16 -110, -38 -122, -38 -145 Z" fill="none" stroke="url(#goldMetal)" stroke-width="8" stroke-linecap="round" />
+            <line x1="0" y1="-155" x2="0" y2="-232" stroke="#fff7c2" stroke-width="8" stroke-linecap="round" />
+            <!-- Damaru Drum -->
+            <polygon points="-24,-85 24,-65 24,-85 -24,-65" fill="url(#saffronCloth)" stroke="url(#goldMetal)" stroke-width="3" />
+          </g>
+
+          <!-- Flowing Dark Jata Hair Locks -->
+          <path d="M -68 -135 C -125 -85, -135 5, -105 65 C -90 25, -75 -25, -52 -65 Z" fill="#0d1324" stroke="#050812" stroke-width="4" />
+          <path d="M 68 -135 C 125 -85, 135 5, 105 65 C 90 25, 75 -25, 52 -65 Z" fill="#0d1324" stroke="#050812" stroke-width="4" />
+
+          <!-- Crossed Legs in Padmasana (Lotus Posture) -->
+          <path d="M -145 145 C -165 110, -85 88, 0 105 C 85 88, 165 110, 145 145 C 125 182, -125 182, -145 145 Z" fill="url(#shivaBlueSkin)" stroke="#091529" stroke-width="5" />
+          <!-- Tiger Skin Waist Wrap -->
+          <path d="M -88 65 L 88 65 L 112 135 L -112 135 Z" fill="url(#tigerSkinGrad)" stroke="#091529" stroke-width="5" stroke-linejoin="round" />
+
+          <!-- Serene Muscular Torso -->
+          <path d="M -78 -72 C -30 -95, 30 -95, 78 -72 L 85 75 L -85 75 Z" fill="url(#shivaBlueSkin)" stroke="#091529" stroke-width="5" />
+          <!-- Sacred White Janeu & Rudraksha Malas -->
+          <path d="M -62 -72 C -18 5, 32 45, 75 72" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" />
+          <path d="M -42 -74 Q 0 -15 42 -74" fill="none" stroke="#5c2109" stroke-width="9" stroke-dasharray="6 6" stroke-linecap="round" />
+
+          <!-- Coiled Sacred Serpent Vasuki Around Neck -->
+          <path d="M -52 -78 Q 0 -62 52 -78" fill="none" stroke="#3c5e7a" stroke-width="11" stroke-linecap="round" />
+          <path d="M 52 -78 C 72 -85, 82 -105, 70 -118 C 60 -122, 54 -110, 62 -102" fill="none" stroke="#5a88ad" stroke-width="8" stroke-linecap="round" />
+
+          <!-- Arms Resting in Dhyana Mudra / Blessing -->
+          <path d="M -75 -58 C -115 -10, -105 55, -45 78 L -32 52 C -70 38, -75 -5, -52 -42 Z" fill="url(#shivaBlueSkin)" stroke="#091529" stroke-width="4.5" />
+          <path d="M 75 -58 C 115 -10, 105 55, 45 78 L 32 52 C 70 38, 75 -5, 52 -42 Z" fill="url(#shivaBlueSkin)" stroke="#091529" stroke-width="4.5" />
+          <!-- Glowing Blessing Palms -->
+          <circle id="shiva-left-palm" cx="-38" cy="65" r="18" fill="#fff6c2" filter="url(#intenseGoldGlow)" />
+          <circle id="shiva-right-palm" cx="38" cy="65" r="18" fill="#fff6c2" filter="url(#intenseGoldGlow)" />
+
+          <!-- Jata Mukuta Topknot & Glowing Crescent Moon -->
+          <path d="M -36 -185 C -44 -248, 44 -248, 36 -185 Z" fill="#0d1324" stroke="#050812" stroke-width="4.5" />
+          <path d="M 24 -218 C 44 -222, 56 -202, 46 -184 C 48 -198, 38 -210, 24 -218 Z" fill="#ffffff" filter="url(#softGoldGlow)" />
+
+          <!-- Serene Meditative Face -->
+          <path d="M -46 -152 C -46 -186, 46 -186, 46 -152 L 42 -92 C 42 -66, 20 -52, 0 -52 C -20 -52, -42 -66, -42 -92 Z" fill="url(#shivaBlueSkin)" stroke="#091529" stroke-width="4.5" />
+          <!-- Tripundra Tilak & Third Eye -->
+          <line x1="-22" y1="-150" x2="22" y2="-150" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" />
+          <line x1="-19" y1="-142" x2="19" y2="-142" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" />
+          <ellipse cx="0" cy="-146" rx="4" ry="8" fill="#ff5722" />
+          <!-- Calm Half-Closed Meditative Eyes & Gentle Smile -->
+          <path d="M -28 -124 Q -16 -116 -6 -124" fill="none" stroke="#091529" stroke-width="3.5" stroke-linecap="round" />
+          <path d="M 6 -124 Q 16 -116 28 -124" fill="none" stroke="#091529" stroke-width="3.5" stroke-linecap="round" />
+          <path d="M -14 -86 Q 0 -76 14 -86" fill="none" stroke="#091529" stroke-width="3.5" stroke-linecap="round" />
+        </g>
+
+        <!-- ======================================================= -->
+        <!-- GOLDEN GURU-SHISHYA ENERGY STREAMS (SHIVA -> DISCIPLES) -->
+        <!-- ======================================================= -->
+        <g id="guru-energy-streams" filter="url(#intenseGoldGlow)">
+          <!-- Base Soft Conduit Paths -->
+          <path d="M 502 630 C 375 790, 275 960, 255 1185" fill="none" stroke="#ffd24c" stroke-width="10" opacity="0.35" stroke-linecap="round" />
+          <path d="M 578 630 C 705 790, 805 960, 825 1185" fill="none" stroke="#ffd24c" stroke-width="10" opacity="0.35" stroke-linecap="round" />
+
+          <!-- Animated Flowing Golden Energy Streams (stroke-dashoffset) -->
+          <path id="energy-stream-left" d="M 502 630 C 375 790, 275 960, 255 1185" fill="none" stroke="#ffffff" stroke-width="7" stroke-dasharray="36 24" stroke-linecap="round" />
+          <path id="energy-stream-right" d="M 578 630 C 705 790, 805 960, 825 1185" fill="none" stroke="#ffffff" stroke-width="7" stroke-dasharray="36 24" stroke-linecap="round" />
+
+          <!-- Sacred Horizontal Harmony Bond Between Both Disciples -->
+          <line id="harmony-bond-line" x1="330" y1="1360" x2="750" y2="1360" stroke="url(#goldMetal)" stroke-width="6" stroke-dasharray="18 12" opacity="0" />
+        </g>
+
+        <!-- ======================================================= -->
+        <!-- BOTTOM LEFT: LORD PARSHURAM KNEELING IN REVERENCE       -->
+        <!-- ======================================================= -->
+        <g id="parshuram-kneeling" transform="translate(255, 1340)">
+          <!-- Parashu Battle-Axe Resting Reverently Beside Him -->
+          <g transform="translate(-115, 45) rotate(-14)">
+            <line x1="0" y1="175" x2="0" y2="-165" stroke="#1a0b05" stroke-width="16" stroke-linecap="round" />
+            <line x1="0" y1="175" x2="0" y2="-165" stroke="#7a3210" stroke-width="10" stroke-linecap="round" />
+            <path d="M 4 -145 C 65 -165, 95 -105, 72 -45 C 45 -68, 22 -72, 4 -62 Z" fill="url(#goldMetal)" stroke="#1a0b05" stroke-width="4.5" />
+          </g>
+
+          <!-- Kneeling Saffron Dhoti -->
+          <path d="M -78 45 L 78 45 L 105 225 L -95 225 Z" fill="url(#saffronCloth)" stroke="#1a0b05" stroke-width="5" stroke-linejoin="round" />
+          <line x1="-90" y1="208" x2="100" y2="208" stroke="url(#goldMetal)" stroke-width="9" />
+
+          <!-- Torso & Sacred Janeu -->
+          <path d="M -72 -115 C -25 -138, 25 -138, 72 -115 L 62 55 L -62 55 Z" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="5" />
+          <path d="M -52 -116 C -15 -42, 22 10, 56 50" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" />
+
+          <!-- Topknot Jata & Devout Head Bowed Slightly Upward Toward Shiva -->
+          <path d="M -24 -225 C -30 -272, 30 -272, 24 -225 Z" fill="#1c0d08" stroke="#0d0503" stroke-width="4" />
+          <path d="M -38 -195 C -38 -225, 38 -225, 38 -195 L 34 -132 C 34 -106, 16 -92, 0 -92 C -16 -92, -34 -106, -34 -132 Z" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="4.5" />
+          <!-- Beard & Reverent Closed Eyes -->
+          <path d="M -32 -145 C -32 -106, -16 -90, 0 -88 C 16 -90, 32 -106, 32 -145 C 22 -124, 10 -116, 0 -116 C -10 -116, -22 -124, -32 -145 Z" fill="#1c0d08" />
+          <path d="M -22 -166 Q -12 -160 -4 -166" fill="none" stroke="#140905" stroke-width="3.2" stroke-linecap="round" />
+          <path d="M 4 -166 Q 12 -160 22 -166" fill="none" stroke="#140905" stroke-width="3.2" stroke-linecap="round" />
+
+          <!-- Folded Hands in Namaste Mudra -->
+          <path d="M -68 -95 C -82 -45, -45 -18, 0 -22 L 0 -55 C -26 -55, -42 -72, -38 -95 Z" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="4.5" />
+          <path d="M 68 -95 C 82 -45, 45 -18, 0 -22 L 0 -55 C 26 -55, 42 -72, 38 -95 Z" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="4.5" />
+          <path d="M -10 -22 L 0 -76 L 10 -22 Z" fill="url(#parshuramSkin)" stroke="#1a0b05" stroke-width="4" />
+        </g>
+
+        <!-- ======================================================= -->
+        <!-- BOTTOM RIGHT: TEN-HEADED RAVANA KNEELING IN DEVOTION    -->
+        <!-- ======================================================= -->
+        <g id="ravana-kneeling" transform="translate(825, 1340)">
+          <!-- Kneeling Royal Crimson Dhoti -->
+          <path d="M -82 45 L 82 45 L 108 225 L -98 225 Z" fill="url(#royalCrimson)" stroke="#140703" stroke-width="5" stroke-linejoin="round" />
+          <line x1="-92" y1="208" x2="102" y2="208" stroke="url(#goldMetal)" stroke-width="9" />
+
+          <!-- Broad Torso, Sacred Janeu & Gold Necklaces -->
+          <path d="M -78 -115 C -28 -138, 28 -138, 78 -115 L 66 55 L -66 55 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5" />
+          <path d="M -54 -116 C -15 -42, 24 10, 60 50" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" />
+          <path d="M -45 -115 Q 0 -65 45 -115" fill="none" stroke="url(#goldMetal)" stroke-width="9" stroke-linecap="round" />
+
+          <!-- Ten Heads in Devout Reverence (4 Left + 1 Main Center + 5 Right) -->
+          <g id="ravana-kneeling-heads">
+            <use href="#ravana-devotee-head" transform="translate(-145, -155) scale(0.82)" />
+            <use href="#ravana-devotee-head" transform="translate(-112, -158) scale(0.86)" />
+            <use href="#ravana-devotee-head" transform="translate(-78, -162) scale(0.90)" />
+            <use href="#ravana-devotee-head" transform="translate(-44, -165) scale(0.94)" />
+
+            <use href="#ravana-devotee-head" transform="translate(44, -165) scale(0.94)" />
+            <use href="#ravana-devotee-head" transform="translate(78, -162) scale(0.90)" />
+            <use href="#ravana-devotee-head" transform="translate(112, -158) scale(0.86)" />
+            <use href="#ravana-devotee-head" transform="translate(145, -155) scale(0.82)" />
+            <use href="#ravana-devotee-head" transform="translate(176, -150) scale(0.78)" />
+
+            <!-- Main Central Crown & Humble Face -->
+            <path d="M -32 -198 L -24 -248 L 0 -276 L 24 -248 L 32 -198 Z" fill="url(#goldMetal)" stroke="#140703" stroke-width="4" stroke-linejoin="round" />
+            <path d="M -36 -198 Q 0 -206 36 -198 L 34 -188 Q 0 -195 -34 -188 Z" fill="url(#goldMetal)" stroke="#140703" stroke-width="3.5" />
+            <path d="M -34 -188 L 34 -188 L 30 -132 C 30 -110, 14 -98, 0 -98 C -14 -98, -30 -110, -30 -132 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="4.5" />
+            <!-- Tripundra Tilak & Bowed Eyes -->
+            <line x1="-18" y1="-176" x2="18" y2="-176" stroke="#ffffff" stroke-width="3" />
+            <line x1="-15" y1="-169" x2="15" y2="-169" stroke="#ffffff" stroke-width="3" />
+            <circle cx="0" cy="-172" r="3.5" fill="#d91e18" />
+            <path d="M -22 -152 Q -12 -146 -4 -152" fill="none" stroke="#140703" stroke-width="3.2" stroke-linecap="round" />
+            <path d="M 4 -152 Q 12 -146 22 -152" fill="none" stroke="#140703" stroke-width="3.2" stroke-linecap="round" />
+            <path d="M 0 -132 C -12 -136, -24 -130, -30 -122 C -20 -125, -10 -126, 0 -128 C 10 -126, 20 -125, 30 -122 C 24 -130, 12 -136, 0 -132 Z" fill="#140703" />
+          </g>
+
+          <!-- Folded Hands in Namaste Mudra -->
+          <path d="M -72 -95 C -86 -45, -45 -18, 0 -22 L 0 -55 C -26 -55, -44 -72, -40 -95 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="4.5" />
+          <path d="M 72 -95 C 86 -45, 45 -18, 0 -22 L 0 -55 C 26 -55, 44 -72, 40 -95 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="4.5" />
+          <path d="M -10 -22 L 0 -76 L 10 -22 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="4" />
+        </g>
+      </g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 3: RISING GOLDEN & SILVER DEVOTIONAL SPARKS         -->
+      <!-- ========================================================= -->
+      <g id="embers-layer"></g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 4: BOLD HINDI KEYWORDS (NO FULL CAPTIONS)           -->
+      <!-- ========================================================= -->
+      <g id="kinetic-keywords" pointer-events="none" text-anchor="middle">
+        <!-- Keyword 1: "एक ही गुरु — महादेव" -->
+        <g id="kw-same-guru" transform="translate(540, 195)" opacity="0">
+          <line x1="-380" y1="0" x2="-315" y2="0" stroke="url(#goldMetal)" stroke-width="5" stroke-linecap="round" />
+          <line x1="315" y1="0" x2="380" y2="0" stroke="url(#goldMetal)" stroke-width="5" stroke-linecap="round" />
+          <text x="0" y="24" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="68" letter-spacing="1.5" stroke="#081026" stroke-width="18" stroke-linejoin="round" paint-order="stroke" fill="url(#keywordGoldGrad)" filter="url(#softGoldGlow)">एक ही गुरु — महादेव</text>
+        </g>
+
+        <!-- Keyword 2: "युद्ध धर्म विरुद्ध" -->
+        <g id="kw-against-dharma" transform="translate(540, 1765)" opacity="0">
+          <rect x="-295" y="-62" width="590" height="92" rx="20" fill="#091026" fill-opacity="0.92" stroke="url(#goldMetal)" stroke-width="4.5" />
+          <text x="0" y="8" font-family="'Noto Sans Devanagari', sans-serif" font-weight="900" font-size="70" letter-spacing="2" stroke="#040814" stroke-width="14" stroke-linejoin="round" paint-order="stroke" fill="url(#keywordGoldGrad)">युद्ध धर्म विरुद्ध</text>
+        </g>
+      </g>
+
+      <!-- ========================================================= -->
+      <!-- LAYER 5: ORNATE CRIMSON & GOLD MITHILA BORDER             -->
+      <!-- ========================================================= -->
+      <g pointer-events="none">
+        <rect x="18" y="18" width="1044" height="1884" rx="28" fill="none" stroke="#180a1c" stroke-width="24" />
+        <rect x="18" y="18" width="1044" height="1884" rx="28" fill="none" stroke="url(#goldMetal)" stroke-width="7" />
+        <rect x="34" y="34" width="1012" height="1852" rx="20" fill="none" stroke="#ffcf54" stroke-width="2.5" stroke-dasharray="16 10" />
+        <g fill="url(#goldMetal)" stroke="#180a1c" stroke-width="3">
+          <circle cx="44" cy="44" r="18" />
+          <circle cx="1036" cy="44" r="18" />
+          <circle cx="44" cy="1876" r="18" />
+          <circle cx="1036" cy="1876" r="18" />
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <script>
+    (function () {
+      const svgNS = "http://www.w3.org/2000/svg";
+
+      const cameraRig = document.getElementById("camera-rig");
+      const starsLayer = document.getElementById("stars-layer");
+      const shivaHalo = document.getElementById("shiva-halo");
+      const shivaMandala = document.getElementById("shiva-mandala");
+      const lordShivaFig = document.getElementById("lord-shiva-fig");
+
+      const energyStreamLeft = document.getElementById("energy-stream-left");
+      const energyStreamRight = document.getElementById("energy-stream-right");
+      const harmonyBondLine = document.getElementById("harmony-bond-line");
+
+      const parshuramKneeling = document.getElementById("parshuram-kneeling");
+      const ravanaKneeling = document.getElementById("ravana-kneeling");
+
+      const embersLayer = document.getElementById("embers-layer");
+      const kwSameGuru = document.getElementById("kw-same-guru");
+      const kwAgainstDharma = document.getElementById("kw-against-dharma");
+
+      // 1. Build 42 Twinkling Himalayan Stars
+      const stars = [];
+      for (let i = 0; i < 42; i++) {
+        const star = document.createElementNS(svgNS, "circle");
+        const r = 1.8 + (i % 4) * 0.9;
+        star.setAttribute("cx", (60 + ((i * 173) % 960)).toString());
+        star.setAttribute("cy", (70 + ((i * 119) % 880)).toString());
+        star.setAttribute("r", r.toFixed(1));
+        star.setAttribute("fill", i % 3 === 0 ? "#ffe799" : "#ffffff");
+        starsLayer.appendChild(star);
+        stars.push({ el: star, speed: 2.2 + (i % 5) * 0.8, phase: i * 0.9 });
+      }
+
+      // 2. Build 32 Rising Golden & Celestial Blue Light Particles
+      const embers = [];
+      for (let i = 0; i < 32; i++) {
+        const circle = document.createElementNS(svgNS, "circle");
+        const r = 3 + (i % 4) * 1.3;
+        circle.setAttribute("r", r.toFixed(1));
+        circle.setAttribute("fill", i % 2 === 0 ? "#ffe680" : "#9ad4f5");
+        circle.setAttribute("filter", "url(#softGoldGlow)");
+        embersLayer.appendChild(circle);
+
+        embers.push({
+          el: circle,
+          baseX: 85 + ((i * 101) % 910),
+          startY: 1850 - ((i * 131) % 720),
+          speedY: 195 + (i % 7) * 38,
+          wobbleAmp: 16 + (i % 4) * 8,
+          wobbleFreq: 2.0 + (i % 5) * 0.45,
+          phase: i * 0.65
+        });
+      }
+
+      // Easing Helpers
+      function clamp01(v) {
+        return Math.max(0, Math.min(1, v));
+      }
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+      function easeOutBack(t) {
+        const c1 = 1.70158;
+        const c3 = c1 + 1;
+        return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+      }
+      function lerp(a, b, t) {
+        return a + (b - a) * t;
+      }
+
+      // Master 5.0-Second Deterministic Render Function
+      function renderFrameAtTime(t) {
+        // 1. Twinkling Stars
+        for (let i = 0; i < stars.length; i++) {
+          const st = stars[i];
+          const alpha = 0.25 + 0.75 * Math.abs(Math.sin(t * st.speed + st.phase));
+          st.el.setAttribute("opacity", alpha.toFixed(2));
+        }
+
+        // 2. Gentle Camera Push-In across 5.0 Seconds
+        const camZoom = lerp(0.99, 1.06, easeOutCubic(clamp01(t / 5.0)));
+        cameraRig.setAttribute(
+          "transform",
+          `translate(540 960) scale(${camZoom.toFixed(4)}) translate(-540 -960)`
+        );
+
+        // 3. Lord Shiva Gentle Meditative Levitation & Mandala Rotation
+        const levitateY = Math.sin(t * 2.4) * 10;
+        lordShivaFig.setAttribute("transform", `translate(540 ${(565 + levitateY).toFixed(1)})`);
+
+        const haloScale = 1 + 0.07 * Math.sin(t * 2.8);
+        shivaHalo.setAttribute(
+          "transform",
+          `translate(540 540) scale(${haloScale.toFixed(3)}) translate(-540 -540)`
+        );
+        shivaMandala.setAttribute("transform", `rotate(${((t * 12) % 360).toFixed(2)} 540 540)`);
+
+        // 4. Flowing Golden Energy Streams from Shiva to Both Disciples (`stroke-dashoffset`)
+        const streamReveal = clamp01((t - 0.35) / 0.55);
+        const dashOffset = -(t * 190);
+        energyStreamLeft.setAttribute("opacity", streamReveal.toFixed(3));
+        energyStreamRight.setAttribute("opacity", streamReveal.toFixed(3));
+        energyStreamLeft.setAttribute("stroke-dashoffset", dashOffset.toFixed(1));
+        energyStreamRight.setAttribute("stroke-dashoffset", dashOffset.toFixed(1));
+
+        // Sacred Horizontal Bond Between Both Disciples Appears After 1.6s
+        const bondAlpha = clamp01((t - 1.6) / 0.5) * (0.55 + 0.25 * Math.sin(t * 5));
+        harmonyBondLine.setAttribute("opacity", bondAlpha.toFixed(3));
+
+        // 5. Reverent Breathing / Bowing Motion on Both Kneeling Disciples
+        const bowL = Math.sin(t * 2.2) * 1.5;
+        const bowR = -Math.sin(t * 2.2) * 1.5;
+        parshuramKneeling.setAttribute("transform", `translate(255 1340) rotate(${bowL.toFixed(2)})`);
+        ravanaKneeling.setAttribute("transform", `translate(825 1340) rotate(${bowR.toFixed(2)})`);
+
+        // 6. Rising Light Particles
+        for (let i = 0; i < embers.length; i++) {
+          const em = embers[i];
+          const travel = (t * em.speedY) % 1650;
+          let y = em.startY - travel;
+          if (y < 140) y += 1650;
+          const x = em.baseX + Math.sin(t * em.wobbleFreq + em.phase) * em.wobbleAmp;
+          const alpha = y < 320 ? (y - 140) / 180 : y > 1650 ? (1850 - y) / 200 : 0.85;
+          em.el.setAttribute("cx", x.toFixed(1));
+          em.el.setAttribute("cy", y.toFixed(1));
+          em.el.setAttribute("opacity", clamp01(alpha).toFixed(3));
+        }
+
+        // 7. Bold Hindi Keywords ("एक ही गुरु — महादेव" & "युद्ध धर्म विरुद्ध")
+        if (t >= 0.75) {
+          const p1 = clamp01((t - 0.75) / 0.36);
+          const s1 = easeOutBack(p1);
+          kwSameGuru.setAttribute("opacity", clamp01(p1 * 2).toFixed(3));
+          kwSameGuru.setAttribute("transform", `translate(540 195) scale(${s1.toFixed(3)})`);
+        } else {
+          kwSameGuru.setAttribute("opacity", "0");
+        }
+
+        if (t >= 2.05) {
+          const p2 = clamp01((t - 2.05) / 0.38);
+          const s2 = easeOutBack(p2);
+          const slideY = lerp(1815, 1765, easeOutCubic(p2));
+          kwAgainstDharma.setAttribute("opacity", clamp01(p2 * 2).toFixed(3));
+          kwAgainstDharma.setAttribute("transform", `translate(540 ${slideY.toFixed(1)}) scale(${s2.toFixed(3)})`);
+        } else {
+          kwAgainstDharma.setAttribute("opacity", "0");
+        }
+      }
+
+      // Live 5.0-Second Seamless Loop
+      const CLIP_DURATION = 5.0;
+      let startTimestamp = performance.now();
+
+      function animationLoop(now) {
+        const elapsedSec = ((now - startTimestamp) / 1000) % CLIP_DURATION;
+        renderFrameAtTime(elapsedSec);
+        requestAnimationFrame(animationLoop);
+      }
+
+      renderFrameAtTime(0);
+      requestAnimationFrame(animationLoop);
+    })();
+  </script>
+</body>
+</html>
