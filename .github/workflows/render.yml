@@ -1,15 +1,15 @@
 name: Render HTML to MP4
 
 on:
-  workflow_dispatch:
   push:
     paths:
-      - 'index.html'
+      - 'scene*.html'
+      - 'render.js'
+  workflow_dispatch:
 
 jobs:
   build-video:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,13 +19,11 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install FFmpeg and Chrome Dependencies
+      - name: Install FFmpeg and Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg fonts-noto-core libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libasound2t64
-
-      - name: Install Puppeteer
-        run: npm install
+          sudo apt-get install -y ffmpeg fonts-noto-core
+          npm install
 
       - name: Render Video
         run: node render.js
@@ -35,4 +33,3 @@ jobs:
         with:
           name: rendered-video
           path: output.mp4
-          
