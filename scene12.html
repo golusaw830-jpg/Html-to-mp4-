@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Part 3 - Clip 12: Ashoka Vatika & Helpless Ravana (5.0s)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: #04030c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+  svg#scene {
+    width: 100vw;
+    height: 100vh;
+    max-width: 56.25vh;
+    max-height: 177.78vw;
+    display: block;
+    background: #080514;
+  }
+</style>
+</head>
+<body>
+
+<!-- 
+  PART 3 - CLIP 12 (5.0 SECONDS EXACT) — FULL HIGH-DETAIL VERSION
+  Voiceover: "यही कारण था कि लंका ले जाने के बाद भी, अशोक वाटिका में एक साल तक रावण कभी माता सीता के पास जाने की हिम्मत नहीं कर पाया!"
+  Blueprint Visual: "अशोक वाटिका में वृक्ष के नीचे शांत बैठी माता सीता और कई कदम दूर बेबस खड़ा रावण। कीवर्ड्स: 'अशोक वाटिका', 'एक साल तक बेबस'।"
+-->
+<svg id="scene" viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 1. BACKGROUND: Moonlit Ashoka Vatika Garden Night (Deep Indigo & Emerald Twilight) -->
+    <radialGradient id="ashokaVatikaBg" cx="32%" cy="42%" r="78%">
+      <stop offset="0%" stop-color="#2b214d"/>
+      <stop offset="48%" stop-color="#120b29"/>
+      <stop offset="100%" stop-color="#05030e"/>
+    </radialGradient>
+
+    <!-- Mata Sita Pure Golden Sanctuary Halo -->
+    <radialGradient id="sitaSanctuaryHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/>
+      <stop offset="36%" stop-color="#ffe066" stop-opacity="0.60"/>
+      <stop offset="72%" stop-color="#ff9900" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#120b29" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ashoka Tree Foliage Gradient -->
+    <linearGradient id="ashokaLeavesGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e463a"/>
+      <stop offset="55%" stop-color="#0f2924"/>
+      <stop offset="100%" stop-color="#061414"/>
+    </linearGradient>
+
+    <!-- 2. LOCKED CHARACTER PALETTES (EXACT MATCH WITH CLIPS 1-11) -->
+    <linearGradient id="sitaSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe2b8"/>
+      <stop offset="60%" stop-color="#f2ba7e"/>
+      <stop offset="100%" stop-color="#c98549"/>
+    </linearGradient>
+
+    <linearGradient id="sitaSaree" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9d1c"/>
+      <stop offset="55%" stop-color="#e05309"/>
+      <stop offset="100%" stop-color="#8c2303"/>
+    </linearGradient>
+
+    <linearGradient id="ravanaSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b5774b"/>
+      <stop offset="55%" stop-color="#8f542d"/>
+      <stop offset="100%" stop-color="#5e3216"/>
+    </linearGradient>
+
+    <linearGradient id="royalCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d92626"/>
+      <stop offset="55%" stop-color="#9e1116"/>
+      <stop offset="100%" stop-color="#57060a"/>
+    </linearGradient>
+
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff7bd"/>
+      <stop offset="42%" stop-color="#ffbe2e"/>
+      <stop offset="100%" stop-color="#8c4804"/>
+    </linearGradient>
+
+    <linearGradient id="goldBright" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="38%" stop-color="#ffe066"/>
+      <stop offset="100%" stop-color="#e08809"/>
+    </linearGradient>
+
+    <linearGradient id="swordSteel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="48%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+
+    <!-- FILTERS -->
+    <filter id="strongGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGoldGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Reusable Ravana Side Head -->
+    <g id="ravana-side-head">
+      <path d="M -20 -20 L -15 -46 L 0 -58 L 15 -46 L 20 -20 Z" fill="url(#goldGrad)" stroke="#140703" stroke-width="2.8" stroke-linejoin="round"/>
+      <path d="M -23 -20 Q 0 -26 23 -20 L 21 -12 Q 0 -17 -21 -12 Z" fill="url(#goldGrad)" stroke="#140703" stroke-width="2.4"/>
+      <path d="M -20 -13 L 20 -13 L 17 16 C 17 27, 8 33, 0 33 C -8 33, -17 27, -17 16 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="2.8"/>
+      <line x1="-10" y1="-7" x2="10" y2="-7" stroke="#ffffff" stroke-width="1.8"/>
+      <line x1="-8" y1="-2" x2="8" y2="-2" stroke="#ffffff" stroke-width="1.8"/>
+      <circle cx="0" cy="-4" r="2.2" fill="#d91e18"/>
+      <ellipse cx="-8" cy="8" rx="4" ry="2.5" fill="#fff2a6"/>
+      <circle cx="-8" cy="8" r="1.6" fill="#b31209"/>
+      <ellipse cx="8" cy="8" rx="4" ry="2.5" fill="#fff2a6"/>
+      <circle cx="8" cy="8" r="1.6" fill="#b31209"/>
+      <path d="M 0 17 C -7 15, -15 18, -18 24 C -12 22, -5 21, 0 19 C 5 21, 12 22, 18 24 C 15 18, 7 15, 0 17 Z" fill="#140703"/>
+    </g>
+  </defs>
+
+  <!-- CAMERA RIG -->
+  <g id="cameraRig" transform="translate(540, 960) scale(1) translate(-540, -960)">
+
+    <!-- LAYER 1: MOONLIT ASHOKA VATIKA SKY & LANKA SILHOUETTE -->
+    <rect x="-80" y="-80" width="1240" height="2080" fill="url(#ashokaVatikaBg)"/>
+
+    <!-- Sacred Vedic Frame Filigree -->
+    <g opacity="0.25" stroke="url(#goldGrad)" stroke-width="2.5" fill="none">
+      <rect x="44" y="44" width="992" height="1832" rx="34"/>
+      <rect x="64" y="64" width="952" height="1792" rx="24" stroke-dasharray="14 10"/>
+    </g>
+
+    <!-- Full Moon & Distant Lanka Palace Spires on Right -->
+    <circle cx="775" cy="285" r="78" fill="#fff8d6" opacity="0.24" filter="url(#strongGlow)"/>
+    <circle cx="775" cy="285" r="52" fill="#fffbe6" opacity="0.82"/>
+    <g opacity="0.32" fill="#090417">
+      <path d="M 850 1440 L 895 920 L 920 820 L 945 920 L 990 1440 Z"/>
+      <path d="M 730 1440 L 765 1040 L 785 960 L 805 1040 L 840 1440 Z"/>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 2: SACRED ASHOKA TREE CANOPY & TRUNK (LEFT)         -->
+    <!-- ========================================================= -->
+    <g id="ashokaTreeGroup">
+      <!-- Ancient Ashoka Tree Trunk & Root Base -->
+      <path d="M 45 1440 L 82 780 Q 170 620 350 545 L 330 585 Q 205 655 162 800 L 185 1440 Z" fill="#170c08" stroke="#0a0503" stroke-width="4"/>
+      <!-- Lush Overhanging Ashoka Foliage & Crimson Blossom Clusters -->
+      <g id="ashokaCanopy">
+        <path d="M -60 660 Q 60 440 270 470 Q 430 390 560 520 Q 640 640 500 725 Q 340 760 180 735 Q 20 770 -60 660 Z" fill="url(#ashokaLeavesGrad)" stroke="#081a17" stroke-width="4"/>
+        <!-- Hanging Ashoka Leaf Clusters & Orange-Red Flowers -->
+        <g fill="#e65100" opacity="0.88">
+          <circle cx="195" cy="695" r="14"/>
+          <circle cx="212" cy="708" r="11"/>
+          <circle cx="345" cy="680" r="15"/>
+          <circle cx="362" cy="692" r="11"/>
+          <circle cx="465" cy="665" r="13"/>
+          <circle cx="115" cy="715" r="12"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- Ashoka Vatika Garden Ground -->
+    <path d="M -60 1430 Q 540 1385 1140 1430 L 1140 2000 L -60 2000 Z" fill="#080c17"/>
+    <!-- Sacred Stone Seat (Shila) Under Ashoka Tree -->
+    <path d="M 165 1385 L 425 1385 L 445 1440 L 145 1440 Z" fill="#1e2436" stroke="#334155" stroke-width="3.5"/>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 3: LEFT HERO — MATA SITA SEATED CALMLY UNDER TREE   -->
+    <!-- ========================================================= -->
+    <g id="sitaSeatedSanctuary" transform="translate(295, 1215)">
+      <!-- Pure Golden Sanctuary Aura -->
+      <circle id="sitaAuraOrb" cx="0" cy="-35" r="305" fill="url(#sitaSanctuaryHalo)"/>
+
+      <!-- Rotating Golden Mandala Behind Mata Sita -->
+      <g id="sitaMandala" transform="translate(0, -45)" opacity="0.55">
+        <circle cx="0" cy="0" r="215" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-dasharray="14 10"/>
+        <circle cx="0" cy="0" r="180" fill="none" stroke="#fff2a6" stroke-width="1.8"/>
+      </g>
+
+      <!-- MATA SITA SEATED IN SERENE MEDITATION / PRAYER (FULL DETAIL) -->
+      <g id="mataSitaSeatedFig">
+        <!-- Seated Saffron-Gold Saree & Lotus-Folded Lower Drape -->
+        <path d="M -98 115 C -115 75, -65 55, 0 65 C 65 55, 115 75, 98 115 C 82 158, -82 158, -98 115 Z" fill="url(#sitaSaree)" stroke="#240804" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M -85 138 Q 0 155 85 138" fill="none" stroke="url(#goldGrad)" stroke-width="9" stroke-linecap="round"/>
+
+        <!-- Torso & Gold-Bordered Pallu Drape -->
+        <path d="M -52 -65 C -18 -82, 18 -82, 52 -65 L 62 72 L -62 72 Z" fill="url(#sitaSaree)" stroke="#240804" stroke-width="4.5"/>
+        <path d="M -56 -65 C -12 5, 32 55, 72 105 L 54 135 C 12 85, -32 25, -66 -35 Z" fill="#ffaa2b" stroke="#240804" stroke-width="4"/>
+        <path d="M -56 -65 C -12 5, 32 55, 72 105" fill="none" stroke="url(#goldGrad)" stroke-width="7"/>
+
+        <!-- Gold Necklaces & Sacred Garland -->
+        <path d="M -30 -66 Q 0 -24 30 -66" fill="none" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round"/>
+        <path d="M -38 -64 Q 0 -2 38 -64" fill="none" stroke="#fff6cc" stroke-width="5" stroke-dasharray="6 7" stroke-linecap="round"/>
+
+        <!-- Folded Hands in Calm Prayer (Anjali Mudra) -->
+        <path d="M -50 -52 C -72 -12, -52 22, -12 24 L -6 2 C -32 0, -40 -20, -32 -42 Z" fill="url(#sitaSkin)" stroke="#240804" stroke-width="4"/>
+        <path d="M 50 -52 C 72 -12, 52 22, 12 24 L 6 2 C 32 0, 40 -20, 32 -42 Z" fill="url(#sitaSkin)" stroke="#240804" stroke-width="4"/>
+        <path d="M -8 24 L 0 -18 L 8 24 Z" fill="url(#sitaSkin)" stroke="#240804" stroke-width="3.5"/>
+
+        <!-- Dark Braided Hair & Floral Crown Ornament -->
+        <path d="M -40 -150 C -48 -95, -50 -25, -38 35 L -22 35 C -28 -25, -26 -85, -22 -140 Z" fill="#140705"/>
+        <path d="M -35 -158 C -35 -195, 35 -195, 35 -158 Z" fill="#140705" stroke="#090302" stroke-width="4"/>
+        <path d="M -32 -160 Q 0 -176 32 -160" fill="none" stroke="url(#goldGrad)" stroke-width="5.5"/>
+        <circle cx="0" cy="-170" r="7.5" fill="#ff2a2a" stroke="url(#goldGrad)" stroke-width="2.5"/>
+
+        <!-- Gold Kundala Earrings & Serene Face -->
+        <circle cx="-34" cy="-102" r="8" fill="none" stroke="url(#goldGrad)" stroke-width="3.5"/>
+        <circle cx="34" cy="-102" r="8" fill="none" stroke="url(#goldGrad)" stroke-width="3.5"/>
+        <path d="M -34 -154 L 34 -154 L 30 -94 C 30 -70, 14 -58, 0 -58 C -14 -58, -30 -70, -30 -94 Z" fill="url(#sitaSkin)" stroke="#240804" stroke-width="4.5"/>
+        <circle cx="0" cy="-134" r="4.5" fill="#d91e18"/>
+        <!-- Calm Meditative Downcast Eyes -->
+        <path d="M -22 -114 Q -12 -108 -4 -114" fill="none" stroke="#140705" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 4 -114 Q 12 -108 22 -114" fill="none" stroke="#140705" stroke-width="3" stroke-linecap="round"/>
+        <path d="M -10 -82 Q 0 -76 10 -82" fill="none" stroke="#9e2a2b" stroke-width="3" stroke-linecap="round"/>
+      </g>
+
+      <!-- Golden Protective Sanctuary Dome -->
+      <path d="M -185 165 C -215 -145, -125 -310, 0 -310 C 125 -310, 215 -145, 185 165" fill="#ffe066" fill-opacity="0.09" stroke="url(#goldBright)" stroke-width="7.5" filter="url(#strongGlow)"/>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- INVISIBLE CURSE BOUNDARY LINE BETWEEN SITA & RAVANA (535) -->
+    <!-- ========================================================= -->
+    <g id="curseBoundaryBeam" transform="translate(535, 920)" filter="url(#strongGlow)">
+      <line x1="0" y1="-340" x2="0" y2="510" stroke="url(#goldBright)" stroke-width="6" stroke-dasharray="22 14" opacity="0.85"/>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 4: RIGHT HERO — RAVANA STANDING HELPLESS STEPS AWAY -->
+    <!-- ========================================================= -->
+    <g id="ravanaHelplessGroup" transform="translate(825, 1135)">
+      <!-- Royal Crimson Dhoti -->
+      <path d="M -92 -65 L 92 -65 L 128 295 L 26 295 L 0 115 L -26 295 L -128 295 Z" fill="url(#royalCrimson)" stroke="#140703" stroke-width="5.5" stroke-linejoin="round"/>
+      <line x1="-122" y1="278" x2="-30" y2="278" stroke="url(#goldGrad)" stroke-width="11"/>
+      <line x1="30" y1="278" x2="122" y2="278" stroke="url(#goldGrad)" stroke-width="11"/>
+      <rect x="-92" y="-88" width="184" height="26" rx="8" fill="url(#goldGrad)" stroke="#140703" stroke-width="4.5"/>
+
+      <!-- Left & Right Arms Hanging Helplessly at Sides -->
+      <path d="M -108 -315 C -152 -265, -162 -175, -145 -85 L -102 -85 C -112 -165, -105 -235, -80 -275 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5"/>
+      <circle cx="-122" cy="-72" r="22" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="4.5"/>
+
+      <path d="M 108 -315 C 152 -265, 162 -175, 145 -85 L 102 -85 C 112 -165, 105 -235, 80 -275 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5"/>
+      <g transform="translate(122, -72) rotate(18)">
+        <path d="M -10 15 L -12 245 C -12 285, 8 315, 26 335 C 20 292, 14 255, 14 15 Z" fill="url(#swordSteel)" stroke="#140703" stroke-width="4.5"/>
+        <rect x="-24" y="6" width="48" height="14" rx="5" fill="url(#goldGrad)" stroke="#140703" stroke-width="3.5"/>
+      </g>
+      <circle cx="122" cy="-72" r="22" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="4.5"/>
+
+      <!-- Broad Torso -->
+      <path d="M -108 -335 C -52 -360, 52 -360, 108 -335 L 85 -82 L -85 -82 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5.5"/>
+      <path d="M -78 -338 C -40 -235, 22 -155, 76 -88" fill="none" stroke="#ffffff" stroke-width="8.5" stroke-linecap="round"/>
+      <path d="M -58 -340 Q 0 -278 58 -340" fill="none" stroke="url(#goldGrad)" stroke-width="11" stroke-linecap="round"/>
+
+      <!-- Ten Heads Cluster (Frustrated & Helpless Expression) -->
+      <g id="ravanaHeadsHelpless">
+        <use href="#ravana-side-head" transform="translate(-195, -455) scale(0.76)"/>
+        <use href="#ravana-side-head" transform="translate(-152, -460) scale(0.80)"/>
+        <use href="#ravana-side-head" transform="translate(-108, -465) scale(0.84)"/>
+        <use href="#ravana-side-head" transform="translate(-65, -468) scale(0.88)"/>
+
+        <use href="#ravana-side-head" transform="translate(65, -468) scale(0.88)"/>
+        <use href="#ravana-side-head" transform="translate(108, -465) scale(0.84)"/>
+        <use href="#ravana-side-head" transform="translate(152, -460) scale(0.80)"/>
+        <use href="#ravana-side-head" transform="translate(195, -455) scale(0.76)"/>
+
+        <!-- Main Center Crown & Head -->
+        <path d="M -52 -515 L -40 -585 L 0 -625 L 40 -585 L 52 -515 Z" fill="url(#goldGrad)" stroke="#140703" stroke-width="4.5"/>
+        <path d="M -60 -515 Q 0 -528 60 -515 L 54 -498 Q 0 -510 -54 -498 Z" fill="url(#goldGrad)" stroke="#140703" stroke-width="4"/>
+        <path d="M -50 -500 L 50 -500 L 44 -422 C 44 -392, 20 -375, 0 -375 C -20 -375, -44 -392, -44 -422 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5"/>
+        <line x1="-24" y1="-485" x2="24" y2="-485" stroke="#ffffff" stroke-width="3.5"/>
+        <line x1="-20" y1="-476" x2="20" y2="-476" stroke="#ffffff" stroke-width="3.5"/>
+        <circle cx="0" cy="-480" r="4.5" fill="#d91e18"/>
+        <!-- Frustrated Eyes Looking Left Toward Boundary -->
+        <ellipse cx="-20" cy="-448" rx="10" ry="6.5" fill="#fff2a6" stroke="#140703" stroke-width="2.5"/>
+        <circle cx="-24" cy="-448" r="3.8" fill="#9e0b0b"/>
+        <ellipse cx="20" cy="-448" rx="10" ry="6.5" fill="#fff2a6" stroke="#140703" stroke-width="2.5"/>
+        <circle cx="16" cy="-448" r="3.8" fill="#9e0b0b"/>
+        <path d="M 0 -422 C -18 -428, -38 -420, -46 -406 C -32 -410, -15 -412, 0 -415 C 15 -412, 32 -410, 46 -406 C 38 -420, 18 -428, 0 -422 Z" fill="#140703"/>
+      </g>
+    </g>
+
+    <!-- Floating Golden Sanctuary Fireflies & Leaves -->
+    <g id="particlesLayer"></g>
+
+    <!-- LAYER 5: KINETIC HINDI KEYWORDS (Safe Zone: Bottom Third) -->
+    <g id="keywordsLayer" transform="translate(540, 1615)">
+      <!-- Keyword 1: अशोक वाटिका -->
+      <g id="kw1" opacity="0" transform="scale(0.85)">
+        <rect x="-275" y="-58" width="550" height="96" rx="24" fill="#130926" fill-opacity="0.94" stroke="url(#goldGrad)" stroke-width="4.5" filter="url(#softGoldGlow)"/>
+        <text x="0" y="10" text-anchor="middle" fill="url(#goldBright)" font-size="56" font-weight="900">अशोक वाटिका 🌿</text>
+      </g>
+
+      <!-- Keyword 2: एक साल तक बेबस -->
+      <g id="kw2" opacity="0" transform="translate(0, 118) scale(0.85)">
+        <rect x="-320" y="-52" width="640" height="86" rx="43" fill="url(#goldGrad)" filter="url(#softGoldGlow)"/>
+        <text x="0" y="9" text-anchor="middle" fill="#170500" font-size="45" font-weight="900">एक साल तक बेबस 🔒</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- DETERMINISTIC 5.0-SECOND ANIMATION ENGINE -->
+  <script>
+    (function() {
+      const DURATION = 5000;
+      let startTime = null;
+
+      const cameraRig = document.getElementById('cameraRig');
+      const ashokaCanopy = document.getElementById('ashokaCanopy');
+      const sitaAuraOrb = document.getElementById('sitaAuraOrb');
+      const sitaMandala = document.getElementById('sitaMandala');
+      const curseBoundaryBeam = document.getElementById('curseBoundaryBeam');
+      const ravanaHelplessGroup = document.getElementById('ravanaHelplessGroup');
+      const ravanaHeadsHelpless = document.getElementById('ravanaHeadsHelpless');
+      const particlesLayer = document.getElementById('particlesLayer');
+      const kw1 = document.getElementById('kw1');
+      const kw2 = document.getElementById('kw2');
+
+      // Generate 28 Floating Golden Sanctuary Fireflies
+      const particles = [];
+      for (let i = 0; i < 28; i++) {
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('r', (2.5 + (i % 4) * 1.1).toFixed(1));
+        c.setAttribute('fill', i % 3 === 0 ? '#ffffff' : '#ffe066');
+        particlesLayer.appendChild(c);
+        particles.push({
+          el: c,
+          baseX: 80 + ((i * 113) % 920),
+          baseY: 200 + ((i * 197) % 1500),
+          speed: 130 + (i % 6) * 28,
+          phase: i * 0.65
+        });
+      }
+
+      function easeOutBack(x) {
+        const c1 = 1.70158;
+        const c3 = c1 + 1;
+        return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+      }
+
+      function easeOutCubic(x) {
+        return 1 - Math.pow(1 - x, 3);
+      }
+
+      function render(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = (timestamp - startTime) % DURATION;
+        const t = elapsed / DURATION;
+
+        // 1. Camera Gentle Push-In
+        const camScale = 1 + t * 0.07;
+        cameraRig.setAttribute('transform', `translate(540, 960) scale(${camScale.toFixed(4)}) translate(-540, -960)`);
+
+        // 2. Ashoka Tree Canopy Gentle Breeze Sway
+        ashokaCanopy.setAttribute('transform', `rotate(${(Math.sin(t * Math.PI * 3) * 1.4).toFixed(2)}, 180, 560)`);
+
+        // 3. Mata Sita Sanctuary Aura & Mandala Rotation
+        sitaMandala.setAttribute('transform', `translate(0, -45) rotate(${(t * 42).toFixed(1)})`);
+        sitaAuraOrb.setAttribute('r', (295 + Math.sin(t * Math.PI * 4) * 26).toFixed(1));
+
+        // 4. Invisible Curse Boundary Line Pulse
+        const beamOp = 0.65 + 0.35 * Math.sin(t * Math.PI * 6);
+        curseBoundaryBeam.setAttribute('opacity', beamOp.toFixed(2));
+
+        // 5. Helpless Ravana Taking Half a Step Forward and Stopping in Frustration
+        const stepShift = Math.sin(t * Math.PI * 2) * 12;
+        const bobRavana = 1135 + Math.sin(t * Math.PI * 3) * 5;
+        ravanaHelplessGroup.setAttribute('transform', `translate(${(825 - stepShift).toFixed(1)}, ${bobRavana.toFixed(1)})`);
+        ravanaHeadsHelpless.setAttribute('transform', `rotate(${(Math.sin(t * Math.PI * 6) * 1.2).toFixed(2)}, 0, -400)`);
+
+        // 6. Floating Fireflies
+        for (let i = 0; i < particles.length; i++) {
+          const pt = particles[i];
+          const yPos = ((pt.baseY - t * pt.speed * 5) % 1600 + 1600) % 1600 + 140;
+          const xPos = pt.baseX + Math.sin(t * Math.PI * 4 + pt.phase) * 16;
+          pt.el.setAttribute('cx', xPos.toFixed(1));
+          pt.el.setAttribute('cy', yPos.toFixed(1));
+          pt.el.setAttribute('opacity', (0.3 + 0.65 * Math.abs(Math.sin(t * Math.PI * 5 + pt.phase))).toFixed(2));
+        }
+
+        // 7. Kinetic Hindi Keywords ("अशोक वाटिका 🌿" & "एक साल तक बेबस 🔒")
+        if (t >= 0.16) {
+          const p1 = Math.min(1, (t - 0.16) / 0.12);
+          const s1 = 0.85 + 0.15 * easeOutBack(p1);
+          kw1.setAttribute('opacity', easeOutCubic(p1).toFixed(2));
+          kw1.setAttribute('transform', `scale(${s1.toFixed(3)})`);
+        } else {
+          kw1.setAttribute('opacity', '0');
+        }
+
+        if (t >= 0.44) {
+          const p2 = Math.min(1, (t - 0.44) / 0.12);
+          const s2 = 0.85 + 0.15 * easeOutBack(p2);
+          kw2.setAttribute('opacity', easeOutCubic(p2).toFixed(2));
+          kw2.setAttribute('transform', `translate(0, 118) scale(${s2.toFixed(3)})`);
+        } else {
+          kw2.setAttribute('opacity', '0');
+        }
+
+        requestAnimationFrame(render);
+      }
+
+      window.onload = function() {
+        requestAnimationFrame(render);
+      };
+    })();
+  </script>
+</body>
+</html>

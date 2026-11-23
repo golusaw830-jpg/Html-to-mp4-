@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Part 3 - Clip 11: Fiery Warning Barrier & 100-Pieces Curse (5.0s)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: #05020c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+  svg#scene {
+    width: 100vw;
+    height: 100vh;
+    max-width: 56.25vh;
+    max-height: 177.78vw;
+    display: block;
+    background: #090314;
+  }
+</style>
+</head>
+<body>
+
+<!-- 
+  PART 3 - CLIP 11 (5.0 SECONDS EXACT) — HIGH-DETAIL VERSION
+  Voiceover: "श्राप यह था कि यदि रावण किसी स्त्री की इच्छा के विरुद्ध बलपूर्वक उससे समागम या भोग करेगा, तभी उसके सिर के सौ टुकड़े होंगे!"
+  Blueprint Visual: "रावण के दसों सिरों पर लक्ष्मण-रेखा जैसी अग्निमय चेतावनी दीवार जो बल प्रयोग पर 100 टुकड़ों का संकेत देती है। कीवर्ड्स: 'बलपूर्वक भोग निषेध', '100 टुकड़ों का श्राप'।"
+-->
+<svg id="scene" viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 1. BACKGROUND: Deep Cosmic Indigo & Ominous Dark Crimson Night -->
+    <radialGradient id="warningNightBg" cx="50%" cy="34%" r="76%">
+      <stop offset="0%" stop-color="#421036"/>
+      <stop offset="48%" stop-color="#1a0624"/>
+      <stop offset="100%" stop-color="#05020c"/>
+    </radialGradient>
+
+    <!-- Fiery Lakshmana-Rekha Style Warning Aura -->
+    <radialGradient id="fieryBarrierAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/>
+      <stop offset="30%" stop-color="#ffaa1d" stop-opacity="0.62"/>
+      <stop offset="68%" stop-color="#e61c24" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#1a0624" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Blazing Fire-Wall Linear Gradient -->
+    <linearGradient id="fireWallGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff3b1d" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#ff7700" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="85%" stop-color="#ff7700" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ff3b1d" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- 2. LOCKED CHARACTER PALETTE (EXACT MATCH WITH CLIPS 1-10) -->
+    <linearGradient id="ravanaSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b5774b"/>
+      <stop offset="55%" stop-color="#8f542d"/>
+      <stop offset="100%" stop-color="#5e3216"/>
+    </linearGradient>
+
+    <linearGradient id="ravanaSkinDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#754120"/>
+      <stop offset="100%" stop-color="#45210c"/>
+    </linearGradient>
+
+    <linearGradient id="royalCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d92626"/>
+      <stop offset="55%" stop-color="#9e1116"/>
+      <stop offset="100%" stop-color="#57060a"/>
+    </linearGradient>
+
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff7bd"/>
+      <stop offset="42%" stop-color="#ffbe2e"/>
+      <stop offset="100%" stop-color="#8c4804"/>
+    </linearGradient>
+
+    <linearGradient id="goldBright" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="38%" stop-color="#ffe066"/>
+      <stop offset="100%" stop-color="#e08809"/>
+    </linearGradient>
+
+    <linearGradient id="swordSteel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="48%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+
+    <!-- FILTERS -->
+    <filter id="fireGlow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGoldGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Reusable Secondary Ravana Head (Full High Detail) -->
+    <g id="ravana-side-head">
+      <path d="M -26 -26 L -20 -60 L 0 -76 L 20 -60 L 26 -26 Z" fill="url(#goldGrad)" stroke="#140703" stroke-width="3.2" stroke-linejoin="round"/>
+      <path d="M -30 -26 Q 0 -34 30 -26 L 28 -16 Q 0 -22 -28 -16 Z" fill="url(#goldGrad)" stroke="#140703" stroke-width="2.8"/>
+      <circle cx="0" cy="-50" r="4.5" fill="#d91e18"/>
+      <path d="M -26 -18 L 26 -18 L 23 20 C 23 35, 11 43, 0 43 C -11 43, -23 35, -23 20 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="3.2"/>
+      <line x1="-13" y1="-9" x2="13" y2="-9" stroke="#ffffff" stroke-width="2.2"/>
+      <line x1="-11" y1="-4" x2="11" y2="-4" stroke="#ffffff" stroke-width="2.2"/>
+      <circle cx="0" cy="-6" r="2.8" fill="#d91e18"/>
+      <path d="M -18 2 L -4 7" stroke="#140703" stroke-width="3.8" stroke-linecap="round"/>
+      <path d="M 18 2 L 4 7" stroke="#140703" stroke-width="3.8" stroke-linecap="round"/>
+      <ellipse cx="-11" cy="11" rx="5" ry="3.2" fill="#ffdf6b"/>
+      <circle cx="-11" cy="11" r="2" fill="#d90b0b"/>
+      <ellipse cx="11" cy="11" rx="5" ry="3.2" fill="#ffdf6b"/>
+      <circle cx="11" cy="11" r="2" fill="#d90b0b"/>
+      <path d="M 0 22 C -9 19, -20 23, -24 30 C -17 27, -7 26, 0 24 C 7 26, 17 27, 24 30 C 20 23, 9 19, 0 22 Z" fill="#140703"/>
+    </g>
+  </defs>
+
+  <!-- CAMERA RIG -->
+  <g id="cameraRig" transform="translate(540, 960) scale(1) translate(-540, -960)">
+
+    <!-- LAYER 1: DARK COSMIC BACKDROP & SACRED FRAME -->
+    <rect x="-80" y="-80" width="1240" height="2080" fill="url(#warningNightBg)"/>
+
+    <!-- Sacred Vedic Frame Filigree -->
+    <g opacity="0.25" stroke="url(#goldGrad)" stroke-width="2.5" fill="none">
+      <rect x="44" y="44" width="992" height="1832" rx="34"/>
+      <rect x="64" y="64" width="952" height="1792" rx="24" stroke-dasharray="14 10"/>
+    </g>
+
+    <!-- Distant Palace Pillars & Horizon -->
+    <path d="M -60 1510 Q 540 1465 1140 1510 L 1140 2000 L -60 2000 Z" fill="#090312"/>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 2: TOP — "100 टुकड़ों" CURSE WARNING SEAL & EMBLEM     -->
+    <!-- ========================================================= -->
+    <g id="curseSealTop" transform="translate(540, 325)">
+      <circle id="fireAuraTop" cx="0" cy="0" r="290" fill="url(#fieryBarrierAura)"/>
+
+      <!-- Rotating Fiery Vedic Yantra -->
+      <g id="fireYantraWheel" opacity="0.72">
+        <circle cx="0" cy="0" r="215" fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-dasharray="20 10"/>
+        <polygon points="0,-195 169,98 -169,98" fill="none" stroke="#ff7700" stroke-width="3.5"/>
+        <polygon points="0,195 169,-98 -169,-98" fill="none" stroke="#ff7700" stroke-width="3.5"/>
+      </g>
+
+      <!-- Warning Badge: "१०० टुकड़े" -->
+      <circle cx="0" cy="0" r="126" fill="#24050a" stroke="url(#goldBright)" stroke-width="6" filter="url(#fireGlow)"/>
+      <text x="0" y="-8" text-anchor="middle" fill="#ffffff" font-size="72" font-weight="900">१००</text>
+      <text x="0" y="48" text-anchor="middle" fill="#ffe066" font-size="38" font-weight="900">टुकड़े ⚡</text>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 3: FOREGROUND HERO — FULL-DETAIL DASHAANAN RAVANA   -->
+    <!-- ========================================================= -->
+    <g id="ravanaHero" transform="translate(540, 1340)">
+      <ellipse cx="0" cy="340" rx="290" ry="32" fill="#040108" opacity="0.85"/>
+
+      <!-- Royal Crimson Dhoti & Gold Hem -->
+      <path d="M -128 -105 L 128 -105 L 182 325 L 40 325 L 0 115 L -40 325 L -182 325 Z" fill="url(#royalCrimson)" stroke="#140703" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M -42 -105 L 42 -105 L 62 245 L 0 288 L -62 245 Z" fill="#b8141a" stroke="#140703" stroke-width="4.5"/>
+      <line x1="-174" y1="305" x2="-44" y2="305" stroke="url(#goldGrad)" stroke-width="14"/>
+      <line x1="44" y1="305" x2="174" y2="305" stroke="url(#goldGrad)" stroke-width="14"/>
+      <rect x="-128" y="-135" width="256" height="32" rx="10" fill="url(#goldGrad)" stroke="#140703" stroke-width="5"/>
+
+      <!-- Left & Right Arms Clenched in Restraint -->
+      <path d="M -155 -415 C -235 -375, -275 -270, -255 -135 L -198 -135 C -205 -235, -180 -315, -135 -355 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="6"/>
+      <rect x="-252" y="-315" width="66" height="22" rx="6" transform="rotate(-14 -219 -304)" fill="url(#goldGrad)" stroke="#140703" stroke-width="4"/>
+      <circle cx="-225" cy="-115" r="28" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5"/>
+
+      <g id="swordArmRig">
+        <path d="M 155 -415 C 235 -375, 275 -270, 255 -135 L 198 -135 C 205 -235, 180 -315, 135 -355 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="6"/>
+        <rect x="186" y="-315" width="66" height="22" rx="6" transform="rotate(14 219 -304)" fill="url(#goldGrad)" stroke="#140703" stroke-width="4"/>
+        <g transform="translate(225, -115) rotate(22)">
+          <path d="M -12 20 L -16 310 C -16 365, 10 405, 34 430 C 26 375, 18 330, 18 20 Z" fill="url(#swordSteel)" stroke="#140703" stroke-width="5"/>
+          <rect x="-32" y="8" width="64" height="16" rx="6" fill="url(#goldGrad)" stroke="#140703" stroke-width="4"/>
+        </g>
+        <circle cx="225" cy="-115" r="28" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5"/>
+      </g>
+
+      <!-- Broad Royal Torso & Sacred Janeu + Gold Necklaces -->
+      <path d="M -155 -425 C -80 -455, 80 -455, 155 -425 L 122 -125 L -122 -125 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="6"/>
+      <path d="M -115 -428 C -62 -305, 35 -205, 112 -132" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+      <path d="M -85 -432 Q 0 -350 85 -432" fill="none" stroke="url(#goldGrad)" stroke-width="14" stroke-linecap="round"/>
+      <path d="M -105 -428 Q 0 -295 105 -428" fill="none" stroke="#ffffff" stroke-width="8" stroke-dasharray="6 9" stroke-linecap="round"/>
+      <circle cx="0" cy="-352" r="16" fill="#d91e18" stroke="url(#goldGrad)" stroke-width="5"/>
+
+      <!-- TEN HEADS & GLOWING FRACTURE WARNING LINES ON CENTRAL CROWN -->
+      <g id="tenHeadsGroup">
+        <rect x="-46" y="-498" width="92" height="72" rx="14" fill="url(#ravanaSkinDark)" stroke="#140703" stroke-width="5"/>
+
+        <use href="#ravana-side-head" transform="translate(-310, -575) scale(0.84)"/>
+        <use href="#ravana-side-head" transform="translate(-250, -580) scale(0.88)"/>
+        <use href="#ravana-side-head" transform="translate(-190, -585) scale(0.92)"/>
+        <use href="#ravana-side-head" transform="translate(-130, -590) scale(0.96)"/>
+
+        <use href="#ravana-side-head" transform="translate(130, -590) scale(0.96)"/>
+        <use href="#ravana-side-head" transform="translate(190, -585) scale(0.92)"/>
+        <use href="#ravana-side-head" transform="translate(250, -580) scale(0.88)"/>
+        <use href="#ravana-side-head" transform="translate(310, -575) scale(0.84)"/>
+        <use href="#ravana-side-head" transform="translate(365, -568) scale(0.80)"/>
+
+        <!-- Main Central Crown & Head -->
+        <path d="M -75 -645 L -60 -735 L 0 -790 L 60 -735 L 75 -645 Z" fill="url(#goldGrad)" stroke="#140703" stroke-width="5"/>
+        <path d="M -85 -645 Q 0 -662 85 -645 L 78 -624 Q 0 -638 -78 -624 Z" fill="url(#goldGrad)" stroke="#140703" stroke-width="4.5"/>
+        <circle cx="0" cy="-715" r="14" fill="#d91e18" stroke="#140703" stroke-width="3"/>
+
+        <!-- Glowing Fracture Warning Lines on Crown (100-Pieces Warning) -->
+        <g id="crownFractureLines" filter="url(#fireGlow)">
+          <polyline points="0,-785 -16,-742 12,-708 -10,-655" fill="none" stroke="#ffffff" stroke-width="6.5" stroke-linecap="round"/>
+          <polyline points="-48,-720 -14,-695 -35,-652" fill="none" stroke="#ffaa1d" stroke-width="5" stroke-linecap="round"/>
+          <polyline points="48,-720 14,-695 35,-652" fill="none" stroke="#ffaa1d" stroke-width="5" stroke-linecap="round"/>
+        </g>
+
+        <path d="M -72 -628 L 72 -628 L 65 -528 C 65 -488, 32 -466, 0 -466 C -32 -466, -65 -488, -65 -528 Z" fill="url(#ravanaSkin)" stroke="#140703" stroke-width="5.5"/>
+        <line x1="-36" y1="-608" x2="36" y2="-608" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="-32" y1="-596" x2="32" y2="-596" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round"/>
+        <circle cx="0" cy="-602" r="6" fill="#d91e18"/>
+        <path d="M -54 -580 L -14 -570" stroke="#140703" stroke-width="7" stroke-linecap="round"/>
+        <path d="M 54 -580 L 14 -570" stroke="#140703" stroke-width="7" stroke-linecap="round"/>
+        <ellipse cx="-32" cy="-558" rx="14" ry="10" fill="#fff9db" stroke="#140703" stroke-width="3"/>
+        <circle cx="-32" cy="-558" r="5" fill="#9e0b0b"/>
+        <ellipse cx="32" cy="-558" rx="14" ry="10" fill="#fff9db" stroke="#140703" stroke-width="3"/>
+        <circle cx="32" cy="-558" r="5" fill="#9e0b0b"/>
+        <path d="M 0 -526 C -26 -534, -54 -524, -66 -506 C -46 -512, -22 -514, 0 -518 C 22 -514, 46 -512, 66 -506 C 54 -524, 26 -534, 0 -526 Z" fill="#140703"/>
+      </g>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 4: BLAZING LAKSHMANA-REKHA STYLE FIERY WALL ABOVE   -->
+    <!-- ========================================================= -->
+    <g id="lakshmanaRekhaFireWall" transform="translate(540, 525)" filter="url(#fireGlow)">
+      <!-- Glowing Horizontal Fiery Barrier Arc Spanning All Ten Heads -->
+      <path d="M -455 35 Q 0 -35 455 35" fill="none" stroke="url(#fireWallGrad)" stroke-width="18" stroke-linecap="round"/>
+      <path id="fireWallCore" d="M -440 35 Q 0 -35 440 35" fill="none" stroke="#ffffff" stroke-width="6" stroke-dasharray="32 16" stroke-linecap="round"/>
+      <!-- Rising Fire Tongues Along the Barrier (Populated via JS) -->
+      <g id="fireTonguesLayer"></g>
+    </g>
+
+    <!-- Floating Fire Embers -->
+    <g id="particlesLayer"></g>
+
+    <!-- LAYER 5: KINETIC HINDI KEYWORDS (Safe Zone: Bottom Third) -->
+    <g id="keywordsLayer" transform="translate(540, 1615)">
+      <!-- Keyword 1: बलपूर्वक भोग निषेध -->
+      <g id="kw1" opacity="0" transform="scale(0.85)">
+        <rect x="-345" y="-58" width="690" height="96" rx="24" fill="#180624" fill-opacity="0.94" stroke="url(#goldGrad)" stroke-width="4.5" filter="url(#softGoldGlow)"/>
+        <text x="0" y="10" text-anchor="middle" fill="url(#goldBright)" font-size="50" font-weight="900">बलपूर्वक भोग निषेध 🔥</text>
+      </g>
+
+      <!-- Keyword 2: 100 टुकड़ों का श्राप -->
+      <g id="kw2" opacity="0" transform="translate(0, 118) scale(0.85)">
+        <rect x="-320" y="-52" width="640" height="86" rx="43" fill="url(#goldGrad)" filter="url(#softGoldGlow)"/>
+        <text x="0" y="9" text-anchor="middle" fill="#170500" font-size="45" font-weight="900">100 टुकड़ों का श्राप ⚡</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- DETERMINISTIC 5.0-SECOND ANIMATION ENGINE -->
+  <script>
+    (function() {
+      const DURATION = 5000;
+      let startTime = null;
+
+      const cameraRig = document.getElementById('cameraRig');
+      const fireYantraWheel = document.getElementById('fireYantraWheel');
+      const fireAuraTop = document.getElementById('fireAuraTop');
+      const fireWallCore = document.getElementById('fireWallCore');
+      const fireTonguesLayer = document.getElementById('fireTonguesLayer');
+      const crownFractureLines = document.getElementById('crownFractureLines');
+      const ravanaHero = document.getElementById('ravanaHero');
+      const tenHeadsGroup = document.getElementById('tenHeadsGroup');
+      const particlesLayer = document.getElementById('particlesLayer');
+      const kw1 = document.getElementById('kw1');
+      const kw2 = document.getElementById('kw2');
+
+      // Generate 19 Blazing Flame Tongues Along the Fiery Barrier
+      const flames = [];
+      for (let i = 0; i < 19; i++) {
+        const x = -390 + i * 43.3;
+        const curveY = (x * x) / 6000;
+        const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        p.setAttribute('fill', i % 2 === 0 ? '#ffe066' : '#ff6a00');
+        fireTonguesLayer.appendChild(p);
+        flames.push({ el: p, x, baseY: curveY, phase: i * 0.7 });
+      }
+
+      // Generate 28 Floating Fire Embers
+      const particles = [];
+      for (let i = 0; i < 28; i++) {
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('r', (2.5 + (i % 4) * 1.1).toFixed(1));
+        c.setAttribute('fill', i % 2 === 0 ? '#ffe066' : '#ff5500');
+        particlesLayer.appendChild(c);
+        particles.push({
+          el: c,
+          baseX: 80 + ((i * 113) % 920),
+          baseY: 200 + ((i * 197) % 1500),
+          speed: 150 + (i % 6) * 32,
+          phase: i * 0.65
+        });
+      }
+
+      function easeOutBack(x) {
+        const c1 = 1.70158;
+        const c3 = c1 + 1;
+        return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+      }
+
+      function easeOutCubic(x) {
+        return 1 - Math.pow(1 - x, 3);
+      }
+
+      function render(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = (timestamp - startTime) % DURATION;
+        const t = elapsed / DURATION;
+
+        // 1. Camera Smooth Push-In
+        const camScale = 1 + t * 0.08;
+        cameraRig.setAttribute('transform', `translate(540, 960) scale(${camScale.toFixed(4)}) translate(-540, -960)`);
+
+        // 2. Top "100 टुकड़े" Fiery Yantra Rotation & Pulse
+        fireYantraWheel.setAttribute('transform', `rotate(${(t * 54).toFixed(1)})`);
+        fireAuraTop.setAttribute('r', (280 + Math.sin(t * Math.PI * 6) * 28).toFixed(1));
+
+        // 3. Blazing Lakshmana-Rekha Fire Wall & Dancing Flame Tongues
+        fireWallCore.setAttribute('stroke-dashoffset', (-t * 480).toFixed(1));
+        for (let i = 0; i < flames.length; i++) {
+          const fl = flames[i];
+          const h = 28 + Math.abs(Math.sin(t * Math.PI * 10 + fl.phase)) * 34;
+          const sway = Math.sin(t * Math.PI * 8 + fl.phase) * 7;
+          fl.el.setAttribute('d', `M ${fl.x - 10} ${fl.baseY + 4} Q ${fl.x + sway} ${fl.baseY - h} ${fl.x + 10} ${fl.baseY + 4} Z`);
+        }
+
+        // 4. Glowing Fracture Warning Lines on Ravana's Central Crown
+        const crackOp = 0.55 + 0.45 * Math.abs(Math.sin(t * Math.PI * 8));
+        crownFractureLines.setAttribute('opacity', crackOp.toFixed(2));
+
+        // 5. Ravana Subtle Recoil & Tremor Under Fiery Barrier
+        const bobY = 1340 + Math.sin(t * Math.PI * 3) * 5;
+        ravanaHero.setAttribute('transform', `translate(540, ${bobY.toFixed(1)})`);
+        tenHeadsGroup.setAttribute('transform', `rotate(${(Math.sin(t * Math.PI * 18) * 1.1).toFixed(2)}, 0, -480)`);
+
+        // 6. Floating Fire Embers
+        for (let i = 0; i < particles.length; i++) {
+          const pt = particles[i];
+          const yPos = ((pt.baseY - t * pt.speed * 5) % 1600 + 1600) % 1600 + 140;
+          const xPos = pt.baseX + Math.sin(t * Math.PI * 4 + pt.phase) * 16;
+          pt.el.setAttribute('cx', xPos.toFixed(1));
+          pt.el.setAttribute('cy', yPos.toFixed(1));
+          pt.el.setAttribute('opacity', (0.3 + 0.65 * Math.abs(Math.sin(t * Math.PI * 5 + pt.phase))).toFixed(2));
+        }
+
+        // 7. Kinetic Hindi Keywords ("बलपूर्वक भोग निषेध 🔥" & "100 टुकड़ों का श्राप ⚡")
+        if (t >= 0.16) {
+          const p1 = Math.min(1, (t - 0.16) / 0.12);
+          const s1 = 0.85 + 0.15 * easeOutBack(p1);
+          kw1.setAttribute('opacity', easeOutCubic(p1).toFixed(2));
+          kw1.setAttribute('transform', `scale(${s1.toFixed(3)})`);
+        } else {
+          kw1.setAttribute('opacity', '0');
+        }
+
+        if (t >= 0.44) {
+          const p2 = Math.min(1, (t - 0.44) / 0.12);
+          const s2 = 0.85 + 0.15 * easeOutBack(p2);
+          kw2.setAttribute('opacity', easeOutCubic(p2).toFixed(2));
+          kw2.setAttribute('transform', `translate(0, 118) scale(${s2.toFixed(3)})`);
+        } else {
+          kw2.setAttribute('opacity', '0');
+        }
+
+        requestAnimationFrame(render);
+      }
+
+      window.onload = function() {
+        requestAnimationFrame(render);
+      };
+    })();
+  </script>
+</body>
+</html>
+```
+
+मैंने **Part 3 का Clip 11 (`part3_sentence_11.html` — पूरे 5.0 सेकंड)** पूरी बारीक डिटेलिंग के साथ तैयार कर दिया है:
+* **अग्निमय चेतावनी दीवार:** दशानन रावण के दसों मुकुटों के ठीक ऊपर लहराती लपटों वाली **लक्ष्मण-रेखा जैसी अग्नि दीवार**, ऊपर घूमता हुआ **`१०० टुकड़े ⚡`** का श्राप यंत्र, और रावण के केंद्रीय मुकुट पर चमकती हुई चेतावनी दरारें।
+* **मुख्य हिंदी कीवर्ड्स:** **`बलपूर्वक भोग निषेध 🔥`** और **`100 टुकड़ों का श्राप ⚡`**।
+
+बताइए जब आप **Clip 12** (*"यही कारण था कि लंका ले जाने के बाद भी, अशोक वाटिका में एक साल तक रावण कभी माता सीता के पास जाने की हिम्मत नहीं कर पाया!"* — अशोक वाटिका में वृक्ष के नीचे शांत बैठी माता सीता और कई कदम दूर बेबस खड़ा रावण) के लिए तैयार हों!
