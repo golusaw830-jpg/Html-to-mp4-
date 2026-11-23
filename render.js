@@ -70,7 +70,7 @@ function generateBuiltinSfx(type, outWav) {
 (async () => {
   const WIDTH = 1080;
   const HEIGHT = 1920;
-  const FPS = 60;
+  const FPS = 30;
   const DEFAULT_CLIP_SEC = 5.0;
   const TRANSITION_SEC = 0.5;
 
@@ -231,17 +231,16 @@ function generateBuiltinSfx(type, outWav) {
         html, body { width: 1080px !important; height: 1920px !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; background: #000 !important; }
         .stage-wrapper { width: 1080px !important; height: 1920px !important; max-width: none !important; max-height: none !important; border-radius: 0 !important; box-shadow: none !important; }
 
-        /* Style 2: Royal Temple Pill Box Overlay */
+        /* Style 2: Royal Temple Pill Box Overlay (YouTube Shorts Safe Zone: left 60px, right 150px, bottom 430px) */
         #royal-caption-wrap {
           position: fixed;
-          left: 50%;
-          bottom: 330px;
-          transform: translateX(-50%);
+          left: 60px;
+          bottom: 430px;
           z-index: 999999;
           display: none;
           flex-direction: column;
           align-items: center;
-          width: 900px;
+          width: 870px;
           pointer-events: none;
         }
         .temple-trim {
@@ -262,15 +261,209 @@ function generateBuiltinSfx(type, outWav) {
           background: linear-gradient(180deg, rgba(44, 10, 12, 0.90) 0%, rgba(16, 4, 6, 0.94) 100%);
           border: 3px solid #e6b44c;
           border-radius: 999px;
-          padding: 20px 46px;
+          padding: 18px 40px;
           box-shadow: 0 14px 36px rgba(0, 0, 0, 0.85), inset 0 0 22px rgba(255, 166, 0, 0.22);
           text-align: center;
           font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', sans-serif;
-          font-size: 50px;
+          font-size: 46px;
           font-weight: 800;
           line-height: 1.3;
           letter-spacing: 0.5px;
         }
+        .cap-word {
+          display: inline-block;
+          margin: 0 7px;
+          color: #fff6e0;
+          text-shadow: 0 3px 8px rgba(0, 0, 0, 0.95);
+        }
+        .cap-word.active {
+          color: #ffcc33;
+          transform: scale(1.12);
+          text-shadow: 0 0 18px rgba(255, 153, 0, 0.95), 0 0 34px rgba(255, 85, 0, 0.75), 0 3px 6px #000;
+        }
+      `
+    });
+
+    if (captionsData) {
+      await page.evaluate((caps) => {
+        window.__CAPTIONS = caps;
+        const wrap = document.createElement('div');
+        wrap.id = 'royal-caption-wrap';
+        wrap.innerHTML = `
+          <div class="temple-trim"></div>
+          <div class="temple-pill" id="royal-caption-text"></div>
+          <div class="temple-trim"></div>
+        `;
+        document.body.appendChild(wrap);
+
+        window.__updateCaption = function (globalSec) {
+          const seg = window.__CAPTIONS.find((c) => globalSec >= c.start && globalSec <= c.end);
+          if (!seg) {
+            wrap.style.display = 'none';
+            return;
+          }
+          wrap.style.display = 'flex';
+          const words = seg.text.trim().split(/\s+/);
+          const progress = Math.min(0.999, Math.max(0, (globalSec - seg.start) / Math.max(0.1, seg.end - seg.start)));
+          const activeIdx = Math.floor(progress * words.length);
+          const box = document.getElementById('royal-caption-text');
+          box.innerHTML = words
+            .map((w, i) => `<span class="cap-word${i === activeIdx ? ' active' : ''}">${w}</span>`)
+            .join('');
+        };
+      }, captionsData);
+    }
+
+    const ffmpeg = spawn('ffmpeg', [
+      '-y', '-f', 'image2pipe', '-vcodec', 'png', '-r', String(FPS), '-i', '-',
+      '-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-pix_fmt', 'yuv420p', '-r', String(FPS), clipMp4
+    ], { stdio: ['pipe', 'inherit', 'inherit'] });
+
+    const totalFrames = Math.round(clipSec * FPS);
+    const simStepMs = (DEFAULT_CLIP_SEC * 1000) / totalFrames;
+
+    for (let f = 0; f < totalFrames; f++) {
+      const localSec = f / FPS;
+      const globalSec = sceneStartGlobal + localSec;
+      await page.evaluate((ms, gSec, hasCaps) => {
+        window.__advanceClock(ms);
+        if (hasCaps && window.__updateCaption) window.__updateCaption(gSec);
+      }, f === 0 ? 0 : simStepMs, globalSec, Boolean(captionsData));
+
+      const buf = await page.screenshot({ type: 'png' });
+      const ok = ffmpeg.stdin.write(buf);
+      if (!ok) await new Promise((r) => ffmpeg.stdin.once('drain', r));
+    }
+
+    ffmpeg.stdin.end();
+    await new Promise((resolve, reject) => {
+      ffmpeg.on('close', (code) => (code === 0 ? resolve() : reject(new Error('Clip FFmpeg exited ' + code))));
+    });
+    await page.close();
+    clipOutputs.push(clipMp4);
+  }
+
+  await browser.close();
+
+  const mergedVideo = 'temp_merged_video.mp4';
+  if (clipOutputs.length === 1) {
+    fs.renameSync(clipOutputs[0], mergedVideo);
+  } else {
+    const inputs = [];
+    clipOutputs.forEach((c) => inputs.push('-i', c));
+
+    const transitionTypes = ['fade', 'wipeup', 'circleopen', 'fadeblack'];
+    const filters = [];
+    let prevLabel = '[0:v]';
+    let currentTimeline = sceneDurations[0];
+
+    for (let i = 1; i < clipOutputs.length; i++) {
+      const outLabel = i === clipOutputs.length - 1 ? '[vout]' : `[v${i}]`;
+      const offset = Math.max(0, currentTimeline - TRANSITION_SEC).toFixed(3);
+      const tType = transitionTypes[(i - 1) % transitionTypes.length];
+      filters.push(`${prevLabel}[${i}:v]xfade=transition=${tType}:duration=${TRANSITION_SEC}:offset=${offset}${outLabel}`);
+      prevLabel = outLabel;
+      currentTimeline = Number(offset) + sceneDurations[i];
+    }
+
+    await runFFmpeg([
+      '-y', ...inputs, '-filter_complex', filters.join(';'), '-map', '[vout]',
+      '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', '-r', String(FPS), mergedVideo
+    ]);
+
+    clipOutputs.forEach((c) => { if (fs.existsSync(c)) fs.unlinkSync(c); });
+  }
+
+  // Mix Voiceover + Balanced SFX + Auto-Ducked Universal Mythology BGM
+  if (fullAudioFile) {
+    const tempFilesToClean = [];
+    let activeBgmPath = customBgmFile || null;
+
+    if (!activeBgmPath && bgmMood !== 'none') {
+      activeBgmPath = 'temp_builtin_bgm.wav';
+      generateBuiltinBgm(bgmMood, totalAudioSec || 60, activeBgmPath);
+      tempFilesToClean.push(activeBgmPath);
+    }
+
+    const hasSfx = Array.isArray(sfxList) && sfxList.length > 0;
+    const audioInputs = ['-i', fullAudioFile];
+    const filterChains = ['[0:a]aresample=44100,aformat=channel_layouts=stereo,volume=1.0[vo]'];
+    const mixLabels = ['[vo]'];
+    let nextIdx = 1;
+
+    if (activeBgmPath) {
+      if (customBgmFile) {
+        audioInputs.push('-stream_loop', '-1', '-i', activeBgmPath);
+      } else {
+        audioInputs.push('-i', activeBgmPath);
+      }
+      filterChains.push(
+        `[${nextIdx}:a]aresample=44100,aformat=channel_layouts=stereo,volume=0.22[bgm_raw];` +
+        `[bgm_raw][vo]sidechaincompress=threshold=0.03:ratio=6:attack=40:release=350[bgm]`
+      );
+      mixLabels.push('[bgm]');
+      nextIdx++;
+    }
+
+    if (hasSfx) {
+      const generatedCache = {};
+      for (let i = 0; i < sfxList.length; i++) {
+        const cue = sfxList[i];
+        const type = cue.type || 'whoosh';
+        const customPath = path.join(__dirname, 'sfx', `${type}.mp3`);
+        let sfxPath = null;
+
+        if (fs.existsSync(customPath)) {
+          sfxPath = customPath;
+        } else {
+          if (!generatedCache[type]) {
+            const wavPath = `temp_sfx_${type}.wav`;
+            generateBuiltinSfx(type, wavPath);
+            generatedCache[type] = wavPath;
+            tempFilesToClean.push(wavPath);
+          }
+          sfxPath = generatedCache[type];
+        }
+
+        audioInputs.push('-i', sfxPath);
+        const delayMs = Math.max(0, Math.round((Number(cue.time) || 0) * 1000));
+        const vol = Math.min(0.45, Math.max(0.10, Number(cue.volume) || 0.28));
+        const lbl = `[sfx${i}]`;
+        filterChains.push(
+          `[${nextIdx}:a]aresample=44100,aformat=channel_layouts=stereo,volume=${vol},adelay=${delayMs}|${delayMs}${lbl}`
+        );
+        mixLabels.push(lbl);
+        nextIdx++;
+      }
+    }
+
+    filterChains.push(`${mixLabels.join('')}amix=inputs=${mixLabels.length}:duration=first:normalize=0[aout]`);
+    const finalAudioTrack = 'temp_mixed_master_audio.wav';
+    tempFilesToClean.push(finalAudioTrack);
+
+    await runFFmpeg([
+      '-y',
+      ...audioInputs,
+      '-filter_complex', filterChains.join(';'),
+      '-map', '[aout]',
+      '-c:a', 'pcm_s16le',
+      finalAudioTrack
+    ]);
+
+    await runFFmpeg([
+      '-y', '-i', mergedVideo, '-i', finalAudioTrack,
+      '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-shortest', 'final_video_with_audio.mp4'
+    ]);
+
+    fs.unlinkSync(mergedVideo);
+    tempFilesToClean.forEach((f) => { if (fs.existsSync(f)) fs.unlinkSync(f); });
+  } else {
+    fs.renameSync(mergedVideo, 'final_video_with_audio.mp4');
+  }
+
+  console.log('DONE! final_video_with_audio.mp4 is ready!');
+})();
+ }
         .cap-word {
           display: inline-block;
           margin: 0 8px;
