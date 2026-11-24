@@ -27,7 +27,9 @@ jobs:
           sudo apt-get install -y ffmpeg fonts-noto-core fonts-noto-extra git
           pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install "numpy>=1.26,<2" "protobuf>=5.28.0" transformers==4.46.1 accelerate sentencepiece soundfile faster-whisper argbind einops julius scipy tqdm
-          pip install --no-deps descript-audio-codec git+https://github.com/huggingface/parler-tts.git
+          pip install --no-deps descript-audiotools descript-audio-codec git+https://github.com/huggingface/parler-tts.git
+          pip install flatten-dict randomname rich tensorboard fire matplotlib
+          python3 -c "from parler_tts import ParlerTTSForConditionalGeneration; print('PARLER_OK')"
 
       - name: Install Node dependencies
         run: npm install
