@@ -749,7 +749,7 @@ e';
         audioInputs.push('-stream_loop', '-1', '-i', bgmFile);
         // Subtle 22% bed that automatically ducks to ~10% whenever voiceover speaks
         filterChains.push(
-          `[${nextIdx}:a]aresample=44100,aformat=channel_layouts=stereo,volume=0.22[bgm_raw];` +
+          `[${nextIdx}:a]aresample=44100,aformat=channel_layouts=stereo,volume=0.14[bgm_raw];` +
           `[bgm_raw][vo]sidechaincompress=threshold=0.03:ratio=6:attack=40:release=350[bgm]`
         );
         mixLabels.push('[bgm]');
