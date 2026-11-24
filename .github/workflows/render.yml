@@ -15,87 +15,15 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install FFmpeg, Hindi Fonts & Whisper
+      - name: Install FFmpeg
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg fonts-noto-core fonts-noto-extra
-          pip install faster-whisper
+          sudo apt-get install -y ffmpeg fonts-noto-core
 
       - name: Install Node dependencies
         run: npm install
 
-      - name: Generate Pure-Hindi Word-Synced Captions & Exact Scene Durations
-        run: |
-          python3 - << 'PYEOF'
-          import os, glob, re, json
-          from faster_whisper import WhisperModel
-
-          audio_files = [f for f in glob.glob("audio.*") if f.split(".")[-1].lower() in ["mp3", "wav", "m4a", "ogg", "aac"]]
-          if not audio_files:
-              raise FileNotFoundError("No audio.* file found in repository!")
-
-          audio_path = audio_files[0]
-          print(f"Transcribing {audio_path} with word timestamps...")
-          model = WhisperModel("small", device="cpu", compute_type="int8")
-          segments, info = model.transcribe(audio_path, language="hi", word_timestamps=True)
-
-          w_words = []
-          for seg in segments:
-              if seg.words:
-                  for w in seg.words:
-                      if w.word.strip():
-                          w_words.append({"start": w.start, "end": w.end, "text": w.word.strip()})
-              else:
-                  w_words.append({"start": seg.start, "end": seg.end, "text": seg.text.strip()})
-
-          script_text = open("script.txt", encoding="utf-8").read().strip() if os.path.exists("script.txt") else ""
-          pure_words = [w for w in re.split(r'\s+', script_text) if w]
-
-          cues = []
-          if pure_words and w_words:
-              total_p = len(pure_words)
-              total_w = len(w_words)
-              chunk_size = 3
-              for i in range(0, total_p, chunk_size):
-                  chunk_words = pure_words[i:i+chunk_size]
-                  w_start_idx = min(total_w - 1, int((i / total_p) * total_w))
-                  w_end_idx = min(total_w - 1, int(((i + len(chunk_words) - 1) / total_p) * total_w))
-                  start_t = round(w_words[w_start_idx]["start"], 2)
-                  end_t = round(max(start_t + 0.35, w_words[w_end_idx]["end"]), 2)
-                  cues.append({
-                      "start": start_t,
-                      "end": end_t,
-                      "text": " ".join(chunk_words)
-                  })
-          else:
-              for i in range(0, len(w_words), 3):
-                  grp = w_words[i:i+3]
-                  cues.append({
-                      "start": round(grp[0]["start"], 2),
-                      "end": round(grp[-1]["end"], 2),
-                      "text": " ".join(x["text"] for x in grp)
-                  })
-
-          with open("captions.json", "w", encoding="utf-8") as cf:
-              json.dump(cues, cf, ensure_ascii=False, indent=2)
-          print(f"Saved {len(cues)} ultra-clean 3-word captions to captions.json!")
-
-          total_dur = round(info.duration, 2)
-          weights = [4.5, 4.5, 5.0, 4.5, 5.0, 4.5, 5.0, 5.0, 4.5, 4.0]
-          w_sum = sum(weights)
-          scaled_durs = [round((w / w_sum) * total_dur, 2) for w in weights]
-          scaled_durs[-1] = round(max(2.0, total_dur - sum(scaled_durs[:-1])), 2)
-          with open("durations.json", "w", encoding="utf-8") as df:
-              json.dump(scaled_durs, df)
-          print(f"Synced 10 scene durations to total audio ({total_dur}s): {scaled_durs}")
-          PYEOF
-
-      - name: Render HTML scenes to MP4
+      - name: Render HTML scenes to MP4 (30 FPS)
         run: node render.js
 
       - name: Upload Final Video
