@@ -28,8 +28,8 @@ jobs:
           pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install "numpy>=1.26,<2" "protobuf>=5.28.0" transformers==4.46.1 accelerate sentencepiece soundfile faster-whisper argbind einops julius scipy tqdm
           pip install --no-deps descript-audiotools descript-audio-codec git+https://github.com/huggingface/parler-tts.git
-          pip install flatten-dict randomname rich tensorboard fire matplotlib
-          python3 -c "from parler_tts import ParlerTTSForConditionalGeneration; print('PARLER_OK')"
+          pip install flatten-dict randomname rich tensorboard fire matplotlib ffmpy librosa pyloudnorm markdown2 pystoi torch-stoi scikit-learn
+          python3 -c "from parler_tts import ParlerTTSForConditionalGeneration; from transformers import AutoTokenizer; print('PARLER_OK')"
 
       - name: Install Node dependencies
         run: npm install
