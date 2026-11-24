@@ -6,7 +6,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -16,20 +15,27 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Setup Python for Indic Parler-TTS & Whisper
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install FFmpeg, Hindi Fonts and AI Voice Dependencies
+      - name: Cache Pip Packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-parler-${{ runner.os }}-v2
+
+      - name: Install FFmpeg, Hindi Fonts & Indic Parler-TTS
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg fonts-noto-core fonts-noto-extra git
+          pip install --upgrade pip setuptools wheel Cython
+          pip install "numpy>=1.26.4,<2"
           pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
-          pip install "numpy>=1.26,<2" "protobuf>=5.28.0" transformers==4.46.1 accelerate sentencepiece soundfile faster-whisper argbind einops julius scipy tqdm
-          pip install --no-deps descript-audiotools descript-audio-codec git+https://github.com/huggingface/parler-tts.git
-          pip install flatten-dict randomname rich tensorboard fire matplotlib ffmpy librosa pyloudnorm markdown2 pystoi torch-stoi scikit-learn
-          python3 -c "from parler_tts import ParlerTTSForConditionalGeneration; from transformers import AutoTokenizer; print('PARLER_OK')"
+          pip install git+https://github.com/huggingface/parler-tts.git soundfile faster-whisper
+          pip install --upgrade --no-deps "protobuf>=5.28.0" "transformers==4.46.1"
+          python3 -c "from parler_tts import ParlerTTSForConditionalGeneration; from transformers import AutoTokenizer; print('ALL_IMPORTS_OK')"
 
       - name: Install Node dependencies
         run: npm install
@@ -39,61 +45,55 @@ jobs:
         with:
           path: ~/.cache/huggingface
           key: hf-models-${{ runner.os }}-v1
+
       - name: Auto-Generate Emotional Hindi Voiceover (Indic Parler-TTS) & Captions
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          python3 - << 'EOF'
+          python3 - << 'PYEOF'
           import os, glob, re, json
+          import numpy as np
           import torch
           import soundfile as sf
           from parler_tts import ParlerTTSForConditionalGeneration
           from transformers import AutoTokenizer
           from faster_whisper import WhisperModel
 
-          has_audio = any(glob.glob(f"audio.{ext}") for ext in ["mp3", "wav", "m4a", "ogg", "aac"])
-
-          if os.path.exists("script.txt") and not has_audio:
-              with open("script.txt", "r", encoding="utf-8") as f:
-                  full_text = " ".join(f.read().strip().split())
-
-              if full_text:
-                  print("Loading AI4Bharat Indic Parler-TTS model...")
+          if not glob.glob("audio.*") and os.path.exists("script.txt"):
+              raw_text = open("script.txt", encoding="utf-8").read().strip()
+              if raw_text:
+                  print("Loading ai4bharat/indic-parler-tts...")
                   device = "cpu"
-                  model_id = "ai4bharat/indic-parler-tts"
-                  model = ParlerTTSForConditionalGeneration.from_pretrained(model_id).to(device)
-                  tokenizer = AutoTokenizer.from_pretrained(model_id)
+                  model = ParlerTTSForConditionalGeneration.from_pretrained("ai4bharat/indic-parler-tts").to(device)
+                  tokenizer = AutoTokenizer.from_pretrained("ai4bharat/indic-parler-tts")
                   desc_tokenizer = AutoTokenizer.from_pretrained(model.config.text_encoder._name_or_path)
 
-                  description = (
-                      "Rohit speaks with a deep, dramatic, and expressive male voice in Hindi, "
-                      "with natural storytelling pauses, rich emotion, moderate pace, and clear studio audio."
-                  )
+                  description = "Rohit speaks in a deep, cinematic, suspenseful Hindi storytelling tone with clear pronunciation, dramatic pauses, and studio-quality clarity."
+                  desc_ids = desc_tokenizer(description, return_tensors="pt").to(device)
 
-                  # Split into clean sentences for natural breathing & stability
-                  sentences = [s.strip() for s in re.split(r'(?<=[।?!.])\s+', full_text) if s.strip()]
-                  audio_chunks = []
-
-                  for idx, sent in enumerate(sentences):
-                      print(f"Synthesizing sentence {idx+1}/{len(sentences)}: {sent}")
-                      input_ids = desc_tokenizer(description, return_tensors="pt").input_ids.to(device)
-                      prompt_input_ids = tokenizer(sent, return_tensors="pt").input_ids.to(device)
-                      generation = model.generate(input_ids=input_ids, prompt_input_ids=prompt_input_ids)
-                      audio_arr = generation.cpu().numpy().squeeze()
-                      audio_chunks.append(audio_arr)
-
-                  import numpy as np
-                  silence = np.zeros(int(model.config.sampling_rate * 0.28), dtype=np.float32)
+                  sentences = [s.strip() for s in re.split(r'(?<=[।?!.])\s+', raw_text) if s.strip()]
                   combined = []
-                  for i, chunk in enumerate(audio_chunks):
-                      combined.append(chunk)
-                      if i < len(audio_chunks) - 1:
-                          combined.append(silence)
+                  sr = model.config.sampling_rate
+                  silence = np.zeros(int(sr * 0.25), dtype=np.float32)
+
+                  for idx, sent in enumerate(sentences, 1):
+                      print(f"Generating sentence {idx}/{len(sentences)}: {sent}")
+                      prompt_ids = tokenizer(sent, return_tensors="pt").to(device)
+                      with torch.no_grad():
+                          gen = model.generate(
+                              input_ids=desc_ids.input_ids,
+                              attention_mask=desc_ids.attention_mask,
+                              prompt_input_ids=prompt_ids.input_ids,
+                              prompt_attention_mask=prompt_ids.attention_mask
+                          )
+                      wav = gen.cpu().numpy().squeeze().astype(np.float32)
+                      combined.append(wav)
+                      combined.append(silence)
+
                   final_audio = np.concatenate(combined)
-                  sf.write("audio.wav", final_audio, model.config.sampling_rate)
+                  sf.write("audio.wav", final_audio, sr)
                   print("Emotional Hindi voiceover saved to audio.wav!")
 
-          # Generate exact synced captions.json from audio.wav / audio.mp3 using Whisper
           audio_files = [f for f in glob.glob("audio.*") if f.split(".")[-1].lower() in ["mp3", "wav", "m4a", "ogg", "aac"]]
           if audio_files and not os.path.exists("captions.json"):
               print(f"Transcribing {audio_files[0]} for exact word-synced captions...")
@@ -111,7 +111,7 @@ jobs:
               with open("captions.json", "w", encoding="utf-8") as cf:
                   json.dump(cues, cf, ensure_ascii=False, indent=2)
               print(f"Generated captions.json with {len(cues)} synced segments!")
-          EOF
+          PYEOF
 
       - name: Render HTML scenes to MP4
         run: node render.js
