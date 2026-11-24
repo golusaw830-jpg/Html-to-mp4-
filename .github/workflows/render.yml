@@ -26,8 +26,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg fonts-noto-core fonts-noto-extra git
           pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
-          pip install --no-deps git+https://github.com/huggingface/parler-tts.git
-          pip install transformers==4.46.1 "protobuf>=5.28.0" accelerate descript-audio-codec sentencepiece soundfile faster-whisper
+          pip install "numpy>=1.26,<2" "protobuf>=5.28.0" transformers==4.46.1 accelerate sentencepiece soundfile faster-whisper argbind einops julius scipy tqdm
+          pip install --no-deps descript-audio-codec git+https://github.com/huggingface/parler-tts.git
 
       - name: Install Node dependencies
         run: npm install
