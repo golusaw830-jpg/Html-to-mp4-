@@ -21,7 +21,7 @@ function getAudioDuration(audioPath) {
 (async () => {
   const WIDTH = 1080;
   const HEIGHT = 1920;
-  const FPS = 60;
+  const FPS = 30;
   const DEFAULT_CLIP_SEC = 5.0;
   const TRANSITION_SEC = 0.5;
 
