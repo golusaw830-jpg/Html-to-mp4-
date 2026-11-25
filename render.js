@@ -4,6 +4,7 @@ const path = require('path');
 const { spawn } = require('child_process');
 
 const FPS = 30;
+const FRAME_MS = 1000 / FPS;
 const WIDTH = 1080;
 const HEIGHT = 1920;
 const CONCURRENCY = 2;
@@ -40,7 +41,7 @@ function runFFmpeg(args) {
     acc += d;
   }
 
-  console.log(`Rendering ${sceneFiles.length} scenes (${totalDuration.toFixed(2)}s @ ${FPS} FPS):`, sceneFiles);
+  console.log(`Rendering ${sceneFiles.length} scenes with True Virtual Time (${totalDuration.toFixed(2)}s @ ${FPS} FPS):`, sceneFiles);
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -60,7 +61,6 @@ function runFFmpeg(args) {
 
     console.log(`[${i + 1}/${sceneFiles.length}] Starting ${file} (${dur}s, ${totalFrames} frames)...`);
     await page.goto('file://' + path.resolve(file), { waitUntil: 'domcontentloaded', timeout: 60000 });
-    await new Promise((r) => setTimeout(r, 250));
 
     await page.evaluate(() => {
       const barWrap = document.createElement('div');
@@ -81,47 +81,49 @@ function runFFmpeg(args) {
       '-i', '-',
       '-c:v', 'libx264',
       '-pix_fmt', 'yuv420p',
-      '-preset', 'ultrafast',
-      '-crf', '18',
+      '-preset', 'fast',
+      '-crf', '23',
       outPart
     ], { stdio: ['pipe', 'ignore', 'inherit'] });
 
     ffmpeg.stdin.on('error', () => {});
 
+    const advanceVirtualTime = (ms) => new Promise((resolve) => {
+      let done = false;
+      const finish = () => {
+        if (done) return;
+        done = true;
+        client.off('Emulation.virtualTimeBudgetExpired', finish);
+        clearTimeout(timer);
+        resolve();
+      };
+      const timer = setTimeout(finish, 2000);
+      client.on('Emulation.virtualTimeBudgetExpired', finish);
+      client.send('Emulation.setVirtualTimePolicy', {
+        policy: 'advance',
+        budget: ms
+      }).catch(finish);
+    });
+
+    // Freeze browser clock immediately at start of scene
+    await advanceVirtualTime(1);
+
     for (let f = 0; f < totalFrames; f++) {
-      const sceneTimeMs = (f / FPS) * 1000;
       const pct = Math.min(100, ((elapsedBefore + f / FPS) / totalDuration) * 100);
 
-      await page.evaluate((tMs, p) => {
-        try {
-          const anims = document.getAnimations();
-          for (let k = 0; k < anims.length; k++) {
-            try {
-              anims[k].pause();
-              anims[k].currentTime = tMs;
-            } catch (e) {}
-          }
-        } catch (e) {}
-        try {
-          const svgs = document.querySelectorAll('svg');
-          for (let k = 0; k < svgs.length; k++) {
-            try {
-              if (typeof svgs[k].pauseAnimations === 'function') {
-                svgs[k].pauseAnimations();
-                svgs[k].setCurrentTime(tMs / 1000);
-              }
-            } catch (e) {}
-          }
-        } catch (e) {}
+      await page.evaluate((p) => {
         const bar = document.getElementById('__master_progress_bar__');
         if (bar) bar.style.width = p + '%';
-      }, sceneTimeMs, pct);
+      }, pct);
 
       const { data } = await client.send('Page.captureScreenshot', { format: 'jpeg', quality: 90 });
       const frameBuffer = Buffer.from(data, 'base64');
       if (!ffmpeg.stdin.write(frameBuffer)) {
         await new Promise((res) => ffmpeg.stdin.once('drain', res));
       }
+
+      // Advance CSS + SVG + JS timers by exact 1 frame (33.33ms) and pause again
+      await advanceVirtualTime(FRAME_MS);
     }
 
     ffmpeg.stdin.end();
@@ -164,6 +166,7 @@ function runFFmpeg(args) {
       '-c:v', 'copy',
       '-c:a', 'aac',
       '-b:a', '192k',
+      '-movflags', '+faststart',
       '-shortest',
       'final_video_with_audio.mp4'
     ]);
