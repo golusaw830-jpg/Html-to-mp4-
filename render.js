@@ -57,7 +57,7 @@ function runFFmpeg(args) {
     console.log(`[${i + 1}/${sceneFiles.length}] Rendering ${file} (${dur}s)...`);
 
     const fileUrl = 'file://' + path.resolve(file);
-    await page.goto(fileUrl, { waitUntil: 'networkidle0' });
+    await page.goto(fileUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
     await page.evaluate(() => {
       const barWrap = document.createElement('div');
