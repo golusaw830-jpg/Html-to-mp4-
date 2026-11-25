@@ -6,7 +6,7 @@ const { spawn } = require('child_process');
 const FPS = 30;
 const WIDTH = 1080;
 const HEIGHT = 1920;
-const CONCURRENCY = 3;
+const CONCURRENCY = 2;
 
 function runFFmpeg(args) {
   return new Promise((resolve, reject) => {
@@ -40,7 +40,7 @@ function runFFmpeg(args) {
     acc += d;
   }
 
-  console.log(`Fast Parallel Render (${CONCURRENCY}x) for ${sceneFiles.length} scenes (${totalDuration.toFixed(2)}s @ ${FPS} FPS):`, sceneFiles);
+  console.log(`Rendering ${sceneFiles.length} scenes (${totalDuration.toFixed(2)}s @ ${FPS} FPS):`, sceneFiles);
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -56,47 +56,11 @@ function runFFmpeg(args) {
 
     const page = await browser.newPage();
     await page.setViewport({ width: WIDTH, height: HEIGHT, deviceScaleFactor: 1 });
-
-    // Lock JS requestAnimationFrame & performance.now to exact virtual frame time
-    await page.evaluateOnNewDocument(() => {
-      window.__virtualNow = 0;
-      performance.now = () => window.__virtualNow;
-      const rafQueue = [];
-      window.requestAnimationFrame = (cb) => {
-        rafQueue.push(cb);
-        return rafQueue.length;
-      };
-      window.__stepFrame = (tMs, pct) => {
-        window.__virtualNow = tMs;
-        // 1. Step JS requestAnimationFrame callbacks
-        const cbs = rafQueue.splice(0, rafQueue.length);
-        for (const cb of cbs) {
-          try { cb(tMs); } catch (e) {}
-        }
-        // 2. Lock all CSS / Web Animations to exact tMs
-        document.getAnimations({ subtree: true }).forEach((anim) => {
-          try {
-            anim.pause();
-            anim.currentTime = tMs;
-          } catch (e) {}
-        });
-        // 3. Lock all SVG SMIL (<animate> / <animateTransform>) to exact seconds
-        document.querySelectorAll('svg').forEach((svg) => {
-          try {
-            if (typeof svg.pauseAnimations === 'function') {
-              svg.pauseAnimations();
-              svg.setCurrentTime(tMs / 1000);
-            }
-          } catch (e) {}
-        });
-        // 4. Update top progress bar
-        const bar = document.getElementById('__master_progress_bar__');
-        if (bar) bar.style.width = pct + '%';
-      };
-    });
+    const client = await page.createCDPSession();
 
     console.log(`[${i + 1}/${sceneFiles.length}] Starting ${file} (${dur}s, ${totalFrames} frames)...`);
     await page.goto('file://' + path.resolve(file), { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await new Promise((r) => setTimeout(r, 250));
 
     await page.evaluate(() => {
       const barWrap = document.createElement('div');
@@ -110,24 +74,51 @@ function runFFmpeg(args) {
 
     const ffmpeg = spawn('ffmpeg', [
       '-y',
+      '-loglevel', 'error',
       '-f', 'image2pipe',
       '-vcodec', 'mjpeg',
       '-r', String(FPS),
       '-i', '-',
       '-c:v', 'libx264',
       '-pix_fmt', 'yuv420p',
-      '-preset', 'veryfast',
+      '-preset', 'ultrafast',
       '-crf', '18',
       outPart
     ], { stdio: ['pipe', 'ignore', 'inherit'] });
+
+    ffmpeg.stdin.on('error', () => {});
 
     for (let f = 0; f < totalFrames; f++) {
       const sceneTimeMs = (f / FPS) * 1000;
       const pct = Math.min(100, ((elapsedBefore + f / FPS) / totalDuration) * 100);
 
-      await page.evaluate((tMs, p) => window.__stepFrame(tMs, p), sceneTimeMs, pct);
+      await page.evaluate((tMs, p) => {
+        try {
+          const anims = document.getAnimations();
+          for (let k = 0; k < anims.length; k++) {
+            try {
+              anims[k].pause();
+              anims[k].currentTime = tMs;
+            } catch (e) {}
+          }
+        } catch (e) {}
+        try {
+          const svgs = document.querySelectorAll('svg');
+          for (let k = 0; k < svgs.length; k++) {
+            try {
+              if (typeof svgs[k].pauseAnimations === 'function') {
+                svgs[k].pauseAnimations();
+                svgs[k].setCurrentTime(tMs / 1000);
+              }
+            } catch (e) {}
+          }
+        } catch (e) {}
+        const bar = document.getElementById('__master_progress_bar__');
+        if (bar) bar.style.width = p + '%';
+      }, sceneTimeMs, pct);
 
-      const frameBuffer = await page.screenshot({ type: 'jpeg', quality: 92 });
+      const { data } = await client.send('Page.captureScreenshot', { format: 'jpeg', quality: 90 });
+      const frameBuffer = Buffer.from(data, 'base64');
       if (!ffmpeg.stdin.write(frameBuffer)) {
         await new Promise((res) => ffmpeg.stdin.once('drain', res));
       }
@@ -135,14 +126,14 @@ function runFFmpeg(args) {
 
     ffmpeg.stdin.end();
     await new Promise((resolve, reject) => {
-      ffmpeg.on('close', (code) => (code === 0 ? resolve() : reject(new Error(`FFmpeg part ${i + 1} failed`))));
+      ffmpeg.on('close', (code) => (code === 0 ? resolve() : reject(new Error(`FFmpeg part ${i + 1} failed (code ${code})`))));
     });
 
+    await client.detach();
     await page.close();
     console.log(`[${i + 1}/${sceneFiles.length}] Finished ${file}!`);
   };
 
-  // Run 3 scenes in parallel at a time
   let nextIdx = 0;
   const workers = Array.from({ length: Math.min(CONCURRENCY, sceneFiles.length) }, async () => {
     while (nextIdx < sceneFiles.length) {
@@ -157,7 +148,7 @@ function runFFmpeg(args) {
   fs.writeFileSync('concat_list.txt', partFiles.map((f) => `file '${f}'`).join('\n'));
 
   const mergedVideo = 'merged_silent.mp4';
-  await runFFmpeg(['-y', '-f', 'concat', '-safe', '0', '-i', 'concat_list.txt', '-c', 'copy', mergedVideo]);
+  await runFFmpeg(['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', 'concat_list.txt', '-c', 'copy', mergedVideo]);
 
   partFiles.forEach((f) => { if (fs.existsSync(f)) fs.unlinkSync(f); });
   if (fs.existsSync('concat_list.txt')) fs.unlinkSync('concat_list.txt');
@@ -167,6 +158,7 @@ function runFFmpeg(args) {
     console.log(`Merging ${audioFile}...`);
     await runFFmpeg([
       '-y',
+      '-loglevel', 'error',
       '-i', mergedVideo,
       '-i', audioFile,
       '-c:v', 'copy',
