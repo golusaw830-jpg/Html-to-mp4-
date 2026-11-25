@@ -1,8 +1,0 @@
-{
-  "name": "html-to-mp4",
-  "version": "1.0.0",
-  "dependencies": {
-    "puppeteer": "^23.0.0"
-  }
-}
-
