@@ -18,11 +18,10 @@ function runFFmpeg(args) {
 }
 
 (async () => {
-  // Exact scene1.html -> scene10.html natural numeric sort
-  const sceneFiles = fs
-    .readdirSync('.')
-    .filter((f) => /^scene\d+\.html$/i.test(f))
-    .sort((a, b) => parseInt(a.match(/\d+/)[0], 10) - parseInt(b.match(/\d+/)[0], 10));
+  const sceneFiles = [
+    'scene1.html', 'scene2.html', 'scene3.html', 'scene4.html', 'scene5.html',
+    'scene6.html', 'scene7.html', 'scene8.html', 'scene9.html', 'scene10.html'
+  ].filter((f) => fs.existsSync(f));
 
   if (sceneFiles.length === 0) {
     throw new Error('No scene*.html files found!');
@@ -35,7 +34,7 @@ function runFFmpeg(args) {
 
   const sceneDurations = sceneFiles.map((_, idx) => Number(durations[idx]) || 4.5);
   const totalDuration = sceneDurations.reduce((a, b) => a + b, 0);
-  console.log(`Rendering ${sceneFiles.length} scenes in exact order (${totalDuration.toFixed(2)}s @ ${FPS} FPS):`, sceneFiles);
+  console.log(`Rendering ${sceneFiles.length} scenes cleanly (${totalDuration.toFixed(2)}s @ ${FPS} FPS):`, sceneFiles);
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -60,8 +59,12 @@ function runFFmpeg(args) {
     const fileUrl = 'file://' + path.resolve(file);
     await page.goto(fileUrl, { waitUntil: 'networkidle0' });
 
-    // Inject clean top progress bar
+    // Pause all CSS/Web animations & inject top progress bar for deterministic zero-glitch frame capture
     await page.evaluate(() => {
+      document.getAnimations().forEach((anim) => {
+        anim.pause();
+        anim.currentTime = 0;
+      });
       const barWrap = document.createElement('div');
       barWrap.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:10px;background:rgba(255,255,255,0.15);z-index:999999;';
       const barFill = document.createElement('div');
@@ -85,13 +88,18 @@ function runFFmpeg(args) {
     ], { stdio: ['pipe', 'ignore', 'inherit'] });
 
     for (let f = 0; f < totalFrames; f++) {
+      const sceneTimeMs = (f / FPS) * 1000;
       const globalTime = elapsedBeforeScene + f / FPS;
       const pct = Math.min(100, (globalTime / totalDuration) * 100);
 
-      await page.evaluate((p) => {
+      await page.evaluate(({ tMs, p }) => {
+        document.getAnimations().forEach((anim) => {
+          anim.pause();
+          anim.currentTime = tMs;
+        });
         const bar = document.getElementById('__master_progress_bar__');
         if (bar) bar.style.width = p + '%';
-      }, pct);
+      }, { tMs: sceneTimeMs, p: pct });
 
       const frameBuffer = await page.screenshot({ type: 'png' });
       if (!ffmpeg.stdin.write(frameBuffer)) {
@@ -109,7 +117,6 @@ function runFFmpeg(args) {
 
   await browser.close();
 
-  // Concatenate all scene parts
   const concatList = partFiles.map((f) => `file '${f}'`).join('\n');
   fs.writeFileSync('concat_list.txt', concatList);
 
@@ -119,7 +126,6 @@ function runFFmpeg(args) {
   partFiles.forEach((f) => { if (fs.existsSync(f)) fs.unlinkSync(f); });
   if (fs.existsSync('concat_list.txt')) fs.unlinkSync('concat_list.txt');
 
-  // Merge user's audio track if present
   const audioFile = fs
     .readdirSync('.')
     .find((f) => /^audio\.(mp3|wav|m4a|aac|ogg)$/i.test(f));
@@ -138,7 +144,6 @@ function runFFmpeg(args) {
     ]);
     fs.unlinkSync(mergedVideo);
   } else {
-    console.log('No audio.* found, saving video as final_video_with_audio.mp4');
     fs.renameSync(mergedVideo, 'final_video_with_audio.mp4');
   }
 
