@@ -1,7 +1,8 @@
 {
-  "name": "html-to-mp4-renderer",
+  "name": "html-to-mp4",
   "version": "1.0.0",
   "dependencies": {
-    "puppeteer": "^23.6.0"
+    "puppeteer": "^23.0.0"
   }
 }
+
