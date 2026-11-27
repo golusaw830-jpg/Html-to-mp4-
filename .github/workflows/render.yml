@@ -1,19 +1,13 @@
-name: Render HTML to MP4
+name: Render Animated Video
 
 on:
-  push:
-    paths:
-      - 'scene*.html'
-      - 'audio.*'
-      - 'durations.json'
-      - 'render.js'
   workflow_dispatch:
 
 jobs:
-  build-video:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -21,16 +15,16 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install FFmpeg and Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg fonts-noto-core
-          npm install
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      - name: Render Synced Video
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Render HTML scenes to MP4 (30 FPS)
         run: node render.js
 
-      - name: Upload Final Synced MP4
+      - name: Upload Final Video
         uses: actions/upload-artifact@v4
         with:
           name: synced-final-video
