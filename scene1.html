@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghnad 16-Scene Blueprint - Scene 1 (5.0s Symbolic SVG)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: #030709;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+  svg#scene {
+    width: 100vw;
+    height: 100vh;
+    max-width: 56.25vh;
+    max-height: 177.78vw;
+    display: block;
+    background: #050b0e;
+  }
+</style>
+</head>
+<body>
+
+<!-- 
+  16-VISUAL CREATIVE SVG BLUEPRINT — SCENE 1 (00:00 – 00:05.0 = 5.0 SECONDS EXACT)
+  Voiceover: "इतिहास मुझे एक क्रूर राक्षस कहता है,"
+  Symbolic Concept:
+  - Ancient golden-edged manuscript scroll unrolling open at center screen.
+  - Sharp geometric demon shadow (ज्यामितीय राक्षस छाया) emerging from the scroll's ink pages with glowing crimson eyes.
+  - 100% YouTube Shorts Safe Zone (x: 90..900px, y: 235..1450px) & zero UI buttons.
+  - Match-Cut Ready: Shadow geometry centered at (510, 720) so Scene 2 can morph directly from this silhouette into calm Indrajit!
+-->
+<svg id="scene" viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 1. SMOKY MIDNIGHT TEAL & OBSIDIAN ARCHIVE SKY -->
+    <radialGradient id="archiveBgGrad" cx="50%" cy="42%" r="78%">
+      <stop offset="0%" stop-color="#173a40"/>
+      <stop offset="44%" stop-color="#0b1d24"/>
+      <stop offset="80%" stop-color="#050c10"/>
+      <stop offset="100%" stop-color="#020507"/>
+    </radialGradient>
+
+    <!-- Crimson-Amber Demon Shadow Halo -->
+    <radialGradient id="demonCrimsonHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3b30" stop-opacity="0.62"/>
+      <stop offset="38%" stop-color="#991b1b" stop-opacity="0.34"/>
+      <stop offset="72%" stop-color="#0f766e" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#0b1d24" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 2. ANCIENT SCROLL PARCHMENT & ROLLERS -->
+    <linearGradient id="scrollParchment" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6b370b"/>
+      <stop offset="14%" stop-color="#d9a14a"/>
+      <stop offset="50%" stop-color="#f7dfa4"/>
+      <stop offset="86%" stop-color="#d9a14a"/>
+      <stop offset="100%" stop-color="#6b370b"/>
+    </linearGradient>
+
+    <linearGradient id="rollerGoldWood" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff6bd"/>
+      <stop offset="32%" stop-color="#d98a14"/>
+      <stop offset="74%" stop-color="#692b04"/>
+      <stop offset="100%" stop-color="#240a01"/>
+    </linearGradient>
+
+    <!-- 3. GEOMETRIC DEMON SHADOW FACET GRADIENTS -->
+    <linearGradient id="demonFacetDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f080d"/>
+      <stop offset="55%" stop-color="#0c0508"/>
+      <stop offset="100%" stop-color="#030204"/>
+    </linearGradient>
+
+    <linearGradient id="demonFacetCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7f1d1d"/>
+      <stop offset="60%" stop-color="#3b070c"/>
+      <stop offset="100%" stop-color="#120205"/>
+    </linearGradient>
+
+    <linearGradient id="glowingRedEye" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#ff4d4d"/>
+      <stop offset="100%" stop-color="#990000"/>
+    </linearGradient>
+
+    <linearGradient id="goldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8c7"/>
+      <stop offset="38%" stop-color="#ffd043"/>
+      <stop offset="78%" stop-color="#c4740a"/>
+      <stop offset="100%" stop-color="#633302"/>
+    </linearGradient>
+
+    <linearGradient id="goldBright" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="38%" stop-color="#ffe066"/>
+      <stop offset="100%" stop-color="#e08809"/>
+    </linearGradient>
+
+    <!-- FILTERS -->
+    <filter id="crimsonEyeGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGoldGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="textShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.92"/>
+    </filter>
+
+    <!-- Dynamic Clip Path for Ancient Scroll Unrolling Inside Safe Zone -->
+    <clipPath id="historyScrollClip">
+      <rect id="scrollClipRect" x="120" y="750" width="780" height="0"/>
+    </clipPath>
+  </defs>
+
+  <!-- CAMERA RIG (Centered in Safe Zone x=505, y=760) -->
+  <g id="cameraRig" transform="translate(505, 760) scale(1) translate(-505, -760)">
+
+    <!-- LAYER 1: SMOKY MIDNIGHT TEAL & OBSIDIAN BACKDROP -->
+    <rect x="-80" y="-80" width="1240" height="2080" fill="url(#archiveBgGrad)"/>
+    <g id="cosmicStarsLayer"></g>
+
+    <!-- Sacred Vedic Mandala Geometry Behind Scroll -->
+    <g id="bgMandala" transform="translate(505, 740)" opacity="0.34">
+      <circle cx="0" cy="0" r="395" fill="none" stroke="url(#goldMetal)" stroke-width="3" stroke-dasharray="20 12"/>
+      <circle cx="0" cy="0" r="340" fill="none" stroke="#5eead4" stroke-width="1.8" opacity="0.65"/>
+      <polygon points="0,-335 290,168 -290,168" fill="none" stroke="url(#goldMetal)" stroke-width="2"/>
+      <polygon points="0,335 290,-168 -290,-168" fill="none" stroke="url(#goldMetal)" stroke-width="2"/>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 2: ANCIENT HISTORY MANUSCRIPT SCROLL (SAFE ZONE)    -->
+    <!-- Positioned x: 155..855, y: 280..1200 (100% Inside Safe)   -->
+    <!-- ========================================================= -->
+    <g id="ancientScrollGroup">
+      <g clip-path="url(#historyScrollClip)">
+        <!-- Unrolled Palm-Leaf Manuscript Body -->
+        <rect x="175" y="295" width="660" height="890" rx="14" fill="url(#scrollParchment)" stroke="#3b1803" stroke-width="6"/>
+        <rect x="196" y="316" width="618" height="848" rx="8" fill="none" stroke="#7c3a06" stroke-width="3" stroke-dasharray="14 8"/>
+
+        <!-- Ancient Sanskrit Chronicle Lines Written on Scroll -->
+        <g stroke="#5c2804" stroke-width="3.5" stroke-linecap="round" opacity="0.45">
+          <line x1="235" y1="375" x2="775" y2="375"/>
+          <line x1="255" y1="415" x2="755" y2="415"/>
+          <line x1="235" y1="455" x2="420" y2="455"/>
+          <line x1="590" y1="455" x2="775" y2="455"/>
+          <line x1="235" y1="1045" x2="410" y2="1045"/>
+          <line x1="600" y1="1045" x2="775" y2="1045"/>
+          <line x1="245" y1="1085" x2="765" y2="1085"/>
+          <line x1="275" y1="1125" x2="735" y2="1125"/>
+        </g>
+
+        <!-- Ink Bleed & Crimson Shadow Aura on Scroll -->
+        <circle id="scrollCrimsonAura" cx="505" cy="740" r="290" fill="url(#demonCrimsonHalo)"/>
+      </g>
+
+      <!-- TOP ROLLER (Unrolls Upward to y=295) -->
+      <g id="rollerTop" transform="translate(505, 735)">
+        <rect x="-385" y="-12" width="48" height="24" rx="6" fill="url(#goldMetal)" stroke="#1f0703" stroke-width="3.5"/>
+        <circle cx="-392" cy="0" r="15" fill="url(#goldMetal)" stroke="#1f0703" stroke-width="3.5"/>
+        <rect x="337" y="-12" width="48" height="24" rx="6" fill="url(#goldMetal)" stroke="#1f0703" stroke-width="3.5"/>
+        <circle cx="392" cy="0" r="15" fill="url(#goldMetal)" stroke="#1f0703" stroke-width="3.5"/>
+        <rect x="-342" y="-19" width="684" height="38" rx="14" fill="url(#rollerGoldWood)" stroke="#1f0703" stroke-width="4.5"/>
+        <line x1="-325" y1="-6" x2="325" y2="-6" stroke="#fff6bd" stroke-width="2.5" opacity="0.65"/>
+      </g>
+
+      <!-- BOTTOM ROLLER (Unrolls Downward to y=1185) -->
+      <g id="rollerBottom" transform="translate(505, 765)">
+        <rect x="-385" y="-12" width="48" height="24" rx="6" fill="url(#goldMetal)" stroke="#1f0703" stroke-width="3.5"/>
+        <circle cx="-392" cy="0" r="15" fill="url(#goldMetal)" stroke="#1f0703" stroke-width="3.5"/>
+        <rect x="337" y="-12" width="48" height="24" rx="6" fill="url(#goldMetal)" stroke="#1f0703" stroke-width="3.5"/>
+        <circle cx="392" cy="0" r="15" fill="url(#goldMetal)" stroke="#1f0703" stroke-width="3.5"/>
+        <rect x="-342" y="-19" width="684" height="38" rx="14" fill="url(#rollerGoldWood)" stroke="#1f0703" stroke-width="4.5"/>
+        <line x1="-325" y1="-6" x2="325" y2="-6" stroke="#fff6bd" stroke-width="2.5" opacity="0.65"/>
+      </g>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 3: GEOMETRIC DEMON SHADOW EMERGING FROM SCROLL INK  -->
+    <!-- Sharp Polygonal Facets + Glowing Crimson Eyes (Match-Cut) -->
+    <!-- ========================================================= -->
+    <g id="geometricDemonShadow" transform="translate(505, 745)" opacity="0">
+      <!-- Outer Expanding Shadow Tendrils / Ink Shards -->
+      <g id="shadowTendrils" opacity="0.82">
+        <polygon points="-145,-145 -235,-245 -185,-115" fill="#090306" stroke="#7f1d1d" stroke-width="2.5"/>
+        <polygon points="145,-145 235,-245 185,-115" fill="#090306" stroke="#7f1d1d" stroke-width="2.5"/>
+        <polygon points="-175,20 -265,-35 -195,85" fill="#090306" stroke="#7f1d1d" stroke-width="2.5"/>
+        <polygon points="175,20 265,-35 195,85" fill="#090306" stroke="#7f1d1d" stroke-width="2.5"/>
+      </g>
+
+      <!-- Geometric Broad Armored Shoulders Silhouette -->
+      <polygon points="-245,275 -165,125 0,155 165,125 245,275" fill="url(#demonFacetDark)" stroke="#991b1b" stroke-width="3.5" stroke-linejoin="round"/>
+      <polygon points="-165,125 -85,145 0,275 -245,275" fill="url(#demonFacetCrimson)" opacity="0.75"/>
+      <polygon points="165,125 85,145 0,275 245,275" fill="url(#demonFacetCrimson)" opacity="0.55"/>
+
+      <!-- Geometric Crowned Demon Head (Polygonal Faceted Low-Poly Vector Art) -->
+      <g id="demonFacetHead">
+        <!-- Sharp Geometric Crown / Horns Silhouette -->
+        <polygon points="-105,-145 -145,-255 -65,-195 0,-315 65,-195 145,-255 105,-145"
+                 fill="url(#demonFacetDark)" stroke="#dc2626" stroke-width="3.5" stroke-linejoin="round"/>
+        <polygon points="0,-315 65,-195 0,-145 -65,-195" fill="url(#demonFacetCrimson)" opacity="0.8"/>
+
+        <!-- Angular Chiseled Demon Face Facets -->
+        <polygon points="-112,-145 112,-145 96,-25 48,78 0,104 -48,78 -96,-25"
+                 fill="url(#demonFacetDark)" stroke="#991b1b" stroke-width="3.5" stroke-linejoin="round"/>
+        <!-- Left & Right Highlight Facet Planes -->
+        <polygon points="-112,-145 0,-145 0,104 -48,78 -96,-25" fill="url(#demonFacetCrimson)" opacity="0.65"/>
+        <polygon points="0,-145 112,-145 96,-25 48,78 0,104" fill="#080205" opacity="0.85"/>
+
+        <!-- Sharp Angular Demon Brow Ridges -->
+        <polygon points="-92,-92 -22,-64 -28,-52 -96,-76" fill="#dc2626"/>
+        <polygon points="92,-92 22,-64 28,-52 96,-76" fill="#dc2626"/>
+
+        <!-- GLOWING CRIMSON-GRADIENT EYES -->
+        <g id="demonGlowingEyes" filter="url(#crimsonEyeGlow)">
+          <!-- Left Eye -->
+          <polygon points="-86,-64 -28,-50 -42,-32 -82,-42" fill="url(#glowingRedEye)"/>
+          <circle cx="-55" cy="-48" r="5" fill="#ffffff"/>
+          <!-- Right Eye -->
+          <polygon points="86,-64 28,-50 42,-32 82,-42" fill="url(#glowingRedEye)"/>
+          <circle cx="55" cy="-48" r="5" fill="#ffffff"/>
+        </g>
+
+        <!-- Geometric Fanged / Fierce Mouth Line -->
+        <polyline points="-44,34 -22,22 0,30 22,22 44,34" fill="none" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <!-- Rising Crimson & Golden Ink Embers -->
+    <g id="particlesLayer"></g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 4: 100% YOUTUBE SHORTS SAFE-ZONE KINETIC KEYWORDS   -->
+    <!-- ========================================================= -->
+    <g id="keywordsLayer" transform="translate(505, 1320)" filter="url(#textShadow)">
+      <!-- Keyword 1: क्रूर राक्षस? -->
+      <g id="kw1" opacity="0" transform="scale(0.85)">
+        <rect x="-255" y="-48" width="510" height="82" rx="22" fill="#18050a" fill-opacity="0.94" stroke="url(#goldMetal)" stroke-width="4" filter="url(#softGoldGlow)"/>
+        <text x="0" y="9" text-anchor="middle" fill="url(#goldBright)" font-size="45" font-weight="900" letter-spacing="1">क्रूर राक्षस? 👹</text>
+      </g>
+
+      <!-- Keyword 2: इतिहास की कहानी -->
+      <g id="kw2" opacity="0" transform="translate(0, 102) scale(0.85)">
+        <rect x="-275" y="-44" width="550" height="74" rx="37" fill="url(#goldMetal)" filter="url(#softGoldGlow)"/>
+        <text x="0" y="8" text-anchor="middle" fill="#071417" font-size="40" font-weight="900" letter-spacing="1">इतिहास की कहानी 📜</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- DETERMINISTIC 5.0-SECOND ANIMATION ENGINE -->
+  <script>
+    (function() {
+      const DURATION = 5000; // Exact 5.0 seconds as requested
+      let startTime = null;
+
+      const cameraRig = document.getElementById('cameraRig');
+      const bgMandala = document.getElementById('bgMandala');
+      const scrollClipRect = document.getElementById('scrollClipRect');
+      const rollerTop = document.getElementById('rollerTop');
+      const rollerBottom = document.getElementById('rollerBottom');
+      const scrollCrimsonAura = document.getElementById('scrollCrimsonAura');
+
+      const geometricDemonShadow = document.getElementById('geometricDemonShadow');
+      const shadowTendrils = document.getElementById('shadowTendrils');
+      const demonGlowingEyes = document.getElementById('demonGlowingEyes');
+
+      const cosmicStarsLayer = document.getElementById('cosmicStarsLayer');
+      const particlesLayer = document.getElementById('particlesLayer');
+      const kw1 = document.getElementById('kw1');
+      const kw2 = document.getElementById('kw2');
+
+      // Build 32 Twinkling Stars
+      const stars = [];
+      for (let i = 0; i < 32; i++) {
+        const st = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        st.setAttribute('cx', (50 + ((i * 179) % 980)).toString());
+        st.setAttribute('cy', (50 + ((i * 257) % 1500)).toString());
+        st.setAttribute('r', (1.5 + (i % 4) * 0.7).toFixed(1));
+        st.setAttribute('fill', i % 3 === 0 ? '#99f6e4' : '#fef08a');
+        cosmicStarsLayer.appendChild(st);
+        stars.push({ el: st, speed: 2.2 + (i % 5) * 0.7, phase: i * 0.85 });
+      }
+
+      // Build 28 Rising Crimson & Golden Embers
+      const particles = [];
+      for (let i = 0; i < 28; i++) {
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('r', (2.5 + (i % 4) * 1.1).toFixed(1));
+        c.setAttribute('fill', i % 2 === 0 ? '#ef4444' : '#fde047');
+        particlesLayer.appendChild(c);
+        particles.push({
+          el: c,
+          baseX: 130 + ((i * 103) % 750),
+          baseY: 260 + ((i * 181) % 1140),
+          speed: 145 + (i % 6) * 32,
+          phase: i * 0.65
+        });
+      }
+
+      function easeOutBack(x) {
+        const c1 = 1.70158;
+        const c3 = c1 + 1;
+        return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+      }
+
+      function easeOutCubic(x) {
+        return 1 - Math.pow(1 - x, 3);
+      }
+
+      function render(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = (timestamp - startTime) % DURATION;
+        const t = elapsed / DURATION; // 0.0 -> 1.0 over 5.0 seconds
+
+        // 1. Twinkling Stars & Background Mandala Rotation
+        for (let i = 0; i < stars.length; i++) {
+          const st = stars[i];
+          const op = 0.25 + 0.75 * Math.abs(Math.sin(t * Math.PI * st.speed + st.phase));
+          st.el.setAttribute('opacity', op.toFixed(2));
+        }
+        bgMandala.setAttribute('transform', `translate(505, 740) rotate(${(t * 42).toFixed(1)})`);
+
+        // 2. Smooth Safe-Zone Camera Push-In (1.0 -> 1.07)
+        const camScale = 1 + easeOutCubic(t) * 0.07;
+        cameraRig.setAttribute('transform', `translate(505, 760) scale(${camScale.toFixed(4)}) translate(-505, -760)`);
+
+        // 3. Ancient Manuscript Scroll Unrolling Open (t: 0.04 -> 0.28)
+        const unrollProg = easeOutBack(Math.max(0, Math.min(1, (t - 0.04) / 0.24)));
+        const halfH = 18 + unrollProg * 427; // Opens cleanly from y=295 to y=1185 inside Safe Zone
+        const topY = 740 - halfH;
+        const botY = 740 + halfH;
+
+        rollerTop.setAttribute('transform', `translate(505, ${topY.toFixed(1)})`);
+        rollerBottom.setAttribute('transform', `translate(505, ${botY.toFixed(1)})`);
+        scrollClipRect.setAttribute('y', topY.toFixed(1));
+        scrollClipRect.setAttribute('height', Math.max(0, botY - topY).toFixed(1));
+
+        // 4. Geometric Demon Shadow Emerging & Expanding Slowly From Scroll Ink (t: 0.18 -> 1.0)
+        const emergeProg = easeOutCubic(Math.max(0, Math.min(1, (t - 0.18) / 0.34)));
+        const slowExpand = 0.78 + emergeProg * 0.24 + Math.sin(t * Math.PI * 3) * 0.02;
+        const shadowY = 785 - emergeProg * 40;
+
+        geometricDemonShadow.setAttribute('opacity', Math.min(0.96, emergeProg * 1.4).toFixed(2));
+        geometricDemonShadow.setAttribute('transform', `translate(505, ${shadowY.toFixed(1)}) scale(${slowExpand.toFixed(3)})`);
+
+        // Tendrils & Crimson Eye Glow Pulse
+        const tendrilScale = 0.92 + Math.sin(t * Math.PI * 4) * 0.08;
+        shadowTendrils.setAttribute('transform', `scale(${tendrilScale.toFixed(3)})`);
+
+        const eyePulse = 0.85 + 0.15 * Math.sin(t * Math.PI * 8);
+        demonGlowingEyes.setAttribute('opacity', eyePulse.toFixed(2));
+        scrollCrimsonAura.setAttribute('r', (270 + emergeProg * 50 + Math.sin(t * Math.PI * 5) * 20).toFixed(1));
+
+        // 5. Rising Crimson & Golden Embers
+        for (let i = 0; i < particles.length; i++) {
+          const pt = particles[i];
+          const yPos = ((pt.baseY - t * pt.speed * 5.0) % 1140 + 1140) % 1140 + 260;
+          const xPos = pt.baseX + Math.sin(t * Math.PI * 4 + pt.phase) * 16;
+          pt.el.setAttribute('cx', xPos.toFixed(1));
+          pt.el.setAttribute('cy', yPos.toFixed(1));
+          pt.el.setAttribute('opacity', (0.3 + 0.65 * Math.abs(Math.sin(t * Math.PI * 5 + pt.phase))).toFixed(2));
+        }
+
+        // 6. Safe-Zone Kinetic Hindi Keywords ("क्रूर राक्षस? 👹" & "इतिहास की कहानी 📜")
+        if (t >= 0.24) {
+          const p1 = Math.min(1, (t - 0.24) / 0.12);
+          const s1 = 0.85 + 0.15 * easeOutBack(p1);
+          kw1.setAttribute('opacity', easeOutCubic(p1).toFixed(2));
+          kw1.setAttribute('transform', `scale(${s1.toFixed(3)})`);
+        } else {
+          kw1.setAttribute('opacity', '0');
+        }
+
+        if (t >= 0.48) {
+          const p2 = Math.min(1, (t - 0.48) / 0.12);
+          const s2 = 0.85 + 0.15 * easeOutBack(p2);
+          kw2.setAttribute('opacity', easeOutCubic(p2).toFixed(2));
+          kw2.setAttribute('transform', `translate(0, 102) scale(${s2.toFixed(3)})`);
+        } else {
+          kw2.setAttribute('opacity', '0');
+        }
+
+        requestAnimationFrame(render);
+      }
+
+      window.onload = function() {
+        requestAnimationFrame(render);
+      };
+    })();
+  </script>
+</body>
+</html>

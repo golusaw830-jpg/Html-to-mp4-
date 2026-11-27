@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghnad 16-Scene Blueprint - Scene 8 (5.0s Story & Symbolic SVG)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: #030709;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+  svg#scene {
+    width: 100vw;
+    height: 100vh;
+    max-width: 56.25vh;
+    max-height: 177.78vw;
+    display: block;
+    background: #050b0e;
+  }
+</style>
+</head>
+<body>
+
+<!-- 
+  16-VISUAL CREATIVE SVG BLUEPRINT — SCENE 8 (00:40.0 – 00:45.0 = 5.0 SECONDS EXACT)
+  Voiceover: "लक्ष्मण के पास मुझे हराने की कोई शक्ति नहीं थी।"
+  CLEAR STORYTELLING + SYMBOLIC HEXAGONAL ENERGY SHIELD:
+  - Left Foreground (x=270): Locked Indrajit (Meghnad) in emerald-teal & gold Lanka armor and Naga-wing crown,
+    standing unbowed with his raised golden Brahmastra bow.
+  - Center-Right (x=640): Radiant hexagonal SVG energy shield (ऊर्जा-कवच) blocking incoming fiery vector arrows
+    from the right, shattering them into golden sparks with snap-zoom and ripple glow flashes.
+  - 100% YouTube Shorts Safe Zone (x: 90..900px, y: 235..1450px), 5.0s duration, zero UI buttons.
+-->
+<svg id="scene" viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 1. SMOKY MIDNIGHT TEAL & VOLCANIC AMBER BATTLEFIELD SKY (Locked Palette) -->
+    <radialGradient id="battleShieldBg" cx="54%" cy="40%" r="78%">
+      <stop offset="0%" stop-color="#173a40"/>
+      <stop offset="44%" stop-color="#0b1d24"/>
+      <stop offset="80%" stop-color="#050c10"/>
+      <stop offset="100%" stop-color="#020507"/>
+    </radialGradient>
+
+    <radialGradient id="shieldCoreAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/>
+      <stop offset="32%" stop-color="#5eead4" stop-opacity="0.54"/>
+      <stop offset="68%" stop-color="#ffd043" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#0b1d24" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="hexShieldFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5eead4" stop-opacity="0.32"/>
+      <stop offset="50%" stop-color="#0d9488" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#ffd043" stop-opacity="0.28"/>
+    </linearGradient>
+
+    <!-- 2. LOCKED MEGHNAD (INDRAJIT) PALETTE (Matches Scenes 1-7) -->
+    <linearGradient id="meghnadSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0a370"/>
+      <stop offset="52%" stop-color="#b57443"/>
+      <stop offset="100%" stop-color="#6b3b1b"/>
+    </linearGradient>
+
+    <linearGradient id="lankaRoyalArmor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#115e59"/>
+      <stop offset="52%" stop-color="#083336"/>
+      <stop offset="100%" stop-color="#03171a"/>
+    </linearGradient>
+
+    <linearGradient id="crimsonRoyalCloth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b91c1c"/>
+      <stop offset="60%" stop-color="#690b12"/>
+      <stop offset="100%" stop-color="#2b0306"/>
+    </linearGradient>
+
+    <linearGradient id="goldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8c7"/>
+      <stop offset="38%" stop-color="#ffd043"/>
+      <stop offset="78%" stop-color="#c4740a"/>
+      <stop offset="100%" stop-color="#633302"/>
+    </linearGradient>
+
+    <linearGradient id="goldBright" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="38%" stop-color="#ffe066"/>
+      <stop offset="100%" stop-color="#e08809"/>
+    </linearGradient>
+
+    <!-- FILTERS -->
+    <filter id="superGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGoldGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="textShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.92"/>
+    </filter>
+
+    <!-- Reusable Hexagonal Cell Tile for Energy Shield -->
+    <polygon id="hexCell" points="0,-48 41.5,-24 41.5,24 0,48 -41.5,24 -41.5,-24"
+             fill="url(#hexShieldFill)" stroke="#5eead4" stroke-width="3" stroke-linejoin="round"/>
+  </defs>
+
+  <!-- CAMERA RIG (Centered in Safe Zone x=505, y=760) -->
+  <g id="cameraRig" transform="translate(505, 760) scale(1) translate(-505, -760)">
+
+    <!-- LAYER 1: SMOKY MIDNIGHT TEAL BATTLEFIELD SKY & RAMPART -->
+    <rect x="-80" y="-80" width="1240" height="2080" fill="url(#battleShieldBg)"/>
+    <g id="cosmicStarsLayer"></g>
+
+    <!-- Lanka Fortress Pillars & Battlefield Floor -->
+    <g opacity="0.42" fill="#051014">
+      <rect x="95" y="235" width="42" height="1010"/>
+      <rect x="865" y="235" width="42" height="1010"/>
+      <path d="M 95 360 Q 480 230 907 360 L 907 235 L 95 235 Z"/>
+    </g>
+    <rect x="75" y="1225" width="850" height="22" rx="6" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="4"/>
+    <rect x="-60" y="1247" width="1200" height="720" fill="#040b0e"/>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 2: LEFT FOREGROUND (x=270) — UNYIELDING INDRAJIT    -->
+    <!-- ========================================================= -->
+    <g id="indrajitShieldBearer" transform="translate(270, 920)">
+      <!-- Warrior Dhoti & Greaves Standing Tall -->
+      <path d="M -72 65 L 72 65 L 92 305 L 18 305 L 0 185 L -18 305 L -92 305 Z" fill="url(#crimsonRoyalCloth)" stroke="#0a1214" stroke-width="5" stroke-linejoin="round"/>
+      <line x1="-88" y1="290" x2="-20" y2="290" stroke="url(#goldMetal)" stroke-width="10"/>
+      <line x1="20" y1="290" x2="88" y2="290" stroke="url(#goldMetal)" stroke-width="10"/>
+      <rect x="-72" y="48" width="144" height="22" rx="6" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="4.5"/>
+
+      <!-- Swept-Back Warrior Hair Locks -->
+      <path id="hairBack" d="M -45 -245 C -115 -175, -135 -65, -105 45 C -85 -15, -72 -85, -42 -150 Z" fill="#0f1115" stroke="#040608" stroke-width="4.5"/>
+
+      <!-- Torso in Locked Emerald-Teal & Gold Lanka Armor -->
+      <path d="M -74 -155 C -25 -178, 35 -178, 74 -155 L 64 52 L -64 52 Z" fill="url(#lankaRoyalArmor)" stroke="#0a1214" stroke-width="5.5" stroke-linejoin="round"/>
+      <path d="M -52 -156 C -15 -65, 25 5, 58 48" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round"/>
+      <path d="M -42 -156 Q 5 -105 52 -156" fill="none" stroke="url(#goldMetal)" stroke-width="10" stroke-linecap="round"/>
+
+      <!-- Naga-Wing Golden Shoulder Pauldron -->
+      <path d="M -82 -142 C -50 -185, 14 -185, 42 -148 L 20 -95 C -12 -118, -50 -110, -86 -82 Z" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="4.5"/>
+
+      <!-- Extended Arm Projecting the Hexagonal Energy Shield + Brahmastra Bow -->
+      <g id="shieldProjectArm" transform="translate(42, -95)">
+        <path d="M -15 -10 C 35 6, 78 -8, 114 -36 L 98 -60 C 66 -36, 34 -26, -4 -36 Z" fill="url(#meghnadSkin)" stroke="#0a1214" stroke-width="5" stroke-linejoin="round"/>
+        <g transform="translate(114, -48) rotate(-14)">
+          <path d="M 0 -170 C 68 -100, 68 100, 0 170" fill="none" stroke="#081417" stroke-width="18" stroke-linecap="round"/>
+          <path d="M 0 -170 C 68 -100, 68 100, 0 170" fill="none" stroke="url(#goldBright)" stroke-width="11" stroke-linecap="round" filter="url(#softGoldGlow)"/>
+          <line x1="0" y1="-170" x2="0" y2="170" stroke="#fff7c2" stroke-width="3"/>
+        </g>
+      </g>
+
+      <!-- LOCKED MEGHNAD HEAD (3/4 PROFILE) -->
+      <g id="meghnadProfileHead" transform="translate(12, -175)">
+        <path d="M -46 -85 L -34 -148 L 0 -195 L 34 -148 L 46 -85 Z" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="4.5" stroke-linejoin="round"/>
+        <path d="M -46 -95 C -68 -110, -72 -132, -58 -145 C -52 -128, -48 -115, -38 -105 Z" fill="url(#goldBright)" stroke="#0a1214" stroke-width="3.5"/>
+        <circle cx="0" cy="-138" r="8" fill="#0d9488" stroke="url(#goldBright)" stroke-width="2.5"/>
+        <path d="M -52 -86 Q 0 -100 52 -86 L 50 -74 Q 0 -86 -50 -74 Z" fill="url(#goldBright)" stroke="#0a1214" stroke-width="4"/>
+
+        <path d="M -48 -76 L 48 -76 L 56 -32 L 48 6 L 22 34 C 8 46, -16 44, -32 28 L -48 -18 Z"
+              fill="url(#meghnadSkin)" stroke="#0a1214" stroke-width="4.5" stroke-linejoin="round"/>
+
+        <polygon points="-44,-18 -50,2 -44,10 -38,2" fill="url(#goldBright)" stroke="#0a1214" stroke-width="3"/>
+        <line x1="-10" y1="-64" x2="36" y2="-64" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="-6" y1="-56" x2="34" y2="-56" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="16" cy="-60" r="4.5" fill="#dc2626"/>
+
+        <path d="M -12 -46 L 34 -42" stroke="#0f1115" stroke-width="5.5" stroke-linecap="round"/>
+        <ellipse cx="14" cy="-32" rx="11" ry="6.5" fill="#fffbeb" stroke="#0f1115" stroke-width="2.5"/>
+        <circle cx="18" cy="-33" r="5" fill="#d97706"/>
+        <circle cx="19" cy="-33" r="2.5" fill="#090d10"/>
+
+        <path d="M 48 -38 L 60 -12 L 46 -8" fill="none" stroke="#5c3014" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M 24 0 C 34 -4, 46 0, 52 6 C 42 4, 32 4, 24 3 Z" fill="#0f1115"/>
+        <path d="M 26 14 Q 36 18 46 14" fill="none" stroke="#5e2418" stroke-width="3" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 3: HEXAGONAL SVG ENERGY SHIELD (ऊर्जा-कवच)         -->
+    <!-- Positioned at (615, 760) Blocking Incoming Arrows!        -->
+    <!-- ========================================================= -->
+    <g id="hexagonalShieldGroup" transform="translate(615, 760)">
+      <!-- Radiant Shield Glow Halo -->
+      <circle id="shieldAuraOrb" cx="0" cy="0" r="285" fill="url(#shieldCoreAura)" opacity="0.78"/>
+
+      <!-- Outer Curved Golden-Teal Barrier Arc -->
+      <path d="M -65 -310 C 95 -245, 135 245, -65 310" fill="none" stroke="url(#goldBright)" stroke-width="8" stroke-linecap="round" filter="url(#superGlow)"/>
+
+      <!-- Honeycomb Cluster of Glowing Hexagonal SVG Cells -->
+      <g id="hexGridCluster" filter="url(#softGoldGlow)">
+        <!-- Center Column -->
+        <use href="#hexCell" x="0" y="-192"/>
+        <use href="#hexCell" x="0" y="-96"/>
+        <use href="#hexCell" x="0" y="0"/>
+        <use href="#hexCell" x="0" y="96"/>
+        <use href="#hexCell" x="0" y="192"/>
+        <!-- Front Right Column (Impact Face) -->
+        <use href="#hexCell" x="72" y="-144"/>
+        <use href="#hexCell" x="72" y="-48"/>
+        <use href="#hexCell" x="72" y="48"/>
+        <use href="#hexCell" x="72" y="144"/>
+        <!-- Inner Left Column -->
+        <use href="#hexCell" x="-72" y="-144"/>
+        <use href="#hexCell" x="-72" y="-48"/>
+        <use href="#hexCell" x="-72" y="48"/>
+        <use href="#hexCell" x="-72" y="144"/>
+      </g>
+
+      <!-- Ripple Glow Flashes Where Arrows Strike the Shield! -->
+      <circle id="shieldRipple1" cx="95" cy="-75" r="24" fill="none" stroke="#ffffff" stroke-width="7" opacity="0" filter="url(#superGlow)"/>
+      <circle id="shieldRipple2" cx="105" cy="45" r="24" fill="none" stroke="#ffe066" stroke-width="7" opacity="0" filter="url(#superGlow)"/>
+      <circle id="shieldRipple3" cx="88" cy="145" r="24" fill="none" stroke="#5eead4" stroke-width="7" opacity="0" filter="url(#superGlow)"/>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 4: INCOMING VECTOR ARROWS & SHATTERING SPARKS       -->
+    <!-- Arrows fly in from right (x=895) & shatter on shield!     -->
+    <!-- ========================================================= -->
+    <g id="incomingArrowsLayer" filter="url(#softGoldGlow)"></g>
+    <g id="shatterSparksLayer" filter="url(#superGlow)"></g>
+    <g id="particlesLayer"></g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 5: 100% YOUTUBE SHORTS SAFE-ZONE KINETIC KEYWORDS   -->
+    <!-- ========================================================= -->
+    <g id="keywordsLayer" transform="translate(505, 1320)" filter="url(#textShadow)">
+      <!-- Keyword 1: लक्ष्मण विवश थे -->
+      <g id="kw1" opacity="0" transform="scale(0.85)">
+        <rect x="-275" y="-48" width="550" height="82" rx="22" fill="#07191e" fill-opacity="0.94" stroke="url(#goldMetal)" stroke-width="4" filter="url(#softGoldGlow)"/>
+        <text x="0" y="9" text-anchor="middle" fill="url(#goldBright)" font-size="45" font-weight="900" letter-spacing="1">लक्ष्मण विवश थे 🏹</text>
+      </g>
+
+      <!-- Keyword 2: अजेय मायावी शक्ति -->
+      <g id="kw2" opacity="0" transform="translate(0, 102) scale(0.85)">
+        <rect x="-295" y="-44" width="590" height="74" rx="37" fill="url(#goldMetal)" filter="url(#softGoldGlow)"/>
+        <text x="0" y="8" text-anchor="middle" fill="#071417" font-size="40" font-weight="900" letter-spacing="1">अजेय मायावी शक्ति 🛡️</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- DETERMINISTIC 5.0-SECOND SNAP-ZOOM & SHIELD DEFLECTION ENGINE -->
+  <script>
+    (function() {
+      const DURATION = 5000; // Exact 5.0 seconds as requested
+      let startTime = null;
+
+      const cameraRig = document.getElementById('cameraRig');
+      const shieldAuraOrb = document.getElementById('shieldAuraOrb');
+      const hexGridCluster = document.getElementById('hexGridCluster');
+      const shieldRipple1 = document.getElementById('shieldRipple1');
+      const shieldRipple2 = document.getElementById('shieldRipple2');
+      const shieldRipple3 = document.getElementById('shieldRipple3');
+
+      const hairBack = document.getElementById('hairBack');
+      const incomingArrowsLayer = document.getElementById('incomingArrowsLayer');
+      const shatterSparksLayer = document.getElementById('shatterSparksLayer');
+      const cosmicStarsLayer = document.getElementById('cosmicStarsLayer');
+      const particlesLayer = document.getElementById('particlesLayer');
+      const kw1 = document.getElementById('kw1');
+      const kw2 = document.getElementById('kw2');
+
+      // 1. Build 9 Incoming Vector Arrows (3 Waves × 3 Arrows) Flying Leftward Into Shield
+      const arrowWaves = [
+        { hitT: 0.22, y: 685, hitX: 710, rippleEl: shieldRipple1 },
+        { hitT: 0.36, y: 805, hitX: 720, rippleEl: shieldRipple2 },
+        { hitT: 0.50, y: 905, hitX: 703, rippleEl: shieldRipple3 },
+        { hitT: 0.66, y: 685, hitX: 710, rippleEl: shieldRipple1 },
+        { hitT: 0.80, y: 805, hitX: 720, rippleEl: shieldRipple2 }
+      ];
+
+      const arrows = [];
+      const sparks = [];
+
+      for (let i = 0; i < arrowWaves.length; i++) {
+        const w = arrowWaves[i];
+        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        const shaft = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        shaft.setAttribute('x1', '0');
+        shaft.setAttribute('y1', '0');
+        shaft.setAttribute('x2', '125');
+        shaft.setAttribute('y2', '0');
+        shaft.setAttribute('stroke', '#ff7714');
+        shaft.setAttribute('stroke-width', '6');
+        shaft.setAttribute('stroke-linecap', 'round');
+        g.appendChild(shaft);
+
+        const tip = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        tip.setAttribute('points', '-16,0 12,-10 4,0 12,10');
+        tip.setAttribute('fill', '#ffffff');
+        g.appendChild(tip);
+
+        const fletch = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        fletch.setAttribute('points', '125,0 145,-12 135,0 145,12');
+        fletch.setAttribute('fill', '#ffe066');
+        g.appendChild(fletch);
+
+        incomingArrowsLayer.appendChild(g);
+        arrows.push({ el: g, ...w });
+
+        // Create 8 Shattering Spark Shards per Arrow Impact
+        for (let s = 0; s < 8; s++) {
+          const sp = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          sp.setAttribute('r', (3 + (s % 3) * 1.4).toFixed(1));
+          sp.setAttribute('fill', s % 2 === 0 ? '#ffffff' : '#ffe066');
+          shatterSparksLayer.appendChild(sp);
+          const ang = (-75 + s * 22) * (Math.PI / 180);
+          sparks.push({
+            el: sp,
+            hitT: w.hitT,
+            originX: w.hitX,
+            originY: w.y,
+            vx: Math.cos(ang) * (140 + (s % 4) * 55),
+            vy: Math.sin(ang) * (140 + (s % 4) * 55)
+          });
+        }
+      }
+
+      const stars = [];
+      for (let i = 0; i < 30; i++) {
+        const st = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        st.setAttribute('cx', (50 + ((i * 179) % 980)).toString());
+        st.setAttribute('cy', (50 + ((i * 257) % 1200)).toString());
+        st.setAttribute('r', (1.5 + (i % 4) * 0.7).toFixed(1));
+        st.setAttribute('fill', i % 3 === 0 ? '#99f6e4' : '#fef08a');
+        cosmicStarsLayer.appendChild(st);
+        stars.push({ el: st, speed: 2.2 + (i % 5) * 0.7, phase: i * 0.85 });
+      }
+
+      const particles = [];
+      for (let i = 0; i < 24; i++) {
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('r', (2.5 + (i % 4) * 1.1).toFixed(1));
+        c.setAttribute('fill', i % 2 === 0 ? '#fde047' : '#5eead4');
+        particlesLayer.appendChild(c);
+        particles.push({
+          el: c,
+          baseX: 110 + ((i * 103) % 780),
+          baseY: 240 + ((i * 181) % 1180),
+          speed: 145 + (i % 6) * 32,
+          phase: i * 0.65
+        });
+      }
+
+      function easeOutBack(x) {
+        const c1 = 1.70158;
+        const c3 = c1 + 1;
+        return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+      }
+
+      function easeOutCubic(x) {
+        return 1 - Math.pow(1 - x, 3);
+      }
+
+      function render(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = (timestamp - startTime) % DURATION;
+        const t = elapsed / DURATION; // 0.0 -> 1.0 over 5.0 seconds
+
+        for (let i = 0; i < stars.length; i++) {
+          const st = stars[i];
+          const op = 0.25 + 0.75 * Math.abs(Math.sin(t * Math.PI * st.speed + st.phase));
+          st.el.setAttribute('opacity', op.toFixed(2));
+        }
+
+        // 1. Snap-Zoom on First Shield Impact (t: 0.18 -> 0.28) + Smooth Push-In
+        let snapZoom = 0;
+        let shakeX = 0;
+        if (t >= 0.18 && t <= 0.30) {
+          const sp = (t - 0.18) / 0.12;
+          snapZoom = Math.sin(sp * Math.PI) * 0.045;
+          shakeX = Math.sin(sp * Math.PI * 10) * 10 * (1 - sp);
+        }
+        const camScale = 1 + easeOutCubic(t) * 0.06 + snapZoom;
+        cameraRig.setAttribute(
+          'transform',
+          `translate(${(505 + shakeX).toFixed(1)}, 760) scale(${camScale.toFixed(4)}) translate(-505, -760)`
+        );
+
+        // 2. Hexagonal Shield Glow Pulse
+        shieldAuraOrb.setAttribute('r', (275 + Math.sin(t * Math.PI * 6) * 25).toFixed(1));
+        hexGridCluster.setAttribute('opacity', (0.82 + 0.18 * Math.sin(t * Math.PI * 8)).toFixed(2));
+        hairBack.setAttribute('transform', `rotate(${(Math.sin(t * Math.PI * 4) * 3.5).toFixed(2)}, -45, -245)`);
+
+        // 3. Incoming Vector Arrows Flying In & Shattering on Shield
+        for (let i = 0; i < arrows.length; i++) {
+          const ar = arrows[i];
+          const startT = ar.hitT - 0.14;
+          if (t >= startT && t <= ar.hitT) {
+            const p = (t - startT) / 0.14;
+            const curX = 910 - p * (910 - ar.hitX);
+            ar.el.setAttribute('opacity', Math.min(1, p * 3).toFixed(2));
+            ar.el.setAttribute('transform', `translate(${curX.toFixed(1)}, ${ar.y})`);
+          } else {
+            ar.el.setAttribute('opacity', '0');
+          }
+        }
+
+        // Ripple Glow Flashes on Shield Surface
+        const rippleEvents = [
+          { el: shieldRipple1, hitTs: [0.22, 0.66] },
+          { el: shieldRipple2, hitTs: [0.36, 0.80] },
+          { el: shieldRipple3, hitTs: [0.50] }
+        ];
+        for (let i = 0; i < rippleEvents.length; i++) {
+          const re = rippleEvents[i];
+          let activeOp = 0;
+          let activeR = 24;
+          for (let j = 0; j < re.hitTs.length; j++) {
+            const ht = re.hitTs[j];
+            if (t >= ht && t <= ht + 0.18) {
+              const rp = (t - ht) / 0.18;
+              activeR = 24 + easeOutCubic(rp) * 115;
+              activeOp = (1 - rp) * 0.95;
+            }
+          }
+          re.el.setAttribute('r', activeR.toFixed(1));
+          re.el.setAttribute('opacity', activeOp.toFixed(2));
+        }
+
+        // Shattering Spark Shards Bursting Outward from Impact Points
+        for (let i = 0; i < sparks.length; i++) {
+          const sp = sparks[i];
+          if (t >= sp.hitT && t <= sp.hitT + 0.24) {
+            const dt = (t - sp.hitT) * 5.0;
+            const x = sp.originX + sp.vx * dt;
+            const y = sp.originY + sp.vy * dt + 140 * dt * dt;
+            const op = Math.max(0, 1 - (t - sp.hitT) / 0.24);
+            sp.el.setAttribute('cx', x.toFixed(1));
+            sp.el.setAttribute('cy', y.toFixed(1));
+            sp.el.setAttribute('opacity', op.toFixed(2));
+          } else {
+            sp.el.setAttribute('opacity', '0');
+          }
+        }
+
+        // 4. Floating Ambient Sparks
+        for (let i = 0; i < particles.length; i++) {
+          const pt = particles[i];
+          const yPos = ((pt.baseY - t * pt.speed * 5.0) % 1180 + 1180) % 1180 + 240;
+          const xPos = pt.baseX + Math.sin(t * Math.PI * 4 + pt.phase) * 16;
+          pt.el.setAttribute('cx', xPos.toFixed(1));
+          pt.el.setAttribute('cy', yPos.toFixed(1));
+          pt.el.setAttribute('opacity', (0.3 + 0.65 * Math.abs(Math.sin(t * Math.PI * 5 + pt.phase))).toFixed(2));
+        }
+
+        // 5. Safe-Zone Kinetic Hindi Keywords ("लक्ष्मण विवश थे 🏹" & "अजेय मायावी शक्ति 🛡️")
+        if (t >= 0.16) {
+          const p1 = Math.min(1, (t - 0.16) / 0.12);
+          const s1 = 0.85 + 0.15 * easeOutBack(p1);
+          kw1.setAttribute('opacity', easeOutCubic(p1).toFixed(2));
+          kw1.setAttribute('transform', `scale(${s1.toFixed(3)})`);
+        } else {
+          kw1.setAttribute('opacity', '0');
+        }
+
+        if (t >= 0.44) {
+          const p2 = Math.min(1, (t - 0.44) / 0.12);
+          const s2 = 0.85 + 0.15 * easeOutBack(p2);
+          kw2.setAttribute('opacity', easeOutCubic(p2).toFixed(2));
+          kw2.setAttribute('transform', `translate(0, 102) scale(${s2.toFixed(3)})`);
+        } else {
+          kw2.setAttribute('opacity', '0');
+        }
+
+        requestAnimationFrame(render);
+      }
+
+      window.onload = function() {
+        requestAnimationFrame(render);
+      };
+    })();
+  </script>
+</body>
+</html>

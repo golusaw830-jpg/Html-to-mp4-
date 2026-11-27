@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghnad 16-Scene Blueprint - Scene 12A (5.0s Symbolic SVG)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: #030709;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+  svg#scene {
+    width: 100vw;
+    height: 100vh;
+    max-width: 56.25vh;
+    max-height: 177.78vw;
+    display: block;
+    background: #050b0e;
+  }
+</style>
+</head>
+<body>
+
+<!-- 
+  16-VISUAL CREATIVE SVG BLUEPRINT — SCENE 12A (5.0 SECONDS EXACT)
+  Voiceover: "अपनों के विश्वासघात ने उस योद्धा को निहत्था कर दिया,"
+  Visual Concept: Indrajit's impenetrable vector armor develops glowing golden-red cracks
+  from the inside out, with left and right armor halves drifting apart in slow motion.
+  100% YouTube Shorts Safe Zone (x: 90..900px, y: 235..1450px), 5.0s loop, zero UI buttons.
+-->
+<svg id="scene" viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 1. SMOKY MIDNIGHT TEAL & VOLCANIC AMBER SKY -->
+    <radialGradient id="betrayalArmorBg" cx="50%" cy="42%" r="78%">
+      <stop offset="0%" stop-color="#173a40"/>
+      <stop offset="44%" stop-color="#0b1d24"/>
+      <stop offset="80%" stop-color="#050c10"/>
+      <stop offset="100%" stop-color="#020507"/>
+    </radialGradient>
+
+    <radialGradient id="fractureInnerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/>
+      <stop offset="32%" stop-color="#ff9900" stop-opacity="0.64"/>
+      <stop offset="70%" stop-color="#dc2626" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#0b1d24" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 2. LOCKED MEGHNAD (INDRAJIT) PALETTE -->
+    <linearGradient id="meghnadSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0a370"/>
+      <stop offset="52%" stop-color="#b57443"/>
+      <stop offset="100%" stop-color="#6b3b1b"/>
+    </linearGradient>
+
+    <linearGradient id="meghnadSkinShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7d4724"/>
+      <stop offset="100%" stop-color="#381a08"/>
+    </linearGradient>
+
+    <linearGradient id="lankaRoyalArmor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#115e59"/>
+      <stop offset="52%" stop-color="#083336"/>
+      <stop offset="100%" stop-color="#03171a"/>
+    </linearGradient>
+
+    <linearGradient id="crimsonRoyalCloth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b91c1c"/>
+      <stop offset="60%" stop-color="#690b12"/>
+      <stop offset="100%" stop-color="#2b0306"/>
+    </linearGradient>
+
+    <linearGradient id="goldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8c7"/>
+      <stop offset="38%" stop-color="#ffd043"/>
+      <stop offset="78%" stop-color="#c4740a"/>
+      <stop offset="100%" stop-color="#633302"/>
+    </linearGradient>
+
+    <linearGradient id="goldBright" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="38%" stop-color="#ffe066"/>
+      <stop offset="100%" stop-color="#e08809"/>
+    </linearGradient>
+
+    <linearGradient id="goldenRedCrackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#ffe066"/>
+      <stop offset="75%" stop-color="#ff6b1a"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+
+    <!-- FILTERS -->
+    <filter id="superGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGoldGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="textShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.92"/>
+    </filter>
+  </defs>
+
+  <!-- CAMERA RIG (Centered in Safe Zone x=505, y=760) -->
+  <g id="cameraRig" transform="translate(505, 760) scale(1) translate(-505, -760)">
+
+    <!-- LAYER 1: FULL-BLEED BACKGROUND & SAFE-ZONE ARCHITECTURE -->
+    <rect x="-80" y="-80" width="1240" height="2080" fill="url(#betrayalArmorBg)"/>
+    <g id="cosmicStarsLayer"></g>
+
+    <!-- Sacred Mandala Ring Behind Indrajit -->
+    <g id="bgMandala" transform="translate(505, 740)" opacity="0.34">
+      <circle cx="0" cy="0" r="395" fill="none" stroke="url(#goldMetal)" stroke-width="3" stroke-dasharray="20 12"/>
+      <circle cx="0" cy="0" r="340" fill="none" stroke="#5eead4" stroke-width="1.8" opacity="0.65"/>
+    </g>
+
+    <!-- Palace Pillars & Court Floor -->
+    <g opacity="0.42" fill="#051014">
+      <rect x="95" y="235" width="42" height="1010"/>
+      <rect x="865" y="235" width="42" height="1010"/>
+      <path d="M 95 360 Q 480 230 907 360 L 907 235 L 95 235 Z"/>
+    </g>
+    <rect x="75" y="1225" width="850" height="22" rx="6" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="4"/>
+    <rect x="-60" y="1247" width="1200" height="720" fill="#040b0e"/>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 2: INDRAJIT WITH INSIDE-OUT FRACTURING ARMOR (12A)   -->
+    <!-- ========================================================= -->
+    <g id="indrajitFractureGroup" transform="translate(505, 845) scale(0.82)">
+      <!-- Inner Glowing Energy Core Radiating Outward Through Cracks -->
+      <circle id="innerCoreGlow" cx="0" cy="220" r="250" fill="url(#fractureInnerGlow)"/>
+
+      <!-- Swept-Back Warrior Hair Locks -->
+      <path id="hairLeft" d="M -128 -210 C -205 -125, -225 25, -185 185 C -162 95, -148 5, -112 -85 Z" fill="#0f1115" stroke="#040608" stroke-width="4.5"/>
+      <path id="hairRight" d="M 128 -210 C 205 -125, 225 25, 185 185 C 162 95, 148 5, 112 -85 Z" fill="#0f1115" stroke="#040608" stroke-width="4.5"/>
+
+      <!-- FRACTURING LEFT ARMOR HALF -->
+      <g id="armorLeftShard">
+        <path d="M -340 490 C -320 295, -225 210, -106 185 L 0 185 L 0 490 Z" fill="url(#meghnadSkin)" stroke="#0a1214" stroke-width="5.5"/>
+        <path d="M -225 220 C -148 268, -55 268, 0 258 L 0 490 L -255 490 Z" fill="url(#lankaRoyalArmor)" stroke="#0a1214" stroke-width="5.5"/>
+        <path d="M -235 230 C -158 325, -65 420, 0 475 L -45 490 C -135 420, -205 330, -255 258 Z" fill="url(#crimsonRoyalCloth)" stroke="#0a1214" stroke-width="4.5"/>
+        <path d="M -322 300 C -285 245, -212 240, -176 284 L -205 342 C -244 312, -290 320, -332 360 Z" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="5"/>
+      </g>
+
+      <!-- FRACTURING RIGHT ARMOR HALF -->
+      <g id="armorRightShard">
+        <path d="M 340 490 C 320 295, 225 210, 106 185 L 0 185 L 0 490 Z" fill="url(#meghnadSkin)" stroke="#0a1214" stroke-width="5.5"/>
+        <path d="M 225 220 C 148 268, 55 268, 0 258 L 0 490 L 255 490 Z" fill="url(#lankaRoyalArmor)" stroke="#0a1214" stroke-width="5.5"/>
+        <path d="M 138 198 C 62 315, -18 420, -68 490" fill="none" stroke="#ffffff" stroke-width="8.5" stroke-linecap="round"/>
+        <path d="M 322 300 C 285 245, 212 240, 176 284 L 205 342 C 244 312, 290 320, 332 360 Z" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="5"/>
+      </g>
+
+      <!-- GLOWING GOLDEN-RED CRACKS EXPANDING FROM INSIDE OUT -->
+      <g id="armorGoldenRedCracks" filter="url(#superGlow)">
+        <polyline points="0,185 -18,245 22,305 -14,368 18,430 -6,490" fill="none" stroke="url(#goldenRedCrackGrad)" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="-18,245 -95,275 -168,315 -225,358" fill="none" stroke="url(#goldenRedCrackGrad)" stroke-width="6.5" stroke-linecap="round"/>
+        <polyline points="-14,368 -88,405 -155,448" fill="none" stroke="#ff6b1a" stroke-width="5.5" stroke-linecap="round"/>
+        <polyline points="22,305 105,272 178,312 232,354" fill="none" stroke="url(#goldenRedCrackGrad)" stroke-width="6.5" stroke-linecap="round"/>
+        <polyline points="18,430 95,412 165,452" fill="none" stroke="#ff6b1a" stroke-width="5.5" stroke-linecap="round"/>
+      </g>
+
+      <!-- Neck & Royal Gold Kantha -->
+      <path d="M -68 70 L 68 70 L 82 190 L -82 190 Z" fill="url(#meghnadSkinShadow)" stroke="#0a1214" stroke-width="5"/>
+      <path d="M -98 182 Q 0 256 98 182" fill="none" stroke="url(#goldMetal)" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="0" cy="226" r="14" fill="#0d9488" stroke="url(#goldBright)" stroke-width="4"/>
+
+      <!-- LOCKED MEGHNAD HEAD & NAGA-SERPENT CROWN -->
+      <g id="meghnadHeadGroup">
+        <path d="M -126 -265 L -95 -420 L -38 -480 L 0 -555 L 38 -480 L 95 -420 L 126 -265 Z" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="5.5" stroke-linejoin="round"/>
+        <path d="M -126 -285 C -175 -315, -185 -365, -155 -395 C -145 -355, -135 -325, -112 -305 Z" fill="url(#goldBright)" stroke="#0a1214" stroke-width="4"/>
+        <path d="M 126 -285 C 175 -315, 185 -365, 155 -395 C 145 -355, 135 -325, 112 -305 Z" fill="url(#goldBright)" stroke="#0a1214" stroke-width="4"/>
+        <circle cx="0" cy="-395" r="17" fill="#0d9488" stroke="url(#goldBright)" stroke-width="4"/>
+        <circle cx="0" cy="-572" r="11" fill="url(#goldBright)" stroke="#0a1214" stroke-width="3.5"/>
+        <path d="M -142 -268 Q 0 -300 142 -268 L 136 -236 Q 0 -266 -136 -236 Z" fill="url(#goldBright)" stroke="#0a1214" stroke-width="5"/>
+
+        <path d="M -138 -244 L 138 -244 L 134 -125 L 116 -38 L 54 68 C 24 102, -24 102, -54 68 L -116 -38 L -134 -125 Z"
+              fill="url(#meghnadSkin)" stroke="#0a1214" stroke-width="5.5" stroke-linejoin="round"/>
+        <polygon points="-146,-65 -158,-25 -146,-8 -134,-25" fill="url(#goldBright)" stroke="#0a1214" stroke-width="3.5"/>
+        <polygon points="146,-65 158,-25 146,-8 134,-25" fill="url(#goldBright)" stroke="#0a1214" stroke-width="3.5"/>
+
+        <line x1="-62" y1="-212" x2="62" y2="-212" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+        <line x1="-54" y1="-196" x2="54" y2="-196" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+        <line x1="-44" y1="-180" x2="44" y2="-180" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round"/>
+        <circle cx="0" cy="-196" r="8.5" fill="#dc2626" stroke="#fff7c2" stroke-width="2"/>
+
+        <path d="M -114 -154 L -32 -136" stroke="#0f1115" stroke-width="10.5" stroke-linecap="round"/>
+        <path d="M 114 -154 L 32 -136" stroke="#0f1115" stroke-width="10.5" stroke-linecap="round"/>
+
+        <path d="M -104 -120 Q -66 -144 -32 -118 Q -66 -100 -104 -120 Z" fill="#fffbeb" stroke="#0f1115" stroke-width="3.5"/>
+        <circle cx="-68" cy="-120" r="11.5" fill="#d97706"/>
+        <circle cx="-68" cy="-120" r="5.5" fill="#090d10"/>
+        <circle cx="-72" cy="-124" r="2.8" fill="#ffffff"/>
+
+        <path d="M 104 -120 Q 66 -144 32 -118 Q 66 -100 104 -120 Z" fill="#fffbeb" stroke="#0f1115" stroke-width="3.5"/>
+        <circle cx="68" cy="-120" r="11.5" fill="#d97706"/>
+        <circle cx="68" cy="-120" r="5.5" fill="#090d10"/>
+        <circle cx="64" cy="-124" r="2.8" fill="#ffffff"/>
+
+        <path d="M 0 -128 L -11 -46 L 10 -40" fill="none" stroke="#5c3014" stroke-width="5" stroke-linecap="round"/>
+        <path d="M 0 -22 C -32 -30, -64 -20, -82 -4 C -58 -12, -28 -14, 0 -16 C 28 -14, 58 -12, 82 -4 C 64 -20, 32 -30, 0 -22 Z" fill="#0f1115"/>
+        <path d="M -28 16 Q 0 24 28 16" fill="none" stroke="#6b2519" stroke-width="4.5" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Rising Golden & Crimson Sparks -->
+    <g id="particlesLayer"></g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 3: 100% YOUTUBE SHORTS SAFE-ZONE KINETIC KEYWORDS   -->
+    <!-- ========================================================= -->
+    <g id="keywordsLayer" transform="translate(505, 1320)" filter="url(#textShadow)">
+      <!-- Keyword 1: विश्वासघात से निहत्था -->
+      <g id="kw1" opacity="0" transform="scale(0.85)">
+        <rect x="-305" y="-48" width="610" height="82" rx="22" fill="#18060c" fill-opacity="0.94" stroke="url(#goldMetal)" stroke-width="4" filter="url(#softGoldGlow)"/>
+        <text x="0" y="9" text-anchor="middle" fill="url(#goldBright)" font-size="43" font-weight="900" letter-spacing="1">विश्वासघात से निहत्था 💔</text>
+      </g>
+
+      <!-- Keyword 2: कवच भीतर से टूटा -->
+      <g id="kw2" opacity="0" transform="translate(0, 102) scale(0.85)">
+        <rect x="-295" y="-44" width="590" height="74" rx="37" fill="url(#goldMetal)" filter="url(#softGoldGlow)"/>
+        <text x="0" y="8" text-anchor="middle" fill="#071417" font-size="40" font-weight="900" letter-spacing="1">कवच भीतर से टूटा ⚡</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- DETERMINISTIC 5.0-SECOND INSIDE-OUT FRACTURE ENGINE -->
+  <script>
+    (function() {
+      const DURATION = 5000; // Exact 5.0 seconds as requested
+      let startTime = null;
+
+      const cameraRig = document.getElementById('cameraRig');
+      const bgMandala = document.getElementById('bgMandala');
+      const armorLeftShard = document.getElementById('armorLeftShard');
+      const armorRightShard = document.getElementById('armorRightShard');
+      const armorGoldenRedCracks = document.getElementById('armorGoldenRedCracks');
+      const innerCoreGlow = document.getElementById('innerCoreGlow');
+      const indrajitFractureGroup = document.getElementById('indrajitFractureGroup');
+      const meghnadHeadGroup = document.getElementById('meghnadHeadGroup');
+      const hairLeft = document.getElementById('hairLeft');
+      const hairRight = document.getElementById('hairRight');
+
+      const cosmicStarsLayer = document.getElementById('cosmicStarsLayer');
+      const particlesLayer = document.getElementById('particlesLayer');
+      const kw1 = document.getElementById('kw1');
+      const kw2 = document.getElementById('kw2');
+
+      const stars = [];
+      for (let i = 0; i < 30; i++) {
+        const st = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        st.setAttribute('cx', (50 + ((i * 179) % 980)).toString());
+        st.setAttribute('cy', (50 + ((i * 257) % 1200)).toString());
+        st.setAttribute('r', (1.5 + (i % 4) * 0.7).toFixed(1));
+        st.setAttribute('fill', i % 3 === 0 ? '#99f6e4' : '#fef08a');
+        cosmicStarsLayer.appendChild(st);
+        stars.push({ el: st, speed: 2.2 + (i % 5) * 0.7, phase: i * 0.85 });
+      }
+
+      const particles = [];
+      for (let i = 0; i < 28; i++) {
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('r', (2.5 + (i % 4) * 1.1).toFixed(1));
+        c.setAttribute('fill', i % 2 === 0 ? '#fde047' : '#ff6b1a');
+        particlesLayer.appendChild(c);
+        particles.push({
+          el: c,
+          baseX: 110 + ((i * 103) % 780),
+          baseY: 240 + ((i * 181) % 1180),
+          speed: 145 + (i % 6) * 32,
+          phase: i * 0.65
+        });
+      }
+
+      function easeOutBack(x) {
+        const c1 = 1.70158;
+        const c3 = c1 + 1;
+        return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+      }
+
+      function easeOutCubic(x) {
+        return 1 - Math.pow(1 - x, 3);
+      }
+
+      function render(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = (timestamp - startTime) % DURATION;
+        const t = elapsed / DURATION; // 0.0 -> 1.0 over 5.0s
+
+        for (let i = 0; i < stars.length; i++) {
+          const st = stars[i];
+          const op = 0.25 + 0.75 * Math.abs(Math.sin(t * Math.PI * st.speed + st.phase));
+          st.el.setAttribute('opacity', op.toFixed(2));
+        }
+
+        const camScale = 1 + easeOutCubic(t) * 0.06;
+        cameraRig.setAttribute('transform', `translate(505, 760) scale(${camScale.toFixed(4)}) translate(-505, -760)`);
+        bgMandala.setAttribute('transform', `translate(505, 740) rotate(${(t * 36).toFixed(1)})`);
+
+        // Cracks expand from inside out & armor shards drift apart in slow motion
+        const crackProg = easeOutCubic(Math.min(1, t / 0.45));
+        const crackPulse = 0.78 + 0.22 * Math.sin(t * Math.PI * 8);
+        armorGoldenRedCracks.setAttribute('opacity', (crackProg * crackPulse).toFixed(2));
+        innerCoreGlow.setAttribute('r', (220 + crackProg * 80 + Math.sin(t * Math.PI * 5) * 20).toFixed(1));
+
+        const driftProg = easeOutCubic(Math.max(0, Math.min(1, (t - 0.12) / 0.78)));
+        const shardGap = driftProg * 36;
+        armorLeftShard.setAttribute('transform', `translate(${(-shardGap).toFixed(1)}, ${(driftProg * 12).toFixed(1)})`);
+        armorRightShard.setAttribute('transform', `translate(${shardGap.toFixed(1)}, ${(driftProg * 12).toFixed(1)})`);
+
+        const breathY = 845 + Math.sin(t * Math.PI * 3) * 4;
+        indrajitFractureGroup.setAttribute('transform', `translate(505, ${breathY.toFixed(1)}) scale(0.82)`);
+        meghnadHeadGroup.setAttribute('transform', `rotate(${(Math.sin(t * Math.PI * 2.5) * 1.4).toFixed(2)}, 0, 110)`);
+        hairLeft.setAttribute('transform', `rotate(${(Math.sin(t * Math.PI * 4) * 3.5).toFixed(2)}, -128, -210)`);
+        hairRight.setAttribute('transform', `rotate(${(-Math.cos(t * Math.PI * 4) * 3.5).toFixed(2)}, 128, -210)`);
+
+        for (let i = 0; i < particles.length; i++) {
+          const pt = particles[i];
+          const yPos = ((pt.baseY - t * pt.speed * 5.0) % 1180 + 1180) % 1180 + 240;
+          const xPos = pt.baseX + Math.sin(t * Math.PI * 4 + pt.phase) * 16;
+          pt.el.setAttribute('cx', xPos.toFixed(1));
+          pt.el.setAttribute('cy', yPos.toFixed(1));
+          pt.el.setAttribute('opacity', (0.3 + 0.65 * Math.abs(Math.sin(t * Math.PI * 5 + pt.phase))).toFixed(2));
+        }
+
+        if (t >= 0.16) {
+          const p1 = Math.min(1, (t - 0.16) / 0.12);
+          const s1 = 0.85 + 0.15 * easeOutBack(p1);
+          kw1.setAttribute('opacity', easeOutCubic(p1).toFixed(2));
+          kw1.setAttribute('transform', `scale(${s1.toFixed(3)})`);
+        } else {
+          kw1.setAttribute('opacity', '0');
+        }
+
+        if (t >= 0.44) {
+          const p2 = Math.min(1, (t - 0.44) / 0.12);
+          const s2 = 0.85 + 0.15 * easeOutBack(p2);
+          kw2.setAttribute('opacity', easeOutCubic(p2).toFixed(2));
+          kw2.setAttribute('transform', `translate(0, 102) scale(${s2.toFixed(3)})`);
+        } else {
+          kw2.setAttribute('opacity', '0');
+        }
+
+        requestAnimationFrame(render);
+      }
+
+      window.onload = function() {
+        requestAnimationFrame(render);
+      };
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghnad 16-Scene Blueprint - Scene 6B (5.0s Story & Symbolic SVG)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: #030709;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+  svg#scene {
+    width: 100vw;
+    height: 100vh;
+    max-width: 56.25vh;
+    max-height: 177.78vw;
+    display: block;
+    background: #050b0e;
+  }
+</style>
+</head>
+<body>
+
+<!-- 
+  16-VISUAL CREATIVE SVG BLUEPRINT — SCENE 6B (00:30.0 – 00:35.0 = 5.0 SECONDS EXACT)
+  Voiceover: "...और अपनी मातृभूमि लंका को जलता हुआ नहीं देख सकता था।"
+  CLEAR STORYTELLING + MATCH-CUT CONTINUITY FROM SCENE 6A:
+  - Seamless Match-Cut from Scene 6A's golden teardrop (x=649, y=750) rippling open into Swarna Lanka's
+    golden palace spires engulfed in blazing orange-red flames on the right (x=685).
+  - Left Foreground (x=275): Locked Meghnad (emerald-teal & gold Lanka armor, Naga-wing crown, chiseled profile)
+    raising his golden Brahmastra bow in fierce resolve with articulated lip-sync.
+  - 100% YouTube Shorts Safe Zone (x: 90..900px, y: 235..1450px), 5.0s duration, zero UI buttons.
+-->
+<svg id="scene" viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 1. SMOKY MIDNIGHT TEAL & VOLCANIC FIRE SKY (Locked Palette) -->
+    <radialGradient id="burningLankaBg" cx="62%" cy="42%" r="78%">
+      <stop offset="0%" stop-color="#3b1512"/>
+      <stop offset="38%" stop-color="#173a40"/>
+      <stop offset="76%" stop-color="#0b1d24"/>
+      <stop offset="100%" stop-color="#020507"/>
+    </radialGradient>
+
+    <radialGradient id="fireHorizonHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff4b8" stop-opacity="0.92"/>
+      <stop offset="32%" stop-color="#ff6b1a" stop-opacity="0.56"/>
+      <stop offset="68%" stop-color="#dc2626" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#0b1d24" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="flameWaveGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#991b1b"/>
+      <stop offset="45%" stop-color="#ea580c"/>
+      <stop offset="82%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+
+    <linearGradient id="swarnaPalaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe066"/>
+      <stop offset="48%" stop-color="#c4740a"/>
+      <stop offset="100%" stop-color="#3b1404"/>
+    </linearGradient>
+
+    <!-- 2. LOCKED MEGHNAD CHARACTER PALETTE (Matches Scenes 1-6A) -->
+    <linearGradient id="meghnadSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0a370"/>
+      <stop offset="52%" stop-color="#b57443"/>
+      <stop offset="100%" stop-color="#6b3b1b"/>
+    </linearGradient>
+
+    <linearGradient id="lankaRoyalArmor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#115e59"/>
+      <stop offset="52%" stop-color="#083336"/>
+      <stop offset="100%" stop-color="#03171a"/>
+    </linearGradient>
+
+    <linearGradient id="crimsonRoyalCloth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b91c1c"/>
+      <stop offset="60%" stop-color="#690b12"/>
+      <stop offset="100%" stop-color="#2b0306"/>
+    </linearGradient>
+
+    <linearGradient id="goldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8c7"/>
+      <stop offset="38%" stop-color="#ffd043"/>
+      <stop offset="78%" stop-color="#c4740a"/>
+      <stop offset="100%" stop-color="#633302"/>
+    </linearGradient>
+
+    <linearGradient id="goldBright" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="38%" stop-color="#ffe066"/>
+      <stop offset="100%" stop-color="#e08809"/>
+    </linearGradient>
+
+    <!-- FILTERS -->
+    <filter id="superGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGoldGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="textShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.92"/>
+    </filter>
+
+    <!-- Circular Reflection Portal Clip Path (Expands from Scene 6A's Teardrop!) -->
+    <clipPath id="teardropReflectionClip">
+      <circle id="reflectionPortalClipCircle" cx="685" cy="840" r="320"/>
+    </clipPath>
+  </defs>
+
+  <!-- CAMERA RIG (Centered in Safe Zone x=505, y=760) -->
+  <g id="cameraRig" transform="translate(505, 760) scale(1) translate(-505, -760)">
+
+    <!-- LAYER 1: SMOKY MIDNIGHT TEAL & FIRE HORIZON BACKDROP -->
+    <rect x="-80" y="-80" width="1240" height="2080" fill="url(#burningLankaBg)"/>
+    <g id="cosmicStarsLayer"></g>
+
+    <!-- Royal Rampart Pillars & Arch Framing Safe Zone -->
+    <g opacity="0.45" fill="#051014">
+      <rect x="95" y="235" width="42" height="1010"/>
+      <rect x="865" y="235" width="42" height="1010"/>
+      <path d="M 95 360 Q 480 230 907 360 L 907 235 L 95 235 Z"/>
+    </g>
+
+    <!-- Golden Fortress Rampart Floor -->
+    <rect x="75" y="1225" width="850" height="22" rx="6" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="4"/>
+    <rect x="-60" y="1247" width="1200" height="720" fill="#040b0e"/>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 2: RIGHT SIDE (x=685) — SWARNA LANKA PALACES IN     -->
+    <!-- BLAZING ORANGE-RED FLAMES (MATCH-CUT FROM TEARDROP)       -->
+    <!-- ========================================================= -->
+    <g id="swarnaLankaBurningGroup">
+      <!-- Radiant Fire Glow Halo -->
+      <circle id="lankaFireOrb" cx="685" cy="840" r="310" fill="url(#fireHorizonHalo)"/>
+
+      <g clip-path="url(#teardropReflectionClip)">
+        <!-- Distant Sea Horizon Around Lanka -->
+        <rect x="460" y="1060" width="430" height="165" fill="#071921"/>
+
+        <!-- Swarna Lanka Golden Palace Towers & Kalasha Spires -->
+        <g id="lankaPalaceTowers" transform="translate(685, 860)">
+          <!-- Left Golden Tower -->
+          <path d="M -165 365 L -135 95 L -115 25 L -95 95 L -65 365 Z" fill="url(#swarnaPalaceGrad)" stroke="#1f0803" stroke-width="4"/>
+          <line x1="-115" y1="-5" x2="-115" y2="28" stroke="#ffe066" stroke-width="4"/>
+          <!-- Grand Central Swarna Lanka Citadel -->
+          <path d="M -85 365 L -45 -45 L 0 -145 L 45 -45 L 85 365 Z" fill="url(#swarnaPalaceGrad)" stroke="#1f0803" stroke-width="4.5"/>
+          <circle cx="0" cy="-155" r="9" fill="#ffe066"/>
+          <!-- Right Golden Tower -->
+          <path d="M 65 365 L 95 75 L 118 -5 L 140 75 L 170 365 Z" fill="url(#swarnaPalaceGrad)" stroke="#1f0803" stroke-width="4"/>
+          <line x1="118" y1="-35" x2="118" y2="-2" stroke="#ffe066" stroke-width="4"/>
+
+          <!-- Palace Battlement Wall -->
+          <rect x="-185" y="210" width="370" height="155" fill="#451506" stroke="url(#goldMetal)" stroke-width="4"/>
+        </g>
+
+        <!-- Looping Wave-Motion Orange-Red Flames Engulfing Lanka -->
+        <g id="lankaFlamesLayer" transform="translate(685, 1185)" filter="url(#softGoldGlow)"></g>
+      </g>
+
+      <!-- Glowing Golden-Amber Teardrop Ripple Frame Ring -->
+      <circle id="rippleFrameRing" cx="685" cy="840" r="225" fill="none" stroke="url(#goldBright)" stroke-width="5" stroke-dasharray="20 10" opacity="0.78" filter="url(#softGoldGlow)"/>
+    </g>
+
+    <!-- Match-Cut Golden Teardrop at t=0 (Seamless Link from Scene 6A) -->
+    <g id="matchCutTeardrop" transform="translate(649, 750)" filter="url(#superGlow)" opacity="1">
+      <path d="M 0 -14 C 7 -2, 12 5, 12 12 A 12 12 0 1 1 -12 12 C -12 5, -7 -2, 0 -14 Z" fill="#ffe066" stroke="#ffffff" stroke-width="2"/>
+    </g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 3: LEFT FOREGROUND (x=275) — MEGHNAD STANDING FIERCE -->
+    <!-- WITH RAISED BRAHMASTRA BOW & ARTICULATED LIP-SYNC          -->
+    <!-- ========================================================= -->
+    <g id="meghnadDefenderGroup" transform="translate(275, 920)">
+      <!-- Warrior Dhoti & Greaves Standing Tall on Rampart -->
+      <path d="M -72 65 L 72 65 L 92 305 L 18 305 L 0 185 L -18 305 L -92 305 Z" fill="url(#crimsonRoyalCloth)" stroke="#0a1214" stroke-width="5" stroke-linejoin="round"/>
+      <line x1="-88" y1="290" x2="-20" y2="290" stroke="url(#goldMetal)" stroke-width="10"/>
+      <line x1="20" y1="290" x2="88" y2="290" stroke="url(#goldMetal)" stroke-width="10"/>
+      <rect x="-72" y="48" width="144" height="22" rx="6" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="4.5"/>
+
+      <!-- Swept-Back Warrior Hair Locks -->
+      <path id="hairBack" d="M -45 -245 C -115 -175, -135 -65, -105 45 C -85 -15, -72 -85, -42 -150 Z" fill="#0f1115" stroke="#040608" stroke-width="4.5"/>
+
+      <!-- Torso in Locked Emerald-Teal & Gold Lanka Armor -->
+      <path d="M -74 -155 C -25 -178, 35 -178, 74 -155 L 64 52 L -64 52 Z" fill="url(#lankaRoyalArmor)" stroke="#0a1214" stroke-width="5.5" stroke-linejoin="round"/>
+      <path d="M -52 -156 C -15 -65, 25 5, 58 48" fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round"/>
+      <path d="M -42 -156 Q 5 -105 52 -156" fill="none" stroke="url(#goldMetal)" stroke-width="10" stroke-linecap="round"/>
+
+      <!-- Naga-Wing Golden Shoulder Pauldron -->
+      <path d="M -82 -142 C -50 -185, 14 -185, 42 -148 L 20 -95 C -12 -118, -50 -110, -86 -82 Z" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="4.5"/>
+
+      <!-- Raised Brahmastra Bow Ready to Defend Lanka -->
+      <g id="defenderBowArm" transform="translate(42, -95)">
+        <path d="M -15 -10 C 32 8, 72 -6, 108 -34 L 92 -58 C 62 -34, 32 -25, -4 -36 Z" fill="url(#meghnadSkin)" stroke="#0a1214" stroke-width="5" stroke-linejoin="round"/>
+        <g transform="translate(108, -48) rotate(-14)">
+          <path d="M 0 -175 C 72 -105, 72 105, 0 175" fill="none" stroke="#081417" stroke-width="18" stroke-linecap="round"/>
+          <path d="M 0 -175 C 72 -105, 72 105, 0 175" fill="none" stroke="url(#goldBright)" stroke-width="11" stroke-linecap="round" filter="url(#softGoldGlow)"/>
+          <line x1="0" y1="-175" x2="0" y2="175" stroke="#fff7c2" stroke-width="3"/>
+        </g>
+      </g>
+
+      <!-- LOCKED MEGHNAD HEAD (3/4 PROFILE WITH LIP-SYNC) -->
+      <g id="meghnadProfileHead" transform="translate(12, -175)">
+        <path d="M -46 -85 L -34 -148 L 0 -195 L 34 -148 L 46 -85 Z" fill="url(#goldMetal)" stroke="#0a1214" stroke-width="4.5" stroke-linejoin="round"/>
+        <path d="M -46 -95 C -68 -110, -72 -132, -58 -145 C -52 -128, -48 -115, -38 -105 Z" fill="url(#goldBright)" stroke="#0a1214" stroke-width="3.5"/>
+        <circle cx="0" cy="-138" r="8" fill="#0d9488" stroke="url(#goldBright)" stroke-width="2.5"/>
+        <path d="M -52 -86 Q 0 -100 52 -86 L 50 -74 Q 0 -86 -50 -74 Z" fill="url(#goldBright)" stroke="#0a1214" stroke-width="4"/>
+
+        <path d="M -48 -76 L 48 -76 L 56 -32 L 48 6 L 22 34 C 8 46, -16 44, -32 28 L -48 -18 Z"
+              fill="url(#meghnadSkin)" stroke="#0a1214" stroke-width="4.5" stroke-linejoin="round"/>
+
+        <polygon points="-44,-18 -50,2 -44,10 -38,2" fill="url(#goldBright)" stroke="#0a1214" stroke-width="3"/>
+        <line x1="-10" y1="-64" x2="36" y2="-64" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="-6" y1="-56" x2="34" y2="-56" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="16" cy="-60" r="4.5" fill="#dc2626"/>
+
+        <path d="M -12 -46 L 34 -42" stroke="#0f1115" stroke-width="5.5" stroke-linecap="round"/>
+        <ellipse cx="14" cy="-32" rx="11" ry="6.5" fill="#fffbeb" stroke="#0f1115" stroke-width="2.5"/>
+        <circle cx="18" cy="-33" r="5" fill="#d97706"/>
+        <circle cx="19" cy="-33" r="2.5" fill="#090d10"/>
+
+        <path d="M 48 -38 L 60 -12 L 46 -8" fill="none" stroke="#5c3014" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M 24 0 C 34 -4, 46 0, 52 6 C 42 4, 32 4, 24 3 Z" fill="#0f1115"/>
+
+        <g transform="translate(36, 12)">
+          <ellipse id="mouthCavity" cx="0" cy="2" rx="10" ry="1.5" fill="#2b0709"/>
+          <path id="upperLip" d="M -12 1 Q 0 -3 12 1 Z" fill="#8c3b2b" stroke="#2b0d06" stroke-width="2"/>
+          <path id="lowerLip" d="M -10 2 Q 0 9 10 2 Z" fill="#a34836" stroke="#2b0d06" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- Rising Golden & Fire Embers -->
+    <g id="particlesLayer"></g>
+
+    <!-- ========================================================= -->
+    <!-- LAYER 4: 100% YOUTUBE SHORTS SAFE-ZONE KINETIC KEYWORDS   -->
+    <!-- ========================================================= -->
+    <g id="keywordsLayer" transform="translate(505, 1320)" filter="url(#textShadow)">
+      <!-- Keyword 1: मातृभूमि लंका -->
+      <g id="kw1" opacity="0" transform="scale(0.85)">
+        <rect x="-285" y="-48" width="570" height="82" rx="22" fill="#1a060c" fill-opacity="0.94" stroke="url(#goldMetal)" stroke-width="4" filter="url(#softGoldGlow)"/>
+        <text x="0" y="9" text-anchor="middle" fill="url(#goldBright)" font-size="45" font-weight="900" letter-spacing="1">मातृभूमि लंका 🏰</text>
+      </g>
+
+      <!-- Keyword 2: जलता नहीं देख सकता -->
+      <g id="kw2" opacity="0" transform="translate(0, 102) scale(0.85)">
+        <rect x="-320" y="-44" width="640" height="74" rx="37" fill="url(#goldMetal)" filter="url(#softGoldGlow)"/>
+        <text x="0" y="8" text-anchor="middle" fill="#071417" font-size="39" font-weight="900" letter-spacing="0.8">जलता नहीं देख सकता 🔥</text>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- DETERMINISTIC 5.0-SECOND MATCH-CUT & WAVE-FLAME ENGINE -->
+  <script>
+    (function() {
+      const DURATION = 5000; // Exact 5.0 seconds as requested
+      let startTime = null;
+
+      const cameraRig = document.getElementById('cameraRig');
+      const lankaFireOrb = document.getElementById('lankaFireOrb');
+      const reflectionPortalClipCircle = document.getElementById('reflectionPortalClipCircle');
+      const rippleFrameRing = document.getElementById('rippleFrameRing');
+      const matchCutTeardrop = document.getElementById('matchCutTeardrop');
+      const lankaFlamesLayer = document.getElementById('lankaFlamesLayer');
+
+      const defenderBowArm = document.getElementById('defenderBowArm');
+      const meghnadProfileHead = document.getElementById('meghnadProfileHead');
+      const hairBack = document.getElementById('hairBack');
+      const mouthCavity = document.getElementById('mouthCavity');
+      const upperLip = document.getElementById('upperLip');
+      const lowerLip = document.getElementById('lowerLip');
+
+      const cosmicStarsLayer = document.getElementById('cosmicStarsLayer');
+      const particlesLayer = document.getElementById('particlesLayer');
+      const kw1 = document.getElementById('kw1');
+      const kw2 = document.getElementById('kw2');
+
+      // Generate 15 Looping Wave-Motion Flame Tongues Engulfing Lanka
+      const flames = [];
+      for (let i = 0; i < 15; i++) {
+        const x = -175 + i * 25;
+        const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        p.setAttribute('fill', 'url(#flameWaveGrad)');
+        lankaFlamesLayer.appendChild(p);
+        flames.push({ el: p, x, phase: i * 0.65 });
+      }
+
+      const stars = [];
+      for (let i = 0; i < 30; i++) {
+        const st = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        st.setAttribute('cx', (50 + ((i * 179) % 980)).toString());
+        st.setAttribute('cy', (50 + ((i * 257) % 1200)).toString());
+        st.setAttribute('r', (1.5 + (i % 4) * 0.7).toFixed(1));
+        st.setAttribute('fill', i % 3 === 0 ? '#99f6e4' : '#fef08a');
+        cosmicStarsLayer.appendChild(st);
+        stars.push({ el: st, speed: 2.2 + (i % 5) * 0.7, phase: i * 0.85 });
+      }
+
+      const particles = [];
+      for (let i = 0; i < 28; i++) {
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('r', (2.5 + (i % 4) * 1.1).toFixed(1));
+        c.setAttribute('fill', i % 2 === 0 ? '#fde047' : '#ff6b1a');
+        particlesLayer.appendChild(c);
+        particles.push({
+          el: c,
+          baseX: 110 + ((i * 103) % 780),
+          baseY: 240 + ((i * 181) % 1180),
+          speed: 160 + (i % 6) * 35,
+          phase: i * 0.65
+        });
+      }
+
+      function easeOutBack(x) {
+        const c1 = 1.70158;
+        const c3 = c1 + 1;
+        return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+      }
+
+      function easeOutCubic(x) {
+        return 1 - Math.pow(1 - x, 3);
+      }
+
+      // Syllable-driven Lip-Sync for "...औ-र अ-प-नी मा-तृ-भू-मि लं-का को ज-ल-ता हु-आ न-हीं दे-ख स-क-ता था।"
+      const syllableCenters = [0.06, 0.14, 0.22, 0.30, 0.38, 0.46, 0.54, 0.62, 0.70, 0.78, 0.86, 0.92];
+      function getSpeechOpenness(t) {
+        let open = 0;
+        for (let i = 0; i < syllableCenters.length; i++) {
+          const dist = (t - syllableCenters[i]) / 0.030;
+          const amp = (i === 2 || i === 5 || i === 8 || i === 10) ? 1.0 : 0.75;
+          open += amp * Math.exp(-dist * dist);
+        }
+        return Math.min(1.0, open);
+      }
+
+      function render(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = (timestamp - startTime) % DURATION;
+        const t = elapsed / DURATION; // 0.0 -> 1.0 over 5.0 seconds
+
+        for (let i = 0; i < stars.length; i++) {
+          const st = stars[i];
+          const op = 0.25 + 0.75 * Math.abs(Math.sin(t * Math.PI * st.speed + st.phase));
+          st.el.setAttribute('opacity', op.toFixed(2));
+        }
+
+        // 1. Safe-Zone Camera Push-In
+        const camScale = 1 + easeOutCubic(t) * 0.06;
+        cameraRig.setAttribute('transform', `translate(505, 760) scale(${camScale.toFixed(4)}) translate(-505, -760)`);
+
+        // 2. MATCH-CUT RIPPLE ZOOM-IN FROM SCENE 6A'S GOLDEN TEARDROP (0.0 -> 0.24)
+        const rippleProg = easeOutCubic(Math.min(1, t / 0.24));
+        const portalR = 24 + rippleProg * 215; // Expands smoothly from teardrop into burning Lanka vision!
+        reflectionPortalClipCircle.setAttribute('r', portalR.toFixed(1));
+        rippleFrameRing.setAttribute('r', portalR.toFixed(1));
+
+        matchCutTeardrop.setAttribute('opacity', Math.max(0, 1 - rippleProg * 1.4).toFixed(2));
+        matchCutTeardrop.setAttribute('transform', `translate(649, ${(750 + rippleProg * 45).toFixed(1)}) scale(${(1 + rippleProg * 1.8).toFixed(2)})`);
+
+        // 3. Looping Wave-Motion Orange-Red Flames Engulfing Swarna Lanka
+        lankaFireOrb.setAttribute('r', (300 + Math.sin(t * Math.PI * 6) * 28).toFixed(1));
+        for (let i = 0; i < flames.length; i++) {
+          const fl = flames[i];
+          const h = 85 + Math.abs(Math.sin(t * Math.PI * 8 + fl.phase)) * 95;
+          const wave = Math.sin(t * Math.PI * 6 + fl.phase) * 16;
+          fl.el.setAttribute('d', `M ${fl.x - 18} 40 Q ${fl.x + wave} ${40 - h} ${fl.x + 18} 40 Z`);
+        }
+
+        // 4. Meghnad Fierce Defender Stance & Articulated Lip-Sync
+        const bowLift = -easeOutBack(Math.min(1, t / 0.28)) * 9 + Math.sin(t * Math.PI * 4) * 2.5;
+        defenderBowArm.setAttribute('transform', `translate(42, -95) rotate(${bowLift.toFixed(2)})`);
+        meghnadProfileHead.setAttribute('transform', `translate(12, -175) rotate(${(Math.sin(t * Math.PI * 3) * 2.0).toFixed(2)})`);
+        hairBack.setAttribute('transform', `rotate(${(Math.sin(t * Math.PI * 4) * 3.5).toFixed(2)}, -45, -245)`);
+
+        const mouthOpen = getSpeechOpenness(t);
+        const jawDrop = mouthOpen * 7.2;
+        mouthCavity.setAttribute('ry', (1.5 + mouthOpen * 5.2).toFixed(1));
+        upperLip.setAttribute('transform', `translate(0, ${(-mouthOpen * 1.2).toFixed(1)})`);
+        lowerLip.setAttribute('transform', `translate(0, ${jawDrop.toFixed(1)})`);
+
+        // 5. Rising Golden & Fire Embers
+        for (let i = 0; i < particles.length; i++) {
+          const pt = particles[i];
+          const yPos = ((pt.baseY - t * pt.speed * 5.0) % 1180 + 1180) % 1180 + 240;
+          const xPos = pt.baseX + Math.sin(t * Math.PI * 4 + pt.phase) * 16;
+          pt.el.setAttribute('cx', xPos.toFixed(1));
+          pt.el.setAttribute('cy', yPos.toFixed(1));
+          pt.el.setAttribute('opacity', (0.3 + 0.65 * Math.abs(Math.sin(t * Math.PI * 5 + pt.phase))).toFixed(2));
+        }
+
+        // 6. Safe-Zone Kinetic Hindi Keywords ("मातृभूमि लंका 🏰" & "जलता नहीं देख सकता 🔥")
+        if (t >= 0.16) {
+          const p1 = Math.min(1, (t - 0.16) / 0.12);
+          const s1 = 0.85 + 0.15 * easeOutBack(p1);
+          kw1.setAttribute('opacity', easeOutCubic(p1).toFixed(2));
+          kw1.setAttribute('transform', `scale(${s1.toFixed(3)})`);
+        } else {
+          kw1.setAttribute('opacity', '0');
+        }
+
+        if (t >= 0.44) {
+          const p2 = Math.min(1, (t - 0.44) / 0.12);
+          const s2 = 0.85 + 0.15 * easeOutBack(p2);
+          kw2.setAttribute('opacity', easeOutCubic(p2).toFixed(2));
+          kw2.setAttribute('transform', `translate(0, 102) scale(${s2.toFixed(3)})`);
+        } else {
+          kw2.setAttribute('opacity', '0');
+        }
+
+        requestAnimationFrame(render);
+      }
+
+      window.onload = function() {
+        requestAnimationFrame(render);
+      };
+    })();
+  </script>
+</body>
+</html>
